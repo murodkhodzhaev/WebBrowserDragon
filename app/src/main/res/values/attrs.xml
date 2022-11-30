@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <attr name="toolbarTheme" format="reference"/>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="actionOverflowMenuStyle">@style/popupOverflowMenu</item>
+    </style>
+    <style name="popupOverflowMenu" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/my_mtrl_popupmenu_background</item>
+    </style>
+</resources>

@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "web.browser.dragon",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "0.001",
+      "outputFile": "com-newbrowser-pro-debug-0.001 (1).apk"
+    }
+  ],
+  "elementType": "File"
+}

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dragon Browser</string>
+    <!--    common-->
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="error_occurred">عفوًا ، حدث خطأ.</string>
+    <string name="google">Google</string>
+    <string name="yandex">Yandex</string>
+    <string name="bing">Bing</string>
+    <string name="duck_duck_go">DuckDuckGo</string>
+    <string name="error">Оخطأ.</string>
+    <string name="search_empty_error">لا يمكن أن يكون البحث فارغًا.</string>
+    <string name="downloads">التحميلات</string>
+
+    <!--    OnboardingActivity-->
+    <string name="onboarding_feature_1_title">بحث سريع من الشاشة الرئيسية وشاشة علامة التبويب</string>
+    <string name="onboarding_feature_1_description">ما عليك سوى الانتقال إلى أي من علامات التبويب هذه وتحديد محرك بحث والعثور على ما تهتم به</string>
+    <string name="onboarding_feature_2_title">الوضع المخفي</string>
+    <string name="onboarding_feature_2_description">في هذا الوضع ، لا يتم حفظ استعلامات البحث والصفحات التي تمت زيارتها في سجل المتصفح</string>
+    <string name="onboarding_feature_3_title">علامات تبويب ملائمة</string>
+    <string name="onboarding_feature_3_description">سهولة الوصول إلى علامات التبويب المفتوحة من أي صفحة والتنقل السهل بينها</string>
+    <string name="onboarding_next">التالي</string>
+    <string name="onboarding_start">يبدأ</string>
+
+    <!--    HomeActivity-->
+    <string name="home_search">بحث</string>
+    <string name="home_bookmarks">المفضلة</string>
+    <string name="home_popular">جمع</string>
+    <string name="home_settings">إعدادات</string>
+    <string name="home_history">قصة</string>
+    <string name="home_edit_tabs">تحرير المفضلة</string>
+    <string name="home_edit_tabs_finish">إنهاء التحرير</string>
+    <string name="home_select_editable_bookmark">حدد إشارة لتعديلها</string>
+    <string name="home_select_editable_bookmark_cancel">يلغي</string>
+    <string name="home_select_editable_bookmark_title">تحرير الإشارة المرجعية</string>
+    <string name="home_select_editable_bookmark_save">يحفظ</string>
+    <string name="home_delete_bookmark_dialog_message">هل أنت متأكد أنك تريد حذف هذه المرجعية؟</string>
+    <string name="home_edit_bookmark_empty">لا يمكن أن تكون الإشارة المرجعية فارغة.</string>
+    <string name="home_edit_bookmark_saved">تم تحرير الإشارة المرجعية.</string>
+
+    <!--    HistoryRecordsActivity-->
+    <string name="history_records_title">قصة</string>
+    <string name="history_records_delete_message">هل أنت متأكد أنك تريد حذف إدخال المحفوظات هذا؟</string>
+
+    <!--    BrowserActivity-->
+    <string name="browser_add_bookmark">اضافة للمفضلة</string>
+    <string name="browser_add_bookmark_question">هل أنت متأكد أنك تريد وضع إشارة مرجعية على هذه الصفحة؟</string>
+    <string name="browser_add_bookmark_message">تمت إضافة إشارة مرجعية.</string>
+    <string name="browser_bookmark_added_already">تمت إضافة الإشارة المرجعية بالفعل.</string>
+    <string name="browser_error_handling">خطأ في معالجة العنوان.</string>
+
+    <!--    DownloadsActivity-->
+    <string name="downloads_title">التحميلات</string>
+
+    <!--    SettingsActivity-->
+    <string name="settings_title">إعدادات</string>
+    <string name="settings_main_title">الإعدادات الرئيسية</string>
+    <string name="settings_without_images">لا توجد صور</string>
+    <string name="settings_block_ads">إعلانات كتلة</string>
+    <string name="settings_enable_javascript">تمكين جافا سكريبت</string>
+    <string name="settings_enable_color_mode">تمكين وضع الألوان</string>
+    <string name="settings_http_proxy">الموقع الوكيل</string>
+    <string name="settings_user_agent">وكيل المستخدم</string>
+    <string name="settings_download_path">مسار التحميل</string>
+    <string name="settings_new_tab">أقحم جديد</string>
+    <string name="settings_language">لغة</string>
+    <string name="settings_http_default">تقصير</string>
+
+    <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- App -->
+    <!--    <string name="app_name">FOSS Browser</string>-->
+    <string name="app_ok">نعم</string>
+    <string name="app_help">مساعدة</string>
+    <string name="app_cancel">يلغي</string>
+    <string name="app_done">مستعد</string>
+    <string name="app_error">خطأ</string>
+    <string name="app_error_activity">لا يوجد تطبيق مثبت لفتح عنوان URL هذا.</string>
+    <string name="app_warning">تحذير</string>
+    <string name="app_permission">لاستخدام هذه الميزة ، يجب منح الإذن. بعد ذلك ، أعد تشغيل التطبيق.</string>
+    <string name="list_empty">القائمة فارغة</string>
+    <string name="album_title_bookmarks">المفضلة</string>
+    <string name="album_title_history">قصة</string>
+    <string name="album_title_home">مسكن</string>
+    <string name="album_title_tab">علامات التبويب المفتوحة</string>
+    <string name="search_hint">بحث</string>
+
+    <string name="color_red">أحمر</string>
+    <string name="color_pink">أحمر</string>
+    <string name="color_purple">نفسجي</string>
+    <string name="color_blue">أزرق</string>
+    <string name="color_teal">تركواز</string>
+    <string name="color_green">أخضر</string>
+    <string name="color_lime">جير</string>
+    <string name="color_yellow">الأصفر</string>
+    <string name="color_orange">الأصفر</string>
+    <string name="color_brown">بني</string>
+    <string name="color_grey">رمادي</string>
+
+    <!-- Menu -->
+    <string name="main_menu_new_tab">علامة تبويب جديدة (خلفية)</string>
+    <string name="main_menu_new_tabProfile">علامة تبويب جديدة (مع الملف الشخصي ...)</string>
+    <string name="main_menu_new_tabOpen">علامة تبويب جديدة (في المقدمة)</string>
+    <string name="main_omnibox_input_hint">ابحث أو أدخل عنوان URL</string>
+    <string name="menu_open_with">فتح الارتباط من ...</string>
+
+    <string name="menu_quit">إطفاء</string>
+    <string name="menu_openFav">فتح المفضلة</string>
+    <string name="menu_delete">حذف</string>
+    <string name="menu_edit">حذف</string>
+    <string name="menu_closeTab">حذف</string>
+    <string name="menu_download">فتح التنزيلات</string>
+    <string name="menu_fav">حفظ كمفضلة</string>
+    <string name="menu_sc">اختصار الشاشة الرئيسية</string>
+    <string name="menu_sort">ترتيب حسب …</string>
+    <string name="menu_filter">ترتيب حسب …</string>
+
+    <string name="menu_share_link">مشاركة الارتباط</string>
+
+    <string name="menu_save_home">حفظ في الصفحة الرئيسية</string>
+    <string name="menu_save_bookmark">حفظ في الصفحة الرئيسية</string>
+    <string name="menu_save_as">حفظ باسم ...</string>
+    <string name="menu_save_pdf">حفظ كملف PDF</string>
+    <string name="menu_shareClipboard">نسخ إلى الحافظة</string>
+    <string name="menu_other_searchSite">البحث في الموقع</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_hint">العنوان:</string>
+    <string name="dialog_URL_hint">URL:</string>
+    <string name="dialog_extension_hint">الامتداد (على سبيل المثال: \". jpg \ "):</string>
+    <string name="dialog_sign_in_username">اسم المستخدم</string>
+    <string name="dialog_sign_in_password">كلمه السر</string>
+    <string name="dialog_title_download">تحميل الملف؟</string>
+    <string name="dialog_content_resubmission">إرسال البيانات مرة أخرى؟</string>
+    <string name="dialog_content_ssl_error">شهادة الموقع غير موثوق بها. هل تريد المتابعة على أي حال؟</string>
+
+    <string name="dialog_sortName">الترتيب حسب الاسم</string>
+    <string name="dialog_sortIcon">فرز حسب الرمز</string>
+    <string name="dialog_sortDate">رتب حسب التاريخ</string>
+
+    <!-- Settings -->
+    <string name="setting_label">إعدادات</string>
+
+    <!-- browser setting -->
+    <string name="setting_title_browser">اعدادات المتصفح</string>
+
+    <string name="setting_title_search_engine">نظام البحث</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
+
+    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_dom">DOM Storage</string>
+
+    <string name="setting_title_save_data">طلب" حفظ البيانات "</string>
+
+    <string name="setting_title_profiles">مظهر</string>
+    <string name="setting_title_profiles_edit">مظهر</string>
+    <string name="setting_title_profiles_trustedList">مواقع موثوقة</string>
+    <string name="setting_title_profiles_standardList">المواقع القياسية</string>
+    <string name="setting_title_profiles_protectedList">مواقع الويب المحمية</string>
+    <string name="setting_title_profiles_startApp">الملف الشخصي عند تشغيل التطبيق</string>
+    <string name="setting_title_profiles_trusted">مستشار توزيع أصول</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_active">حساب تعريفي</string>
+    <string name="setting_title_profiles_dataUsage">استخدام البيانات</string>
+    <string name="setting_title_profiles_privacy">سرية</string>
+    <string name="setting_title_profiles_Security">Security</string>
+
+    <!-- browser start -->
+    <string name="setting_title_images">صور</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">في حالة التمكين ، سيتم حذف جميع ملفات تعريف الارتباط. وكذلك ملفات تعريف الارتباط من مواقع الويب الموثوق بها.</string>
+
+    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript">JavaScript</string>
+
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">تمكين AdBlock لمنع الإعلانات المزعجة. يتم أيضًا تحميل المواقع بشكل أسرع عند التمكين.</string>
+    <string name="setting_title_adblockHost">محتوى محظور</string>
+
+    <string name="setting_title_location">موقع</string>
+    <string name="setting_title_history">قصة</string>
+
+    <string name="setting_title_autofill">Form Data</string>
+    <string name="setting_summary_autofill">تمكين حفظ بيانات النموذج (Android Nougat والإصدارات الأقدم) أو خدمة الملء التلقائي (Android Oreo والإصدارات الأحدث)</string>
+
+
+    <!-- browser clear -->
+    <string name="data_summary">" Documents / browser_backup / "على بطاقة SD.</string>
+    <string name="clear_title_quit">مسح عند الخروج من التطبيق</string>
+    <string name="clear_title_cache">مسح ذاكرة التخزين المؤقت</string>
+    <string name="clear_title_cookie">مسح ملفات تعريف الارتباط</string>
+    <string name="clear_title_history">تاريخ خالص</string>
+    <string name="localData">مسح البيانات المخزنة على الجهاز</string>
+
+    <string name="clear_title_deleteDatabase">حذف قاعدة البيانات</string>
+    <string name="clear_summary_deleteDatabase">احذف قاعدة البيانات بأكملها (صفحة البداية ، والإشارات المرجعية ، والمحفوظات وجميع القوائم البيضاء).</string>
+
+
+    <!-- App setting -->
+    <string name="setting_title_app">إعدادات التطبيق</string>
+    <string name="setting_title_ui">Behavior/UI</string>
+    <string name="setting_title_data">Backup</string>
+
+    <string name="setting_filter">Bookmark filter</string>
+
+    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
+
+    <string name="setting_title_searchEngine">Custom search engine</string>
+
+    <string name="setting_title_userAgent">Custom user agent</string>
+
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
+
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+
+    <string name="setting_title_behavior">Behavior</string>
+
+    <string name="setting_title_confirm_exit">Confirm browser exit</string>
+
+    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
+
+    <string name="setting_overView_onStart_title">Show on start</string>
+
+    <string name="setting_gestures">Gestures</string>
+
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">استعراض</string>
+    <string name="setting_gesture_up">Swipe up</string>
+    <string name="setting_gesture_down">Swipe down</string>
+    <string name="setting_gesture_left">Swipe left</string>
+    <string name="setting_gesture_right">Swipe right</string>
+    <string name="setting_gesture_01">Nothing</string>
+    <string name="setting_gesture_02">استعراض</string>
+    <string name="setting_gesture_03">العودة في التاريخ</string>
+    <string name="setting_gesture_04">Scroll to top</string>
+    <string name="setting_gesture_05">Scroll to bottom</string>
+    <string name="setting_gesture_06">Switch to left tab</string>
+    <string name="setting_gesture_07">Switch to right tab</string>
+    <string name="setting_gesture_08">عرض نظرة عامة</string>
+    <string name="setting_gesture_09">فتح علامة تبويب جديدة</string>
+    <string name="setting_gesture_10">إغلاق علامة التبويب</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
+
+    <!-- Data -->
+    <string name="title_appData">App data</string>
+    <string name="hint_database">سيؤدي هذا إلى حذف البيانات الحالية. هل تريد المتابعة؟</string>
+    <string name="settings_data_restore">إعادة</string>
+
+
+    <!-- Others setting -->
+
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">تمت إضافة المجال بنجاح</string>
+    <string name="toast_copy_successful">تم النسخ بنجاح</string>
+    <string name="toast_delete_successful">تمت الإزالة بنجاح</string>
+    <string name="toast_domain_already_exists">المجال موجود بالفعل</string>
+    <string name="toast_input_empty">لم تدخل أي شيء</string>
+    <string name="toast_invalid_domain">لم تدخل أي شيء</string>
+    <string name="toast_webview_forward">تعذر تحميل الموقع التالي</string>
+    <string name="toast_restart">يجب إعادة تشغيل مستعرض FOSS حتى تدخل التغييرات حيز التنفيذ. هل تريد الإغلاق الآن؟</string>
+    <string name="toast_quit">هل تريد الخروج من \" متصفح FOSS \ ؟</string>
+    <string name="toast_quit_TAB">إغلاق علامة التبويب؟</string>
+    <string name="toast_downloadComplete">اكتمل التنزيل. افتح مدير الملفات؟</string>
+    <string name="toast_unsecured">يستخدم موقع الويب اتصالاً غير آمن (" http "). جرب اتصالاً آمنًا (" https \ ")؟</string>
+    <string name="toast_backup">بيانات النسخ الاحتياطي؟ سيؤدي هذا إلى الكتابة فوق النسخة الاحتياطية القديمة.</string>
+
+
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">واضح</string>
+    <string name="whitelist_edit_hint">اِختِصاص</string>
+    <string name="whitelist_add">يضيف</string>
+    <string name="menu_mobileView">واجهه جوال</string>
+    <string name="menu_desktopView">عرض الكمبيوتر</string>
+    <string name="menu_dayView">عرض اليوم</string>
+    <string name="menu_nightView">منظر ليلي</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_title_camera">السماح باستخدام الكاميرا</string>
+    <string name="setting_title_microphone">السماح بالميكروفون</string>
+    <string name="setting_title_tabsReload">إعادة تحميل علامات التبويب</string>
+    <string name="setting_title_tabsRestore">استعادة علامات التبويب</string>
+    <string name="setting_title_userInterface">واجهة المستخدم</string>
+    <string name="setting_summary_tabsReload">واجهة المستخدم</string>
+    <string name="setting_summary_tabsRestore">استعادة علامات التبويب عندما يقتل النظام متصفح FOSS.</string>
+    <string name="hint_DRM_Media">السماح بتشغيل الوسائط المحمية DRM؟</string>
+    <string name="menu_reload">إعادة تحميل</string>
+    <string name="menu_restart">إعادة تشغيل وإعادة تحميل علامات التبويب</string>
+    <string name="profile_warning">تم الكتابة فوقه:</string>
+    <string name="setting_title_screenOn">اترك الشاشة قيد التشغيل</string>
+    <string name="setting_title_audioBackground">تشغيل الصوت في الخلفية</string>
+
+    <string name="empty_view_text">تشغيل الصوت في الخلفية</string>
+    <string name="toggle_tab_switcher_menu_item">Toggle switcher</string>
+    <string name="remove_tab_menu_item">حذف علامة التبويب</string>
+    <string name="add_tab_menu_item">أقحم جديد</string>
+    <string name="clear_tabs_menu_item">مسح كافة علامات التبويب</string>
+    <string name="settings_menu_item">إعدادات</string>
+
+    <string name="undo">يلغي</string>
+    <string name="tab_title">Tab %1$d</string>
+    <string name="removed_tab_snackbar">Removed %1$s</string>
+
+    <string name="theme_preference_category_title">Theme</string>
+    <string name="theme_preference_key">theme_preference_key</string>
+    <string name="theme_preference_title">Theme</string>
+    <string name="theme_preference_summary">Allows to choose the theme, which should be used by the example app</string>
+    <string name="theme_preference_default_value">0</string>
+    <string name="cleared_tabs_snackbar">حذف كافة علامات التبويب</string>
+
+    <string name="edit_text_hint">Text</string>
+    <string name="incognito_mode">أنت في وضع التصفح المتخفي</string>
+    <string name="incognito_mode_description">The pilgrims you visited will not be remembered and will not remain in the search history</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
+    <string name="proxy">تعيين الوكيل</string>
+    <string name="hint_user_agent">أدخل وكيل المستخدم</string>
+    <string name="user_agent">تثبيت وكيل المستخدم</string>
+    <string name="hint_host">أدخل المضيف</string>
+    <string name="hint_port">أدخل المنفذ</string>
+
+    <string-array name="languages">
+        <item>إنجليزي</item>
+        <item>فرنسي</item>
+        <item>الأسبانية</item>
+        <item>صينى</item>
+        <item>البرتغالية</item>
+        <item>الروسية</item>
+        <item>هندي</item>
+        <item>عرب</item>
+        <item>اليابانية</item>
+    </string-array>
+
+    <string-array name="languages_code">
+        <item>en</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>zh</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>hi</item>
+        <item>ar</item>
+        <item>ja</item>
+    </string-array>
+
+</resources>

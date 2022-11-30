@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_item_bookmark"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_bookmark_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/grey_2"
+            android:textSize="13sp"
+            tools:text="BMW — отзывы и Бортжурналы на DRIVE2"/>
+
+        <ImageView
+            android:id="@+id/iv_bookmark_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:scaleType="centerCrop"
+            android:background="@color/white"
+            tools:src="@tools:sample/avatars" />
+
+        <View
+            android:id="@+id/v_white_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/white_50"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/iv_remove"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="?attr/selectableItemBackground"
+        android:elevation="5dp"
+        android:src="@drawable/ic_remove"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_edit"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="4dp"
+        android:background="?attr/selectableItemBackground"
+        android:elevation="5dp"
+        android:src="@drawable/ic_edit"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/iv_remove"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

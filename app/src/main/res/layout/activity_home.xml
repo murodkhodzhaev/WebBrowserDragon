@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.home.HomeActivity"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_engines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_search_engine"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_search_engines"
+       >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_search_field"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/rounded_5_grey_3_ripple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/b_tabs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_search_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <EditText
+                android:id="@+id/et_search_field"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="24dp"
+                android:background="@color/transparent"
+                android:hint="@string/home_search"
+                android:imeOptions="actionDone"
+                android:inputType="textWebEditText"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:singleLine="true"
+                android:textColor="@color/grey_4"
+                android:textColorHint="@color/grey_4"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_search_icon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="4dp"
+            android:src="@drawable/ic_website_go"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cl_search_field"
+            app:layout_constraintStart_toEndOf="@id/cl_search_field"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/b_tabs"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/rounded_5_white_stroke_1_grey_2_ripple_tabs"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:breakStrategy="balanced"
+            app:autoSizeTextType="uniform"
+            android:text="0"
+            android:textColor="@color/grey_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ib_search_menu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ib_search_menu"
+            android:layout_width="?actionBarSize"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="15dp"
+            android:src="@drawable/ic_search_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/incognito_mode_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="30dp"
+        app:layout_constraintTop_toBottomOf="@id/cl_main_bar"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="132dp"
+            android:layout_height="120dp"
+            android:src="@drawable/icon_incognito"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/title_incognito_mode"
+            android:layout_marginBottom="65dp"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/title_incognito_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/incognito_mode"
+            android:textStyle="bold"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_incognito_mode"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:text="@string/incognito_mode_description"
+            android:textColor="@color/incognito_description"
+            android:textSize="20sp"/>
+
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_main_bar"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_bookmarks_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:autoSizeTextType="uniform"
+                android:lines="1"
+                android:autoSizeMaxTextSize="16sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:text="@string/home_bookmarks"
+                android:textColor="@color/grey_2"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_bookmarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_bookmarks_title"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_bookmark"
+                />
+
+            <TextView
+                android:id="@+id/tv_popular_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start"
+                android:text="@string/home_popular"
+                android:textColor="@color/grey_2"
+                app:autoSizeTextType="uniform"
+                android:lines="1"
+                android:autoSizeMaxTextSize="16sp"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_bookmarks"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_popular_title"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_bookmark"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_select_bookmark_for_editing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_select_bookmark_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="start"
+            android:text="@string/home_select_editable_bookmark"
+            android:textColor="@color/grey_2"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="150dp" />
+
+        <TextView
+            android:id="@+id/b_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_5_white_stroke_1_grey_2_ripple"
+            android:fontFamily="@font/roboto"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="4dp"
+            android:text="@string/home_select_editable_bookmark_cancel"
+            android:textColor="@color/grey_2"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_edit_bookmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_edit_bookmark_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="start"
+            android:text="@string/home_select_editable_bookmark_title"
+            android:textColor="@color/grey_2"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@id/cl_edit_bookmark_field"
+            app:layout_constraintEnd_toStartOf="@id/b_save_editing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/b_save_editing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_5_orange_ripple"
+            android:fontFamily="@font/roboto"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="4dp"
+            android:text="@string/home_select_editable_bookmark_save"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@id/cl_edit_bookmark_field"
+            app:layout_constraintEnd_toStartOf="@id/b_cancel_editing"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/b_cancel_editing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/rounded_5_white_stroke_1_grey_2_ripple"
+            android:fontFamily="@font/roboto"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="4dp"
+            android:text="@string/home_select_editable_bookmark_cancel"
+            android:textColor="@color/grey_2"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@id/cl_edit_bookmark_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_edit_bookmark_field"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_5_grey_3_ripple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_link_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_link"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_link_field"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="24dp"
+                android:background="@color/transparent"
+                android:hint="@string/home_search"
+                android:inputType="textWebEditText"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:singleLine="true"
+                android:textColor="@color/grey_4"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@id/iv_remove_text"
+                app:layout_constraintStart_toEndOf="@id/iv_link_icon"
+                tools:text="https://ru.aliexpress.com" />
+
+            <ImageView
+                android:id="@+id/iv_remove_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackground"
+                android:padding="17dp"
+                android:src="@drawable/ic_close_dialog"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

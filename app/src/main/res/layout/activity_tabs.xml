@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main_tabs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.tabs.TabsActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search_engines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_search_engine" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_search_engines">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_search_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/rounded_5_grey_3_ripple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_search_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_search_field"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="24dp"
+                android:background="@color/transparent"
+                android:hint="@string/home_search"
+                android:imeOptions="actionDone"
+                android:inputType="textWebEditText"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingStart="8dp"
+                android:singleLine="true"
+                android:textColor="@color/grey_4"
+                android:textColorHint="@color/grey_4"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_search_icon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="4dp"
+            android:src="@drawable/ic_website_go"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cl_search_field"
+            app:layout_constraintStart_toEndOf="@id/cl_search_field"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <de.mrapp.android.tabswitcher.TabSwitcher
+        android:id="@+id/tab_switcher"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/cl_buttons_tabs"
+        app:layout_constraintTop_toBottomOf="@id/cl_main_bar"
+        android:background="@color/white"
+        app:layoutPolicy="auto"
+        app:tabIcon="@drawable/ic_file_outline_18dp"
+        app:tabIconTint="@android:color/black"
+        app:tabBackgroundColor="@color/tab_background_color_light"
+        app:tabContentBackgroundColor="@color/tab_content_background_color_light"
+        app:tabTitleTextColor="@color/tab_title_text_color"
+        app:tabCloseButtonIcon="@drawable/ic_close_18dp"
+        app:emptyView="@layout/empty_view"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_buttons_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/close"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="28dp"
+            android:background="@drawable/rounded_5_white_stroke_1_grey_2_ripple_close">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_close_18dp" />
+        </RelativeLayout>
+
+
+
+
+        <ImageView
+            android:id="@+id/iv_add_tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_add_tab"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_incognito"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ib_search_menu"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_5_white_stroke_1_grey_2_ripple">
+
+            <ImageView
+                android:id="@+id/iv_incognito"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_incognito" />
+        </RelativeLayout>
+
+
+
+
+        <ImageView
+            android:id="@+id/ib_search_menu"
+            android:layout_width="?actionBarSize"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="15dp"
+            android:src="@drawable/ic_search_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

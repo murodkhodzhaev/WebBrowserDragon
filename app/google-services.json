@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "423710284212",
+    "project_id": "newbrowserpro",
+    "storage_bucket": "newbrowserpro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423710284212:android:c9df2ce5a25f29f111bae1",
+        "android_client_info": {
+          "package_name": "web.browser.dragon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423710284212-f805m1n1opthnm7fs9j9ftf180ch0r33.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDORarqCHmJbwmZqdsLTPFhxKOPLtcK3o0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423710284212-f805m1n1opthnm7fs9j9ftf180ch0r33.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

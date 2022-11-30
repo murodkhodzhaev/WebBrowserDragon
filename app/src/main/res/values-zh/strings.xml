@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dragon Browser</string>
+    <!--    common-->
+    <string name="yes">是的</string>
+    <string name="no">不是</string>
+    <string name="error_occurred">糟糕，发生错误。</string>
+    <string name="google">Google</string>
+    <string name="yandex">Yandex</string>
+    <string name="bing">Bing</string>
+    <string name="duck_duck_go">DuckDuckGo</string>
+    <string name="error">错误。</string>
+    <string name="search_empty_error">搜索不能为空。</string>
+    <string name="downloads">下载</string>
+
+    <!--    OnboardingActivity-->
+    <string name="onboarding_feature_1_title">从主屏幕和标签屏幕快速搜索</string>
+    <string name="onboarding_feature_1_description">只需转到这些选项卡中的任何一个，选择一个搜索引擎并找到您感兴趣的内容</string>
+    <string name="onboarding_feature_2_title">隐身模式</string>
+    <string name="onboarding_feature_2_description">在这种模式下，您的搜索查询和访问过的页面不会保存在浏览器历史记录中</string>
+    <string name="onboarding_feature_3_title">方便的标签</string>
+    <string name="onboarding_feature_3_description">从任何页面轻松访问打开的选项卡并在它们之间轻松导航</string>
+    <string name="onboarding_next">下一个</string>
+    <string name="onboarding_start">开始</string>
+
+    <!--    HomeActivity-->
+    <string name="home_search">搜索</string>
+    <string name="home_bookmarks">最爱</string>
+    <string name="home_popular">受欢迎的</string>
+    <string name="home_settings">受欢迎的</string>
+    <string name="home_history">故事</string>
+    <string name="home_edit_tabs">编辑收藏夹</string>
+    <string name="home_edit_tabs_finish">完成编辑</string>
+    <string name="home_select_editable_bookmark">选择要编辑的书签</string>
+    <string name="home_select_editable_bookmark_cancel">取消</string>
+    <string name="home_select_editable_bookmark_title">编辑书签</string>
+    <string name="home_select_editable_bookmark_save">节省</string>
+    <string name="home_delete_bookmark_dialog_message">您确定要删除此书签吗？</string>
+    <string name="home_edit_bookmark_empty">书签不能为空。</string>
+    <string name="home_edit_bookmark_saved">书签已被编辑。</string>
+
+    <!--    HistoryRecordsActivity-->
+    <string name="history_records_title">故事</string>
+    <string name="history_records_delete_message">你确定要删除这条历史记录吗？</string>
+
+    <!--    BrowserActivity-->
+    <string name="browser_add_bookmark">你确定要删除这条历史记录吗？</string>
+    <string name="browser_add_bookmark_question">您确定要将此页面添加为书签吗？</string>
+    <string name="browser_add_bookmark_message">添加了书签。</string>
+    <string name="browser_bookmark_added_already">书签已添加。</string>
+    <string name="browser_error_handling">错误处理地址。</string>
+
+    <!--    DownloadsActivity-->
+    <string name="downloads_title">下载</string>
+
+    <!--    SettingsActivity-->
+    <string name="settings_title">设置</string>
+    <string name="settings_main_title">主要设置</string>
+    <string name="settings_without_images">没有图像</string>
+    <string name="settings_block_ads">屏蔽广告</string>
+    <string name="settings_enable_javascript">启用 JavaScript</string>
+    <string name="settings_enable_color_mode">启用颜色模式</string>
+    <string name="settings_http_proxy">HTTP 代理</string>
+    <string name="settings_user_agent">用户代理</string>
+    <string name="settings_download_path">加载路径</string>
+    <string name="settings_new_tab">新插图</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_http_default">默认</string>
+
+    <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- App -->
+    <!--    <string name="app_name">FOSS Browser</string>-->
+    <string name="app_ok">好的</string>
+    <string name="app_help">帮助</string>
+<string name="app_cancel">取消</string>
+<string name="app_done">准备好</string>
+<string name="app_error">错误</string>
+<string name="app_error_activity">没有安装应用程序来打开这个 URL。</string>
+<string name="app_warning">一个警告</string>
+<string name="app_permission">要使用此功能，您必须授予权限。之后，重新启动应用程序。</string>
+<string name="list_empty">列表为空</string>
+<string name="album_title_bookmarks">最爱</string>
+<string name="album_title_history">故事</string>
+<string name="album_title_home">家</string>
+<string name="album_title_tab">打开标签</string>
+<string name="search_hint">搜索</string>
+
+<string name="color_red">红色的</string>
+<string name="color_pink">粉色的</string>
+<string name="color_purple">紫色的</string>
+<string name="color_blue">蓝色的</string>
+<string name="color_teal">绿松石</string>
+<string name="color_green">绿</string>
+<string name="color_lime">酸橙</string>
+<string name="color_yellow">黄色的</string>
+<string name="color_orange">橙子</string>
+<string name="color_brown">棕色的</string>
+<string name="color_grey">灰色的</string>
+
+    <!-- Menu -->
+<string name="main_menu_new_tab">新标签（背景）</string>
+<string name="main_menu_new_tabProfile">新标签（带有配置文件......）</string>
+<string name="main_menu_new_tabOpen">新标签（前景）</string>
+<string name="main_omnibox_input_hint">搜索或输入网址</string>
+<string name="menu_open_with">从……打开链接</string>
+
+<string name="menu_quit">注销</string>
+<string name="menu_openFav">打开收藏夹</string>
+<string name="menu_delete">删除</string>
+<string name="menu_edit">编辑</string>
+<string name="menu_closeTab">关闭标签</string>
+<string name="menu_download">打开下载</string>
+<string name="menu_fav">另存为收藏</string>
+<string name="menu_sc">主屏幕快捷方式</string>
+<string name="menu_sort">排序方式 …</string>
+<string name="menu_filter">排序方式 …</string>
+
+<string name="menu_share_link">分享链接</string>
+
+<string name="menu_save_home">保存到家</string>
+<string name="menu_save_bookmark">另存为书签</string>
+<string name="menu_save_as">另存为 …</string>
+<string name="menu_save_pdf">另存为 PDF</string>
+<string name="menu_shareClipboard">复制到剪贴板</string>
+<string name="menu_other_searchSite">搜索网站</string>
+
+    <!-- Dialog -->
+<string name="dialog_title_hint">标题：</string>
+<string name="dialog_URL_hint">网址：</string>
+<string name="dialog_extension_hint">扩展名（例如：\".jpg\"）：</string>
+<string name="dialog_sign_in_username">用户名</string>
+<string name="dialog_sign_in_password">密码</string>
+<string name="dialog_title_download">下载文件？</string>
+<string name="dialog_content_resubmission">再次发送数据？</string>
+<string name="dialog_content_ssl_error">该站点的证书不受信任。仍然继续吗？</string>
+
+<string name="dialog_sortName">按名称分类</string>
+<string name="dialog_sortIcon">按图标排序</string>
+<string name="dialog_sortDate">按日期排序</string>
+
+    <!-- Settings -->
+<string name="setting_label">设置</string>
+
+    <!-- browser setting -->
+<string name="setting_title_browser">浏览器设置</string>
+
+<string name="setting_title_search_engine">搜索系统</string>
+<string name="setting_summary_search_engine_google">Google</string>
+<string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+<string name="setting_summary_search_engine_startpage">StartPage</string>
+<string name="setting_summary_search_engine_bing">Bing</string>
+<string name="setting_summary_search_engine_baidu">Baidu</string>
+<string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+<string name="setting_summary_search_engine_searx">Searx</string>
+<string name="setting_summary_search_engine_qwant">Qwant</string>
+<string name="setting_summary_search_engine_ecosia">Ecosia</string>
+<string name="setting_summary_search_engine_metager">Metager</string>
+
+<string name="setting_title_font">Font size</string>
+<string name="setting_title_dom">DOM Storage</string>
+
+<string name="setting_title_save_data">请求"保存数据"</string>
+
+<string name="setting_title_profiles">个人资料</string>
+<string name="setting_title_profiles_edit">编辑个人资料</string>
+<string name="setting_title_profiles_trustedList">可靠的网站</string>
+<string name="setting_title_profiles_standardList">标准网站</string>
+<string name="setting_title_profiles_protectedList">受保护的网站</string>
+<string name="setting_title_profiles_startApp">应用程序启动时的配置文件</string>
+<string name="setting_title_profiles_trusted">受托人</string>
+<string name="setting_title_profiles_standard">Standard</string>
+<string name="setting_title_profiles_protected">Protected</string>
+<string name="setting_title_profiles_changed">Custom</string>
+<string name="setting_title_profiles_active">轮廓</string>
+<string name="setting_title_profiles_dataUsage">数据使用</string>
+<string name="setting_title_profiles_privacy">保密</string>
+<string name="setting_title_profiles_Security">Security</string>
+
+    <!-- browser start -->
+<string name="setting_title_images">图片</string>
+<string name="setting_title_cookie">Cookies</string>
+<string name="setting_summary_cookie_delete">如果启用，所有 cookie 都将被删除。还有来自受信任网站的 cookie。</string>
+
+<string name="setting_title_javascript_popUp">Popups</string>
+<string name="setting_title_javascript">JavaScript</string>
+
+<string name="setting_title_adblock">AdBlock</string>
+<string name="setting_summary_adblock">启用 AdBlock 以阻止烦人的广告。启用后网站加载速度也更快。</string>
+<string name="setting_title_adblockHost">被屏蔽的内容</string>
+
+<string name="setting_title_location">地点</string>
+<string name="setting_title_history">故事</string>
+
+<string name="setting_title_autofill">Form Data</string>
+<string name="setting_summary_autofill">启用表单数据保存（Android Nougat 及以下）或自动填充服务（Android Oreo 及以上）。</string>
+
+
+    <!-- browser clear -->
+<string name="data_summary">所有文件都将导出到 SD 卡上的“Documents/browser_backup/”文件夹中。</string>
+<string name="clear_title_quit">清除应用退出</string>
+<string name="clear_title_cache">清除缓存</string>
+<string name="clear_title_cookie">清除Cookies</string>
+<string name="clear_title_history">纯历史</string>
+<string name="localData">清除设备上存储的数据</string>
+
+<string name="clear_title_deleteDatabase">删除数据库</string>
+<string name="clear_summary_deleteDatabase">删除整个数据库（起始页、书签、历史记录和所有白名单）。</string>
+
+
+    <!-- App setting -->
+<string name="setting_title_app">应用程序设置</string>
+<string name="setting_title_ui">Behavior/UI</string>
+<string name="setting_title_data">Backup</string>
+
+<string name="setting_filter">Bookmark filter</string>
+
+<string name="setting_title_fav">Favorite</string>
+<string name="setting_title_reload">Swipe down to reload</string>
+
+<string name="setting_title_searchEngine">Custom search engine</string>
+
+<string name="setting_title_userAgent">Custom user agent</string>
+
+<string name="setting_title_fingerPrint">Fingerprint protection</string>
+<string name="setting_theme">Theme</string>
+<string name="setting_theme_system">System</string>
+<string name="setting_theme_OLED">OLED</string>
+<string name="setting_theme_wallpaper">Wallpaper based</string>
+
+    <!-- App behavior -->
+<string name="setting_title_hideToolbar">Hide toolbar</string>
+
+<string name="setting_title_behavior">Behavior</string>
+
+<string name="setting_title_confirm_exit">Confirm browser exit</string>
+
+<string name="setting_title_confirm_tab_close">Confirm tab close</string>
+
+<string name="setting_overView_onStart_title">Show on start</string>
+
+<string name="setting_gestures">Gestures</string>
+
+    <!-- gestures -->
+<string name="setting_title_toolbar">Toolbar</string>
+<string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+<string name="setting_title_longPress">Long press</string>
+<string name="setting_title_tabButton">Tab button / menu button</string>
+<string name="setting_title_overViewButton">审查</string>
+<string name="setting_gesture_up">Swipe up</string>
+<string name="setting_gesture_down">Swipe down</string>
+<string name="setting_gesture_left">Swipe left</string>
+<string name="setting_gesture_right">Swipe right</string>
+<string name="setting_gesture_01">Nothing</string>
+<string name="setting_gesture_02">历史上的前进</string>
+<string name="setting_gesture_03">回到历史</string>
+<string name="setting_gesture_04">Scroll to top</string>
+<string name="setting_gesture_05">Scroll to bottom</string>
+<string name="setting_gesture_06">Switch to left tab</string>
+<string name="setting_gesture_07">Switch to right tab</string>
+<string name="setting_gesture_08">显示概览</string>
+<string name="setting_gesture_09">打开新标签</string>
+<string name="setting_gesture_10">关闭标签</string>
+<string name="setting_gesture_11">Show fast toggle</string>
+
+    <!-- Data -->
+<string name="title_appData">App data</string>
+<string name="hint_database">这将删除当前数据。继续吗？</string>
+<string name="settings_data_restore">重建</string>
+
+
+    <!-- Others setting -->
+
+    <!-- Toast -->
+<string name="toast_add_whitelist_successful">域名添加成功</string>
+<string name="toast_copy_successful">复制成功</string>
+<string name="toast_delete_successful">已成功删除</string>
+<string name="toast_domain_already_exists">域已经存在</string>
+<string name="toast_input_empty">你没有输入任何东西</string>
+<string name="toast_invalid_domain">无效域</string>
+<string name="toast_webview_forward">无法加载以下网站</string>
+<string name="toast_restart">您必须重新启动 FOSS 浏览器才能使更改生效。现在关闭吗？</string>
+<string name="toast_quit">您要退出“FOSS 浏览器”吗？
+“关闭标签？</string>
+<string name="toast_quit_TAB">关闭标签</string>
+<string name="toast_downloadComplete">下载完成。打开文件管理器？</string>
+<string name="toast_unsecured">该网站正在使用不安全的连接（“http”）。尝试安全连接（“https\”）？</string>
+<string name="toast_backup">备份数据？这会覆盖旧的备份。</string>
+
+
+    <!-- Whitelist -->
+<string name="whitelist_menu_clear">清除</string>
+<string name="whitelist_edit_hint">领域</string>
+<string name="whitelist_add">添加</string>
+<string name="menu_mobileView">移动视图</string>
+<string name="menu_desktopView">电脑视图</string>
+<string name="menu_dayView">日景</string>
+<string name="menu_nightView">夜景</string>
+<string name="setting_userScript">Custom JavaScript code</string>
+<string name="setting_title_camera">允许使用相机</string>
+<string name="setting_title_microphone">允许麦克风</string>
+<string name="setting_title_tabsReload">重新加载标签</string>
+<string name="setting_title_tabsRestore">恢复标签</string>
+<string name="setting_title_userInterface">用户界面</string>
+<string name="setting_summary_tabsReload">启动 FOSS 浏览器时重新加载上次打开的选项卡。</string>
+<string name="setting_summary_tabsRestore">当系统杀死 FOSS 浏览器时恢复标签页。</string>
+<string name="hint_DRM_Media">允许播放受 DRM 保护的媒体？</string>
+<string name="menu_reload">重新加载</string>
+<string name="menu_restart">重新启动和重新加载选项卡</string>
+<string name="profile_warning">覆盖：</string>
+<string name="setting_title_screenOn">让屏幕一直亮着</string>
+<string name="setting_title_audioBackground">在后台播放声音</string>
+
+<string name="empty_view_text">没有可用的选项卡</string>
+<string name="toggle_tab_switcher_menu_item">Toggle switcher</string>
+<string name="remove_tab_menu_item">删除标签</string>
+<string name="add_tab_menu_item">新插图</string>
+<string name="clear_tabs_menu_item">清除所有标签</string>
+<string name="settings_menu_item">设置</string>
+
+<string name="undo">取消</string>
+<string name="tab_title">Tab %1$d</string>
+<string name="removed_tab_snackbar">Removed %1$s</string>
+
+<string name="theme_preference_category_title">Theme</string>
+<string name="theme_preference_key">theme_preference_key</string>
+<string name="theme_preference_title">Theme</string>
+<string name="theme_preference_summary">Allows to choose the theme, which should be used by the example app</string>
+<string name="theme_preference_default_value">0</string>
+<string name="cleared_tabs_snackbar">删除所有标签</string>
+
+<string name="edit_text_hint">Text</string>
+<string name="incognito_mode">你处于隐身模式</string>
+<string name="incognito_mode_description">The pilgrims you visited will not be remembered and will not remain in the search history</string>
+<string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
+<string name="proxy">设置代理</string>
+<string name="hint_user_agent">输入用户代理</string>
+<string name="user_agent">安装用户代理</string>
+<string name="hint_host">进入主机</string>
+<string name="hint_port">进口</string>
+
+<string-array name="languages">
+<item>英语</item>
+<item>法语</item>
+<item>西班牙语</item>
+<item>中国人</item>
+<item>葡萄牙语</item>
+<item>俄语</item>
+<item>印地语</item>
+<item>阿拉伯</item>
+<item>日本人”</item>
+</string-array>
+
+<string-array name="languages_code">
+<item>en</item>
+<item>fr</item>
+<item>es</item>
+<item>zh</item>
+<item>pt</item>
+<item>ru</item>
+<item>hi</item>
+<item>ar</item>
+<item>ja</item>
+</string-array>
+
+    </resources>

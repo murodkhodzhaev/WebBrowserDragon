@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <group android:id="@+id/item_tabs_group">
+        <item
+            android:id="@+id/item_edit_tabs"
+            android:title="@string/home_edit_tabs"
+            android:icon="@drawable/ic_item_edit_tabs"/>
+        <item
+            android:id="@+id/item_edit_tabs_finish"
+            android:title="@string/home_edit_tabs_finish"
+            android:icon="@drawable/ic_item_edit_tabs_finish"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/item_settings"
+            android:title="@string/home_settings"
+            android:icon="@drawable/ic_item_settings"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/item_history"
+            android:title="@string/home_history"
+            android:icon="@drawable/ic_item_history"
+            app:showAsAction="ifRoom"/>
+        <item
+            android:id="@+id/item_downloads"
+            android:title="@string/downloads"
+            android:icon="@drawable/ic_item_downloads"
+            app:showAsAction="ifRoom"/>
+    </group>
+
+</menu>

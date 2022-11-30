@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dragon Browser</string>
+    <!--    common-->
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="error_occurred">Упс, произошла ошибка.</string>
+    <string name="google">Google</string>
+    <string name="yandex">Yandex</string>
+    <string name="bing">Bing</string>
+    <string name="duck_duck_go">DuckDuckGo</string>
+    <string name="error">Ошибка.</string>
+    <string name="search_empty_error">Поиск не может быть пустым.</string>
+    <string name="downloads">Загрузки</string>
+
+    <!--    OnboardingActivity-->
+    <string name="onboarding_feature_1_title">Быстрый поиск с главного экрана и экрана вкладок</string>
+    <string name="onboarding_feature_1_description">Просто зайдите с любой из этих вкладок, выберите поисковую систему и  найдите то, что вас интересовало</string>
+    <string name="onboarding_feature_2_title">Режим инкогнито</string>
+    <string name="onboarding_feature_2_description">В этом режиме ваши поисковые запросы и посещенные страницы не сохраняются в истории браузера</string>
+    <string name="onboarding_feature_3_title">Удобные вкладки</string>
+    <string name="onboarding_feature_3_description">Легкий доступ к открытым вкладкам с любой страницы и удобная навигация между ними</string>
+    <string name="onboarding_next">Следующий</string>
+    <string name="onboarding_start">Старт</string>
+
+    <!--    HomeActivity-->
+    <string name="home_search">Поиск</string>
+    <string name="home_bookmarks">Избранное</string>
+    <string name="home_popular">Популярное</string>
+    <string name="home_settings">Настройки</string>
+    <string name="home_history">История</string>
+    <string name="home_edit_tabs">Редактировать Избранное</string>
+    <string name="home_edit_tabs_finish">Закончить редактирование</string>
+    <string name="home_select_editable_bookmark">Выберите редактируемую закладку</string>
+    <string name="home_select_editable_bookmark_cancel">Отмена</string>
+    <string name="home_select_editable_bookmark_title">Изменить закладку</string>
+    <string name="home_select_editable_bookmark_save">Сохранить</string>
+    <string name="home_delete_bookmark_dialog_message">Вы уверены, что хотите удалить эту закладку?</string>
+    <string name="home_edit_bookmark_empty">Закладка не может быть пустой.</string>
+    <string name="home_edit_bookmark_saved">Закладка отредактирована.</string>
+
+    <!--    HistoryRecordsActivity-->
+    <string name="history_records_title">История</string>
+    <string name="history_records_delete_message">Вы уверены, что хотите удалить эту запись истории?</string>
+
+    <!--    BrowserActivity-->
+    <string name="browser_add_bookmark">Добавить закладку</string>
+    <string name="browser_add_bookmark_question">Вы уверены, что хотите добавить эту страницу в закладки?</string>
+    <string name="browser_add_bookmark_message">Закладка добавлена.</string>
+    <string name="browser_bookmark_added_already">Закладка уже добавлена.</string>
+    <string name="browser_error_handling">Ошибка обработки адреса.</string>
+
+    <!--    DownloadsActivity-->
+    <string name="downloads_title">Загрузки</string>
+
+    <!--    SettingsActivity-->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_main_title">Основные параметры</string>
+    <string name="settings_without_images">Без изображений</string>
+    <string name="settings_block_ads">Блокировать рекламу</string>
+    <string name="settings_enable_javascript">Включить JavaScript</string>
+    <string name="settings_enable_color_mode">Включить Цветной режим</string>
+    <string name="settings_http_proxy">Прокси HTTP</string>
+    <string name="settings_user_agent">User Agent</string>
+    <string name="settings_download_path">Путь загрузки</string>
+    <string name="settings_new_tab">Новая вкладка</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_http_default">По умолчанию</string>
+
+    <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- App -->
+    <!--    <string name="app_name">FOSS Browser</string>-->
+    <string name="app_ok">OK</string>
+    <string name="app_help">Помощь</string>
+    <string name="app_cancel">Отмена</string>
+    <string name="app_done">Готово</string>
+    <string name="app_error">Ошибка</string>
+    <string name="app_error_activity">Не установлено приложение для открытия этого URL.</string>
+    <string name="app_warning">Предупреждение</string>
+    <string name="app_permission">Чтобы использовать эту функцию, вы должны предоставить разрешение. После этого перезапустите приложение.</string>
+    <string name="list_empty">Список пуст</string>
+    <string name="album_title_bookmarks">Избранное</string>
+    <string name="album_title_history">История</string>
+    <string name="album_title_home">Home</string>
+    <string name="album_title_tab">Открытые вкладки</string>
+    <string name="search_hint">Поиск</string>
+
+    <string name="color_red">Красный</string>
+    <string name="color_pink">Розовый</string>
+    <string name="color_purple">Пурпурный</string>
+    <string name="color_blue">Синий</string>
+    <string name="color_teal">Бирюзовый</string>
+    <string name="color_green">Зеленый</string>
+    <string name="color_lime">Лаймовый</string>
+    <string name="color_yellow">Желтый</string>
+    <string name="color_orange">Оранжевый</string>
+    <string name="color_brown">Коричневый</string>
+    <string name="color_grey">Серый</string>
+
+    <!-- Menu -->
+    <string name="main_menu_new_tab">Новая вкладка (фон)</string>
+    <string name="main_menu_new_tabProfile">Новая вкладка (с профилем…)</string>
+    <string name="main_menu_new_tabOpen">Новая вкладка (передний план)</string>
+    <string name="main_omnibox_input_hint">Найдите или введите URL</string>
+    <string name="menu_open_with">Открыть ссылку с…</string>
+
+    <string name="menu_quit">Выйти</string>
+    <string name="menu_openFav">Открыть Избранное</string>
+    <string name="menu_delete">Удалить</string>
+    <string name="menu_edit">Редактировать</string>
+    <string name="menu_closeTab">Закрыть вкладку</string>
+    <string name="menu_download">Открыть загрузки</string>
+    <string name="menu_fav">Сохранить как избранное</string>
+    <string name="menu_sc">Ярлык на главном экране</string>
+    <string name="menu_sort">Сортировать по …</string>
+    <string name="menu_filter">Сортировать по …</string>
+
+    <string name="menu_share_link">Поделиться ссылкой</string>
+
+    <string name="menu_save_home">Сохранить в Home</string>
+    <string name="menu_save_bookmark">Сохранить как закладку</string>
+    <string name="menu_save_as">Сохранить как …</string>
+    <string name="menu_save_pdf">Сохранить как PDF</string>
+    <string name="menu_shareClipboard">Скопировать в буфер обмена</string>
+    <string name="menu_other_searchSite">Поиск на сайте</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_hint">Заголовок:</string>
+    <string name="dialog_URL_hint">URL-адрес:</string>
+    <string name="dialog_extension_hint">Расширение (например: \".jpg\"):</string>
+    <string name="dialog_sign_in_username">Имя пользователя</string>
+    <string name="dialog_sign_in_password">Пароль</string>
+    <string name="dialog_title_download">Скачать файл?</string>
+    <string name="dialog_content_resubmission">Отправить данные повторно?</string>
+    <string name="dialog_content_ssl_error">Сертификат сайта не является доверенным. Все равно продолжайте?</string>
+
+    <string name="dialog_sortName">Сортировать по имени</string>
+    <string name="dialog_sortIcon">Сортировать по значку</string>
+    <string name="dialog_sortDate">Сортировать по дате</string>
+
+    <!-- Settings -->
+    <string name="setting_label">Настройки</string>
+
+    <!-- browser setting -->
+    <string name="setting_title_browser">Настройки браузера</string>
+
+    <string name="setting_title_search_engine">Поисковая система</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
+
+    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_dom">DOM Storage</string>
+
+    <string name="setting_title_save_data">Запрос «Сохранить данные»</string>
+
+    <string name="setting_title_profiles">Профили</string>
+    <string name="setting_title_profiles_edit">Редактировать профили</string>
+    <string name="setting_title_profiles_trustedList">Надежные веб-сайты</string>
+    <string name="setting_title_profiles_standardList">Стандартные сайты</string>
+    <string name="setting_title_profiles_protectedList">Защищенные веб-сайты</string>
+    <string name="setting_title_profiles_startApp">Профиль при запуске приложения</string>
+    <string name="setting_title_profiles_trusted">Доверенный</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_active">Профиль</string>
+    <string name="setting_title_profiles_dataUsage">Использование данных</string>
+    <string name="setting_title_profiles_privacy">Конфиденциальность</string>
+    <string name="setting_title_profiles_Security">Security</string>
+
+    <!-- browser start -->
+    <string name="setting_title_images">Изображения</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">Если включено, все файлы cookie будут удалены. Также файлы cookie доверенных веб-сайтов.</string>
+
+    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript">JavaScript</string>
+
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">Включить AdBlock, чтобы блокировать надоедливую рекламу. Сайты также загружаются быстрее при включении.</string>
+    <string name="setting_title_adblockHost">Заблокированный контент</string>
+
+    <string name="setting_title_location">Местоположение</string>
+    <string name="setting_title_history">История</string>
+
+    <string name="setting_title_autofill">Form Data</string>
+    <string name="setting_summary_autofill">Включите сохранение данных формы (Android Nougat и ниже) или службу автозаполнения (Android Oreo и выше).</string>
+
+
+    <!-- browser clear -->
+    <string name="data_summary">Все файлы будут экспортированы в папку «Documents/browser_backup/» на SD-карте.</string>
+    <string name="clear_title_quit">Очистить при выходе из приложения</string>
+    <string name="clear_title_cache">Очистить кэш</string>
+    <string name="clear_title_cookie">Очистить куки</string>
+    <string name="clear_title_history">Чистая история</string>
+    <string name="localData">Очистить данные, сохраненные на устройстве</string>
+
+    <string name="clear_title_deleteDatabase">Удалить базу данных</string>
+    <string name="clear_summary_deleteDatabase">Удалите всю базу данных (стартовую страницу, закладки, историю и все белые списки).</string>
+
+
+    <!-- App setting -->
+    <string name="setting_title_app">Настройки приложения</string>
+    <string name="setting_title_ui">Behavior/UI</string>
+    <string name="setting_title_data">Backup</string>
+
+    <string name="setting_filter">Bookmark filter</string>
+
+    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
+
+    <string name="setting_title_searchEngine">Custom search engine</string>
+
+    <string name="setting_title_userAgent">Custom user agent</string>
+
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
+
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+
+    <string name="setting_title_behavior">Behavior</string>
+
+    <string name="setting_title_confirm_exit">Confirm browser exit</string>
+
+    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
+
+    <string name="setting_overView_onStart_title">Show on start</string>
+
+    <string name="setting_gestures">Gestures</string>
+
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">Обзор</string>
+    <string name="setting_gesture_up">Swipe up</string>
+    <string name="setting_gesture_down">Swipe down</string>
+    <string name="setting_gesture_left">Swipe left</string>
+    <string name="setting_gesture_right">Swipe right</string>
+    <string name="setting_gesture_01">Nothing</string>
+    <string name="setting_gesture_02">Вперед в истории</string>
+    <string name="setting_gesture_03">Назад в истории</string>
+    <string name="setting_gesture_04">Scroll to top</string>
+    <string name="setting_gesture_05">Scroll to bottom</string>
+    <string name="setting_gesture_06">Switch to left tab</string>
+    <string name="setting_gesture_07">Switch to right tab</string>
+    <string name="setting_gesture_08">Показать обзор</string>
+    <string name="setting_gesture_09">Открыть новую вкладку</string>
+    <string name="setting_gesture_10">Закрыть вкладку</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
+
+    <!-- Data -->
+    <string name="title_appData">App data</string>
+    <string name="hint_database">Это приведет к удалению текущих данных. Продолжить?</string>
+    <string name="settings_data_restore">Восстановить</string>
+
+
+    <!-- Others setting -->
+
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">Домен успешно добавлен</string>
+    <string name="toast_copy_successful">Успешно скопировано</string>
+    <string name="toast_delete_successful">Успешно удалено</string>
+    <string name="toast_domain_already_exists">Домен уже существует</string>
+    <string name="toast_input_empty">Вы ничего не ввели</string>
+    <string name="toast_invalid_domain">Недействительный домен</string>
+    <string name="toast_webview_forward">Не удается загрузить следующий сайт</string>
+    <string name="toast_restart">Вы должны перезапустить «FOSS Browser», чтобы изменения вступили в силу. Закрыть сейчас?</string>
+    <string name="toast_quit">Вы хотите выйти из \"FOSS Browser\"?</string>
+    <string name="toast_quit_TAB">Закрыть вкладку?</string>
+    <string name="toast_downloadComplete">Загрузка завершена. Открыть файловый менеджер?</string>
+    <string name="toast_unsecured">Веб-сайт использует незащищенное соединение («http»). Попробуйте безопасное соединение (\"https\")?</string>
+    <string name="toast_backup">Резервные данные? Это перезапишет старую резервную копию.</string>
+
+
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">Очистить</string>
+    <string name="whitelist_edit_hint">Домен</string>
+    <string name="whitelist_add">Добавить</string>
+    <string name="menu_mobileView">Мобильный вид</string>
+    <string name="menu_desktopView">ПК вид</string>
+    <string name="menu_dayView">Дневной вид</string>
+    <string name="menu_nightView">Ночной вид</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_title_camera">Разрешить использование камеры</string>
+    <string name="setting_title_microphone">Разрешить использование микрофона</string>
+    <string name="setting_title_tabsReload">Перезагрузить вкладки</string>
+    <string name="setting_title_tabsRestore">Восстановить вкладки</string>
+    <string name="setting_title_userInterface">Пользовательский интерфейс</string>
+    <string name="setting_summary_tabsReload">Перезагружать последние открытые вкладки при запуске FOSS Browser.</string>
+    <string name="setting_summary_tabsRestore">Восстановить вкладки, когда система убивает браузер FOSS.</string>
+    <string name="hint_DRM_Media">Разрешить воспроизведение мультимедиа с защитой DRM?</string>
+    <string name="menu_reload">Перезагрузить</string>
+    <string name="menu_restart">Перезапустить и перезагрузить вкладки</string>
+    <string name="profile_warning">Перезаписано:</string>
+    <string name="setting_title_screenOn">Оставьте экран включенным</string>
+    <string name="setting_title_audioBackground">Воспроизведение звука на фоне</string>
+
+    <string name="empty_view_text">Нет доступных вкладок</string>
+    <string name="toggle_tab_switcher_menu_item">Toggle switcher</string>
+    <string name="remove_tab_menu_item">Удалить вкладку</string>
+    <string name="add_tab_menu_item">Новая вкладка</string>
+    <string name="clear_tabs_menu_item">Очистить все вкладки</string>
+    <string name="settings_menu_item">Настройки</string>
+
+    <string name="undo">Отменить</string>
+    <string name="tab_title">Tab %1$d</string>
+    <string name="removed_tab_snackbar">Removed %1$s</string>
+
+    <string name="theme_preference_category_title">Theme</string>
+    <string name="theme_preference_key">theme_preference_key</string>
+    <string name="theme_preference_title">Theme</string>
+    <string name="theme_preference_summary">Allows to choose the theme, which should be used by the example app</string>
+    <string name="theme_preference_default_value">0</string>
+    <string name="cleared_tabs_snackbar">Удалить все вкладки</string>
+
+    <string name="edit_text_hint">Text</string>
+    <string name="incognito_mode">Вы находитесь в режиме инкогнито</string>
+    <string name="incognito_mode_description">The pilgrims you visited will not be remembered and will not remain in the search history</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
+    <string name="proxy">Установить Proxy</string>
+    <string name="hint_user_agent">Введите User Agent</string>
+    <string name="user_agent">Установить User Agent</string>
+    <string name="hint_host">Введите host</string>
+    <string name="hint_port">Введите port</string>
+
+    <string-array name="languages">
+        <item>Английский</item>
+        <item>Французский</item>
+        <item>Испанский</item>
+        <item>Китайский</item>
+        <item>Португальский</item>
+        <item>Русский</item>
+        <item>Хинди</item>
+        <item>Арабский</item>
+        <item>Японский</item>
+    </string-array>
+
+    <string-array name="languages_code">
+        <item>en</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>zh</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>hi</item>
+        <item>ar</item>
+        <item>ja</item>
+    </string-array>
+
+</resources>

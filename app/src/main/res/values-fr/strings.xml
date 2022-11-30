@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dragon Browser</string>
+    <!--    common-->
+    <string name="yes">Oui</string>
+    <string name="no">Pas</string>
+    <string name="error_occurred">Oups! Une erreur est survenue.</string>
+    <string name="google">Google</string>
+    <string name="yandex">Yandex</string>
+    <string name="bing">Bing</string>
+    <string name="duck_duck_go">DuckDuckGo</string>
+    <string name="error">Erreur.</string>
+    <string name="search_empty_error">La recherche ne peut pas être vide.</string>
+    <string name="downloads">Téléchargements</string>
+
+    <!--    OnboardingActivity-->
+    <string name="onboarding_feature_1_title">Recherche rapide depuis l\'écran d\'accueil et l\'écran des onglets</string>
+    <string name="onboarding_feature_1_description">Il vous suffit d\'accéder à l\'un de ces onglets, de sélectionner un moteur de recherche et de trouver ce qui vous intéresse</string>
+    <string name="onboarding_feature_2_title">Mode navigation privée</string>
+    <string name="onboarding_feature_2_description">Dans ce mode, vos requêtes de recherche et les pages visitées ne sont pas enregistrées dans l\'historique du navigateur</string>
+    <string name="onboarding_feature_3_title">Onglets pratiques</string>
+    <string name="onboarding_feature_3_description">Accès facile aux onglets ouverts à partir de n\'importe quelle page et navigation facile entre eux</string>
+    <string name="onboarding_next">Suivant</string>
+    <string name="onboarding_start">Démarrer</string>
+
+    <!--    HomeActivity-->
+    <string name="home_search">Recherche</string>
+    <string name="home_bookmarks">Favoris</string>
+    <string name="home_popular">Populaire</string>
+    <string name="home_settings">Réglages</string>
+    <string name="home_history">Récit</string>
+    <string name="home_edit_tabs">Éditer les favoris</string>
+    <string name="home_edit_tabs_finish">Terminer l\'édition</string>
+    <string name="home_select_editable_bookmark">Sélectionnez le signet à modifier</string>
+    <string name="home_select_editable_bookmark_cancel">Annuler</string>
+    <string name="home_select_editable_bookmark_title">Modifier le signet</string>
+    <string name="home_select_editable_bookmark_save">Sauver</string>
+    <string name="home_delete_bookmark_dialog_message">Êtes vous sûr de vouloir supprimer ce marque-page?</string>
+    <string name="home_edit_bookmark_empty">Le signet ne peut pas être vide.</string>
+    <string name="home_edit_bookmark_saved">Le signet a été modifié.</string>
+
+    <!--    HistoryRecordsActivity-->
+    <string name="history_records_title">Récit</string>
+    <string name="history_records_delete_message">Êtes-vous sûr de vouloir supprimer cette entrée de l\'historique ?</string>
+
+    <!--    BrowserActivity-->
+    <string name="browser_add_bookmark">Ajouter un marque-page</string>
+    <string name="browser_add_bookmark_question">Êtes-vous sûr de vouloir ajouter cette page à vos favoris ?</string>
+    <string name="browser_add_bookmark_message">Signet ajouté.</string>
+    <string name="browser_bookmark_added_already">Le signet a déjà été ajouté.</string>
+    <string name="browser_error_handling">Erreur lors du traitement de l\'adresse.</string>
+
+    <!--    DownloadsActivity-->
+    <string name="downloads_title">Téléchargements</string>
+
+    <!--    SettingsActivity-->
+    <string name="settings_title">Réglages</string>
+    <string name="settings_main_title">Réglages principaux</string>
+    <string name="settings_without_images">Aucune image</string>
+    <string name="settings_block_ads">Bloquer les publicités</string>
+    <string name="settings_enable_javascript">Activer JavaScript</string>
+    <string name="settings_enable_color_mode">Activer le mode couleur</string>
+    <string name="settings_http_proxy">Http proxy</string>
+    <string name="settings_user_agent">Agent utilisateur</string>
+    <string name="settings_download_path">Charger le chemin</string>
+    <string name="settings_new_tab">Nouvel encart</string>
+    <string name="settings_language">Langue</string>
+    <string name="settings_http_default">Défaut</string>
+
+    <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- App -->
+    <!--    <string name="app_name">FOSS Browser</string>-->
+    <string name="app_ok">D\'ACCORD</string>
+    <string name="app_help">Aider</string>
+    <string name="app_cancel">Annuler</string>
+    <string name="app_done">Prêt</string>
+    <string name="app_error">Erreur</string>
+    <string name="app_error_activity">Aucune application installée pour ouvrir cette URL.</string>
+    <string name="app_warning">Un avertissement</string>
+    <string name="app_permission">Pour utiliser cette fonctionnalité, vous devez accorder l\'autorisation. Après cela, redémarrez l\'application.</string>
+    <string name="list_empty">Pour utiliser cette fonctionnalité, vous devez accorder l\'autorisation. Après cela, redémarrez l\'application.</string>
+    <string name="album_title_bookmarks">Favoris</string>
+    <string name="album_title_history">Récit</string>
+    <string name="album_title_home">Domicile</string>
+    <string name="album_title_tab">Ouvrir les onglets</string>
+    <string name="search_hint">Recherche</string>
+
+    <string name="color_red">Rouge</string>
+    <string name="color_pink">Rose</string>
+    <string name="color_purple">Violet</string>
+    <string name="color_blue">Bleu</string>
+    <string name="color_teal">Turquoise</string>
+    <string name="color_green">Vert</string>
+    <string name="color_lime">Chaux</string>
+    <string name="color_yellow">Jaune</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_brown">Brun</string>
+    <string name="color_grey">Gris</string>
+
+    <!-- Menu -->
+    <string name="main_menu_new_tab">Nouvel onglet (arrière-plan)</string>
+    <string name="main_menu_new_tabProfile">Nouvel onglet (avec profil…)</string>
+    <string name="main_menu_new_tabOpen">Nouvel onglet (Premier plan)</string>
+    <string name="main_omnibox_input_hint">Rechercher ou saisir une URL</string>
+    <string name="menu_open_with">Ouvrir le lien depuis...</string>
+
+    <string name="menu_quit">Se déconnecter</string>
+    <string name="menu_openFav">Ouvrir les favoris</string>
+    <string name="menu_delete">Supprimer</string>
+    <string name="menu_edit">Modifier</string>
+    <string name="menu_closeTab">Fermer l\'onglet</string>
+    <string name="menu_download">Ouvrir les téléchargements</string>
+    <string name="menu_fav">Enregistrer comme favori</string>
+    <string name="menu_sc">Raccourci écran d\'accueil</string>
+    <string name="menu_sort">Trier par …</string>
+    <string name="menu_filter">Trier par …</string>
+
+    <string name="menu_share_link">Lien de partage</string>
+
+    <string name="menu_save_home">Enregistrer dans l\'accueil</string>
+    <string name="menu_save_bookmark">Enregistrer comme signet</string>
+    <string name="menu_save_as">Enregistrer sous …</string>
+    <string name="menu_save_pdf">Enregistrer au format PDF</string>
+    <string name="menu_shareClipboard">Copier dans le presse-papier</string>
+    <string name="menu_other_searchSite">Site de recherche</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_hint">Entête:</string>
+    <string name="dialog_URL_hint">URL :</string>
+    <string name="dialog_extension_hint">Extension (ex : \".jpg\") :</string>
+    <string name="dialog_sign_in_username">Nom d\'utilisateur</string>
+    <string name="dialog_sign_in_password">Mot de passe</string>
+    <string name="dialog_title_download">Télécharger un fichier?</string>
+    <string name="dialog_content_resubmission">Envoyer à nouveau des données ?</string>
+    <string name="dialog_content_ssl_error">Le certificat du site n\'est pas approuvé. Continuer quand même ?</string>
+
+    <string name="dialog_sortName">Trier par nom</string>
+    <string name="dialog_sortIcon">Trier par icône</string>
+    <string name="dialog_sortDate">Trier par date</string>
+
+    <!-- Settings -->
+    <string name="setting_label">Réglages</string>
+
+    <!-- browser setting -->
+    <string name="setting_title_browser">Paramètres du navigateur</string>
+
+    <string name="setting_title_search_engine">Système de recherche</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
+
+    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_dom">DOM Storage</string>
+
+    <string name="setting_title_save_data">Demande "Enregistrer les données"</string>
+
+    <string name="setting_title_profiles">Profils</string>
+    <string name="setting_title_profiles_edit">Modifier les profils</string>
+    <string name="setting_title_profiles_trustedList">Sites Web fiables</string>
+    <string name="setting_title_profiles_standardList">Sites standards</string>
+    <string name="setting_title_profiles_protectedList">Sites Web protégés</string>
+    <string name="setting_title_profiles_startApp">Profil au lancement de l\'application</string>
+    <string name="setting_title_profiles_trusted">Fiduciaire</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_active">Profil</string>
+    <string name="setting_title_profiles_dataUsage">L\'utilisation de données</string>
+    <string name="setting_title_profiles_privacy">Confidentialité</string>
+    <string name="setting_title_profiles_Security">Security</string>
+
+    <!-- browser start -->
+    <string name="setting_title_images">Images</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">Si activé, tous les cookies seront supprimés. Aussi les cookies des sites Web de confiance.</string>
+
+    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript">JavaScript</string>
+
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">Activez AdBlock pour bloquer les publicités gênantes. Les sites se chargent également plus rapidement lorsqu\'ils sont activés.</string>
+    <string name="setting_title_adblockHost">Contenu bloqué</string>
+
+    <string name="setting_title_location">Emplacement</string>
+    <string name="setting_title_history">Récit</string>
+
+    <string name="setting_title_autofill">Form Data</string>
+    <string name="setting_summary_autofill">Activer l\'enregistrement des données de formulaire (Android Nougat et inférieur) ou le service de remplissage automatique (Android Oreo et supérieur).</string>
+
+
+    <!-- browser clear -->
+    <string name="data_summary">Tous les fichiers seront exportés vers le dossier "Documents/browser_backup/" sur la carte SD.</string>
+    <string name="clear_title_quit">Effacer à la sortie de l\'application</string>
+    <string name="clear_title_cache">Vider le cache</string>
+    <string name="clear_title_cookie">Effacer les cookies</string>
+    <string name="clear_title_history">Histoire pure</string>
+    <string name="localData">Effacer les données stockées sur l\'appareil</string>
+
+    <string name="clear_title_deleteDatabase">Supprimer la base de données</string>
+    <string name="clear_summary_deleteDatabase">Supprimez toute la base de données (page de démarrage, signets, historique et toutes les listes blanches).</string>
+
+
+    <!-- App setting -->
+    <string name="setting_title_app">Paramètres de l\'application</string>
+    <string name="setting_title_ui">Behavior/UI</string>
+    <string name="setting_title_data">Backup</string>
+
+    <string name="setting_filter">Bookmark filter</string>
+
+    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
+
+    <string name="setting_title_searchEngine">Custom search engine</string>
+
+    <string name="setting_title_userAgent">Custom user agent</string>
+
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
+
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+
+    <string name="setting_title_behavior">Behavior</string>
+
+    <string name="setting_title_confirm_exit">Confirm browser exit</string>
+
+    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
+
+    <string name="setting_overView_onStart_title">Show on start</string>
+
+    <string name="setting_gestures">Gestures</string>
+
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">La revue</string>
+    <string name="setting_gesture_up">Swipe up</string>
+    <string name="setting_gesture_down">Swipe down</string>
+    <string name="setting_gesture_left">Swipe left</string>
+    <string name="setting_gesture_right">Swipe right</string>
+    <string name="setting_gesture_01">Nothing</string>
+    <string name="setting_gesture_02">En avant dans l\'Histoire</string>
+    <string name="setting_gesture_03">Retour dans l\'Histoire</string>
+    <string name="setting_gesture_04">Scroll to top</string>
+    <string name="setting_gesture_05">Scroll to bottom</string>
+    <string name="setting_gesture_06">Switch to left tab</string>
+    <string name="setting_gesture_07">Switch to right tab</string>
+    <string name="setting_gesture_08">Afficher l\'aperçu</string>
+    <string name="setting_gesture_09">Ouvrir un nouvel onglet</string>
+    <string name="setting_gesture_10">Fermer l\'onglet</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
+
+    <!-- Data -->
+    <string name="title_appData">App data</string>
+    <string name="hint_database">Cela supprimera les données actuelles. Continuer ?</string>
+    <string name="settings_data_restore">Rétablir</string>
+
+
+    <!-- Others setting -->
+
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">Domaine ajouté avec succès</string>
+    <string name="toast_copy_successful">Copié avec succès</string>
+    <string name="toast_delete_successful">Supprimé avec succès</string>
+    <string name="toast_domain_already_exists">Le domaine existe déjà</string>
+    <string name="toast_input_empty">Vous n\'avez rien saisi</string>
+    <string name="toast_invalid_domain">Domaine invalide</string>
+    <string name="toast_webview_forward">Impossible de charger le site suivant</string>
+    <string name="toast_restart">Vous devez redémarrer le navigateur FOSS pour que les modifications prennent effet. Fermer maintenant ?</string>
+    <string name="toast_quit">Voulez-vous quitter \"Navigateur FOSS\" ?"</string>
+    <string name="toast_quit_TAB">Fermer l\'onglet?</string>
+    <string name="toast_downloadComplete">Téléchargement terminé. Ouvrir le gestionnaire de fichiers ?</string>
+    <string name="toast_unsecured">Le site Web utilise une connexion non sécurisée ("http"). Essayez une connexion sécurisée ("https\") ?</string>
+    <string name="toast_backup">Données de sauvegarde ? Cela écrasera l\'ancienne sauvegarde.</string>
+
+
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">Dégager</string>
+    <string name="whitelist_edit_hint">Domaine</string>
+    <string name="whitelist_add">Ajouter</string>
+    <string name="menu_mobileView">Vue mobile</string>
+    <string name="menu_desktopView">Vue PC</string>
+    <string name="menu_dayView">Vue du jour</string>
+    <string name="menu_nightView">Vue nocturne</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_title_camera">Autoriser l\'utilisation de la caméra</string>
+    <string name="setting_title_microphone">Autoriser le micro</string>
+    <string name="setting_title_tabsReload">Recharger les onglets</string>
+    <string name="setting_title_tabsRestore">Restaurer les onglets</string>
+    <string name="setting_title_userInterface">Interface utilisateur</string>
+    <string name="setting_summary_tabsReload">Recharger les derniers onglets ouverts lors du lancement du navigateur FOSS.</string>
+    <string name="setting_summary_tabsRestore">Restaurer les onglets lorsque le système tue le navigateur FOSS.</string>
+    <string name="hint_DRM_Media">Autoriser la lecture des médias protégés par DRM ?</string>
+    <string name="menu_reload">Recharger</string>
+    <string name="menu_restart">Relancer et recharger les onglets</string>
+    <string name="profile_warning">Ecrasé :</string>
+    <string name="setting_title_screenOn">Laissez l\'écran allumé</string>
+    <string name="setting_title_audioBackground">Jouez du son en arrière-plan</string>
+
+    <string name="empty_view_text">Aucun onglet disponible</string>
+    <string name="toggle_tab_switcher_menu_item">Toggle switcher</string>
+    <string name="remove_tab_menu_item">Supprimer l\'onglet</string>
+    <string name="add_tab_menu_item">Nouvel encart</string>
+    <string name="clear_tabs_menu_item">Effacer tous les onglets</string>
+    <string name="settings_menu_item">Réglages</string>
+
+    <string name="undo">Annuler</string>
+    <string name="tab_title">Tab %1$d</string>
+    <string name="removed_tab_snackbar">Removed %1$s</string>
+
+    <string name="theme_preference_category_title">Theme</string>
+    <string name="theme_preference_key">theme_preference_key</string>
+    <string name="theme_preference_title">Theme</string>
+    <string name="theme_preference_summary">Allows to choose the theme, which should be used by the example app</string>
+    <string name="theme_preference_default_value">0</string>
+    <string name="cleared_tabs_snackbar">Supprimer tous les onglets</string>
+
+    <string name="edit_text_hint">Text</string>
+    <string name="incognito_mode">Vous êtes en mode navigation privée</string>
+    <string name="incognito_mode_description">The pilgrims you visited will not be remembered and will not remain in the search history</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
+    <string name="proxy">Définir le proxy</string>
+    <string name="hint_user_agent">Définir le proxy</string>
+    <string name="user_agent">Installer l\'agent utilisateur</string>
+    <string name="hint_host">Entrez l\'hôte</string>
+    <string name="hint_port">Entrez le port</string>
+
+    <string-array name="languages">
+        <item>Anglais</item>
+        <item>Français</item>
+        <item>Espagnol</item>
+        <item>Chinois</item>
+        <item>Portugais</item>
+        <item>Russe</item>
+        <item>Hindi</item>
+        <item>Arabe</item>
+        <item>Japonais</item>
+    </string-array>
+
+    <string-array name="languages_code">
+        <item>en</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>zh</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>hi</item>
+        <item>ar</item>
+        <item>ja</item>
+    </string-array>
+
+</resources>

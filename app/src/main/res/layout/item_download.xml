@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_item_download"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginBottom="2dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_file_extension"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_any_file" />
+
+    <TextView
+        android:id="@+id/tv_file_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/grey_4"
+        android:textSize="17sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:gravity="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_file_extension"
+        app:layout_constraintTop_toTopOf="@id/iv_file_extension"
+        tools:text="File name" />
+
+    <TextView
+        android:id="@+id/tv_file_size_and_extension"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/grey_4"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_file_extension"
+        app:layout_constraintTop_toBottomOf="@id/tv_file_title"
+        tools:text="1369 b, Excel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

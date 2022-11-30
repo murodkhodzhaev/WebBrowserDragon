@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dragon Browser</string>
+    <!--    common-->
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="error_occurred">おっと、エラーが発生しました。</string>
+    <string name="google">Google</string>
+    <string name="yandex">Yandex</string>
+    <string name="bing">Bing</string>
+    <string name="duck_duck_go">DuckDuckGo</string>
+    <string name="error">間違い。</string>
+    <string name="search_empty_error">検索を空にすることはできません。</string>
+    <string name="downloads">ダウンロード</string>
+
+    <!--    OnboardingActivity-->
+    <string name="onboarding_feature_1_title">ホーム画面とタブ画面からのクイック検索</string>
+    <string name="onboarding_feature_1_description">これらのタブのいずれかに移動し、検索エンジンを選択して、興味のあるものを見つけてください。</string>
+    <string name="onboarding_feature_2_title">プライバシーモード</string>
+    <string name="onboarding_feature_2_description">このモードでは、検索クエリとアクセスしたページはブラウザの履歴に保存されません</string>
+    <string name="onboarding_feature_3_title">便利なタブ</string>
+    <string name="onboarding_feature_3_description">任意のページから開いているタブに簡単にアクセスでき、タブ間を簡単に移動できます</string>
+    <string name="onboarding_next">次</string>
+    <string name="onboarding_start">始める</string>
+
+    <!--    HomeActivity-->
+    <string name="home_search">探す</string>
+    <string name="home_bookmarks">お気に入り</string>
+    <string name="home_popular">人気</string>
+    <string name="home_settings">設定</string>
+    <string name="home_history">物語</string>
+    <string name="home_edit_tabs">お気に入りの編集</string>
+    <string name="home_edit_tabs_finish">編集終了</string>
+    <string name="home_select_editable_bookmark">編集するブックマークを選択してください</string>
+    <string name="home_select_editable_bookmark_cancel">キャンセル</string>
+    <string name="home_select_editable_bookmark_title">ブックマークを編集</string>
+    <string name="home_select_editable_bookmark_save">保存する</string>
+    <string name="home_delete_bookmark_dialog_message">このブックマークを削除してもよろしいですか？</string>
+    <string name="home_edit_bookmark_empty">ブックマークを空にすることはできません。</string>
+    <string name="home_edit_bookmark_saved">ブックマークが編集されました。</string>
+
+    <!--    HistoryRecordsActivity-->
+    <string name="history_records_title">物語</string>
+    <string name="history_records_delete_message">この履歴エントリを削除してもよろしいですか？</string>
+
+    <!--    BrowserActivity-->
+    <string name="browser_add_bookmark">ブックマークを追加</string>
+    <string name="browser_add_bookmark_question">このページをブックマークしてもよろしいですか？</string>
+    <string name="browser_add_bookmark_message">ブックマークが追加されました。</string>
+    <string name="browser_bookmark_added_already">ブックマークはすでに追加されています。</string>
+    <string name="browser_error_handling">アドレスの処理中にエラーが発生しました。</string>
+
+    <!--    DownloadsActivity-->
+    <string name="downloads_title">ダウンロード</string>
+
+    <!--    SettingsActivity-->
+    <string name="settings_title">設定</string>
+    <string name="settings_main_title">主な設定</string>
+    <string name="settings_without_images">画像なし</string>
+    <string name="settings_block_ads">ブロック広告</string>
+    <string name="settings_enable_javascript">JavaScriptを有効にする</string>
+    <string name="settings_enable_color_mode">カラーモードを有効にする</string>
+    <string name="settings_http_proxy">HTTPプロキシ</string>
+    <string name="settings_user_agent">ユーザーエージェント</string>
+    <string name="settings_download_path">ロードパス</string>
+    <string name="settings_new_tab">新しいはめ込み</string>
+    <string name="settings_language">言語</string>
+    <string name="settings_http_default">デフォルト</string>
+
+    <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- App -->
+    <!--    <string name="app_name">FOSS Browser</string>-->
+    <string name="app_ok">わかった</string>
+    <string name="app_help">ヘルプ</string>
+    <string name="app_cancel">キャンセル</string>
+    <string name="app_done">準備</string>
+    <string name="app_error">間違い</string>
+    <string name="app_error_activity">このURLを開くためのアプリケーションがインストールされていません。</string>
+    <string name="app_warning">警告</string>
+    <string name="app_permission">この機能を使用するには、権限を付与する必要があります。その後、アプリケーションを再起動してください。</string>
+    <string name="list_empty">リストは空です</string>
+    <string name="album_title_bookmarks">お気に入り</string>
+    <string name="album_title_history">物語</string>
+    <string name="album_title_home">家</string>
+    <string name="album_title_tab">タブを開く</string>
+    <string name="search_hint">探す</string>
+
+    <string name="color_red">赤</string>
+    <string name="color_pink">ピンク</string>
+    <string name="color_purple">紫の</string>
+    <string name="color_blue">青</string>
+    <string name="color_teal">ターコイズ</string>
+    <string name="color_green">緑</string>
+    <string name="color_lime">ライム</string>
+    <string name="color_yellow">黄色</string>
+    <string name="color_orange">オレンジ</string>
+    <string name="color_brown">茶色</string>
+    <string name="color_grey">グレー</string>
+
+    <!-- Menu -->
+    <string name="main_menu_new_tab">新しいタブ（背景）</string>
+    <string name="main_menu_new_tabProfile">新しいタブ（プロファイル付き…）</string>
+    <string name="main_menu_new_tabOpen">新しいタブ（前景）</string>
+    <string name="main_omnibox_input_hint">URLを検索または入力してください</string>
+    <string name="menu_open_with">リンクを開く...</string>
+
+    <string name="menu_quit">ログオフ</string>
+    <string name="menu_openFav">お気に入りを開く</string>
+    <string name="menu_delete">消去</string>
+    <string name="menu_edit">編集</string>
+    <string name="menu_closeTab">タブを閉じる</string>
+    <string name="menu_download">オープンダウンロード</string>
+    <string name="menu_fav">オープンダウンロード</string>
+    <string name="menu_sc">ホーム画面のショートカット</string>
+    <string name="menu_sort">並び替え …</string>
+    <string name="menu_filter">並び替え …</string>
+
+    <string name="menu_share_link">共有リンク</string>
+
+    <string name="menu_save_home">家に保存</string>
+    <string name="menu_save_bookmark">ブックマークとして保存</string>
+    <string name="menu_save_as">ブックマークとして保存</string>
+    <string name="menu_save_pdf">PDFとして保存</string>
+    <string name="menu_shareClipboard">クリップボードにコピー</string>
+    <string name="menu_other_searchSite">検索サイト</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_hint">ヘッダ：</string>
+    <string name="dialog_URL_hint">URL：</string>
+    <string name="dialog_extension_hint">拡張子（例：\"。jpg\ "）：</string>
+    <string name="dialog_sign_in_username">ユーザー名</string>
+    <string name="dialog_sign_in_password">パスワード</string>
+    <string name="dialog_title_download">ダウンロードファイル？</string>
+    <string name="dialog_content_resubmission">データをもう一度送信しますか？</string>
+    <string name="dialog_content_ssl_error">サイトの証明書は信頼されていません。とにかく続行しますか？</string>
+
+    <string name="dialog_sortName">名前順</string>
+    <string name="dialog_sortIcon">アイコンで並べ替え</string>
+    <string name="dialog_sortDate">日付けで並び替え</string>
+
+    <!-- Settings -->
+    <string name="setting_label">設定</string>
+
+    <!-- browser setting -->
+    <string name="setting_title_browser">ブラウザの設定</string>
+
+    <string name="setting_title_search_engine">検索システム</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
+
+    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_dom">DOM Storage</string>
+
+    <string name="setting_title_save_data">「データの保存」をリクエストする</string>
+
+    <string name="setting_title_profiles">プロフィール</string>
+    <string name="setting_title_profiles_edit">プロファイルの編集</string>
+    <string name="setting_title_profiles_trustedList">信頼できるウェブサイト</string>
+    <string name="setting_title_profiles_standardList">標準サイト</string>
+    <string name="setting_title_profiles_protectedList">標準サイト</string>
+    <string name="setting_title_profiles_startApp">アプリ起動時のプロファイル</string>
+    <string name="setting_title_profiles_trusted">受託者</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_active">プロフィール</string>
+    <string name="setting_title_profiles_dataUsage">データ使用量</string>
+    <string name="setting_title_profiles_privacy">守秘義務</string>
+    <string name="setting_title_profiles_Security">Security</string>
+
+    <!-- browser start -->
+    <string name="setting_title_images">画像</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">有効にすると、すべてのCookieが削除されます。信頼できるWebサイトからのCookieも削除されます。</string>
+
+    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript">JavaScript</string>
+
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">AdBlockを有効にして迷惑な広告をブロックします。有効にすると、サイトの読み込みも速くなります。</string>
+    <string name="setting_title_adblockHost">ブロックされたコンテンツ</string>
+
+    <string name="setting_title_location">位置</string>
+    <string name="setting_title_history">物語</string>
+
+    <string name="setting_title_autofill">Form Data</string>
+    <string name="setting_summary_autofill">フォームデータの保存（Android Nougat以下）または自動入力サービス（Android Oreo以降）を有効にします。</string>
+
+
+    <!-- browser clear -->
+    <string name="data_summary">すべてのファイルは、SDカードの「Documents /browser_backup/」フォルダにエクスポートされます。</string>
+    <string name="clear_title_quit">アプリの終了時にクリア</string>
+    <string name="clear_title_cache">キャッシュの消去</string>
+    <string name="clear_title_cookie">クッキーを消す</string>
+    <string name="clear_title_history">純粋な歴史</string>
+    <string name="localData">デバイスに保存されているデータを消去する</string>
+
+    <string name="clear_title_deleteDatabase">データベースの削除</string>
+    <string name="clear_summary_deleteDatabase">データベース全体（開始ページ、ブックマーク、履歴、およびすべてのホワイトリスト）を削除してください。</string>
+
+
+    <!-- App setting -->
+    <string name="setting_title_app">アプリケーションの設定</string>
+    <string name="setting_title_ui">Behavior/UI</string>
+    <string name="setting_title_data">Backup</string>
+
+    <string name="setting_filter">Bookmark filter</string>
+
+    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
+
+    <string name="setting_title_searchEngine">Custom search engine</string>
+
+    <string name="setting_title_userAgent">Custom user agent</string>
+
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
+
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+
+    <string name="setting_title_behavior">Behavior</string>
+
+    <string name="setting_title_confirm_exit">Confirm browser exit</string>
+
+    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
+
+    <string name="setting_overView_onStart_title">Show on start</string>
+
+    <string name="setting_gestures">Gestures</string>
+
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">レビュー</string>
+    <string name="setting_gesture_up">Swipe up</string>
+    <string name="setting_gesture_down">Swipe down</string>
+    <string name="setting_gesture_left">Swipe left</string>
+    <string name="setting_gesture_right">Swipe right</string>
+    <string name="setting_gesture_01">Nothing</string>
+    <string name="setting_gesture_02">歴史の前進</string>
+    <string name="setting_gesture_03">歴史に戻る</string>
+    <string name="setting_gesture_04">Scroll to top</string>
+    <string name="setting_gesture_05">Scroll to bottom</string>
+    <string name="setting_gesture_06">Switch to left tab</string>
+    <string name="setting_gesture_07">Switch to right tab</string>
+    <string name="setting_gesture_08">概要を表示</string>
+    <string name="setting_gesture_09">新しいタブを開く</string>
+    <string name="setting_gesture_10">タブを閉じる</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
+
+    <!-- Data -->
+    <string name="title_appData">App data</string>
+    <string name="hint_database">これにより、現在のデータが削除されます。続行しますか？</string>
+    <string name="settings_data_restore">再確立</string>
+
+
+    <!-- Others setting -->
+
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">ドメインが正常に追加されました</string>
+    <string name="toast_copy_successful">正常にコピーされました</string>
+    <string name="toast_delete_successful">正常に削除されました</string>
+    <string name="toast_domain_already_exists">ドメインはすでに存在します</string>
+    <string name="toast_input_empty">何も入力しなかった</string>
+    <string name="toast_invalid_domain">無効なドメイン</string>
+    <string name="toast_webview_forward">次のサイトを読み込めません</string>
+    <string name="toast_restart">変更を有効にするには、FOSSブラウザを再起動する必要があります。今すぐ閉じますか？</string>
+    <string name="toast_quit">「FOSSブラウザ」を終了しますか？</string>
+    <string name="toast_quit_TAB">タブを閉じる？</string>
+    <string name="toast_downloadComplete">ダウンロードが完了しました。ファイルマネージャを開きますか？</string>
+    <string name="toast_unsecured">Webサイトは安全でない接続（ "http"）を使用しています。安全な接続（ "https \"）を試してください？</string>
+    <string name="toast_backup">データをバックアップしますか？これにより、古いバックアップが上書きされます。</string>
+
+
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">クリア</string>
+    <string name="whitelist_edit_hint">ドメイン</string>
+    <string name="whitelist_add">追加</string>
+    <string name="menu_mobileView">追加</string>
+    <string name="menu_desktopView">追加</string>
+    <string name="menu_dayView">デイビュー</string>
+    <string name="menu_nightView">夜景</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_title_camera">カメラの使用を許可する</string>
+    <string name="setting_title_microphone">マイクを許可する</string>
+    <string name="setting_title_tabsReload">マイクを許可する</string>
+    <string name="setting_title_tabsRestore">タブを復元する</string>
+    <string name="setting_title_userInterface">ユーザーインターフェース</string>
+    <string name="setting_summary_tabsReload">FOSSブラウザの起動時に最後に開いたタブを再読み込みしてください。</string>
+    <string name="setting_summary_tabsRestore">システムがFOSSブラウザを強制終了したときにタブを復元します。</string>
+    <string name="hint_DRM_Media">DRMで保護されたメディアの再生を許可しますか？</string>
+    <string name="menu_reload">リロード</string>
+    <string name="menu_restart">タブの再起動と再読み込み</string>
+    <string name="profile_warning">上書き：</string>
+    <string name="setting_title_screenOn">画面をオンのままにします</string>
+    <string name="setting_title_audioBackground">バックグラウンドでサウンドを再生する</string>
+
+    <string name="empty_view_text">利用可能なタブはありません</string>
+    <string name="toggle_tab_switcher_menu_item">Toggle switcher</string>
+    <string name="remove_tab_menu_item">タブを削除</string>
+    <string name="add_tab_menu_item">新しいはめ込み</string>
+    <string name="clear_tabs_menu_item">すべてのタブをクリアする</string>
+    <string name="settings_menu_item">Н設定</string>
+
+    <string name="undo">キャンセル</string>
+    <string name="tab_title">Tab %1$d</string>
+    <string name="removed_tab_snackbar">Removed %1$s</string>
+
+    <string name="theme_preference_category_title">Theme</string>
+    <string name="theme_preference_key">theme_preference_key</string>
+    <string name="theme_preference_title">Theme</string>
+    <string name="theme_preference_summary">Allows to choose the theme, which should be used by the example app</string>
+    <string name="theme_preference_default_value">0</string>
+    <string name="cleared_tabs_snackbar">すべてのタブを削除する</string>
+
+    <string name="edit_text_hint">Text</string>
+    <string name="incognito_mode">シークレットモードになっています</string>
+    <string name="incognito_mode_description">The pilgrims you visited will not be remembered and will not remain in the search history</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
+    <string name="proxy">プロキシの設定</string>
+    <string name="hint_user_agent">ユーザーエージェントを入力してください</string>
+    <string name="user_agent">ユーザーエージェントのインストール</string>
+    <string name="hint_host">ホストを入力してください</string>
+    <string name="hint_port">ポートを入力してください</string>
+
+    <string-array name="languages">
+        <item>英語</item>
+        <item>フランス語</item>
+        <item>スペイン語</item>
+        <item>中国語</item>
+        <item>ポルトガル語</item>
+        <item>ロシア</item>
+        <item>ヒンディー語</item>
+        <item>アラブ</item>
+        <item>日本</item>
+    </string-array>
+
+    <string-array name="languages_code">
+        <item>en</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>zh</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>hi</item>
+        <item>ar</item>
+        <item>ja</item>
+    </string-array>
+
+</resources>

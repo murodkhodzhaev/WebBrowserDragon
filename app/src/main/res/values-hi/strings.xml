@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dragon Browser</string>
+    <!--    common-->
+    <string name="yes">हां</string>
+    <string name="no">नहीं</string>
+    <string name="error_occurred">ओह! एक त्रुटि हुई।.</string>
+    <string name="google">Google</string>
+    <string name="yandex">Yandex</string>
+    <string name="bing">Bing</string>
+    <string name="duck_duck_go">DuckDuckGo</string>
+    <string name="error">गलती।.</string>
+    <string name="search_empty_error">खोज खाली नहीं हो सकती।.</string>
+    <string name="downloads">डाउनलोड</string>
+
+    <!--    OnboardingActivity-->
+    <string name="onboarding_feature_1_title">होम स्क्रीन और टैब स्क्रीन से त्वरित खोज</string>
+    <string name="onboarding_feature_1_description">बस इनमें से किसी भी टैब पर जाएं, एक खोज इंजन का चयन करें और अपनी रुचि का पता लगाएं</string>
+    <string name="onboarding_feature_2_title">इंकॉग्निटो मोड</string>
+    <string name="onboarding_feature_2_description">इस मोड में, आपकी खोज क्वेरी और देखे गए पृष्ठ ब्राउज़र इतिहास में सहेजे नहीं जाते हैं</string>
+    <string name="onboarding_feature_3_title">सुविधाजनक टैब</string>
+    <string name="onboarding_feature_3_description">किसी भी पेज से खुले टैब तक आसान पहुंच और उनके बीच आसान नेविगेशन</string>
+    <string name="onboarding_next">अगला</string>
+    <string name="onboarding_start">शुरू करना</string>
+
+    <!--    HomeActivity-->
+    <string name="home_search">खोज</string>
+    <string name="home_bookmarks">पसंदीदा</string>
+    <string name="home_popular">लोकप्रिय</string>
+    <string name="home_settings">समायोजन</string>
+    <string name="home_history">कहानी</string>
+    <string name="home_edit_tabs">पसंदीदा संपादित करें</string>
+    <string name="home_edit_tabs_finish">संपादन समाप्त करें</string>
+    <string name="home_select_editable_bookmark">संपादित करने के लिए बुकमार्क चुनें</string>
+    <string name="home_select_editable_bookmark_cancel">रद्द करना</string>
+    <string name="home_select_editable_bookmark_title">बुकमार्क संपादित करें</string>
+    <string name="home_select_editable_bookmark_save">बचाना</string>
+    <string name="home_delete_bookmark_dialog_message">क्या आप वाकई इस बुकमार्क को हटाना चाहते हैं?</string>
+    <string name="home_edit_bookmark_empty">बुकमार्क खाली नहीं हो सकता।.</string>
+    <string name="home_edit_bookmark_saved">बुकमार्क संपादित कर दिया गया है।.</string>
+
+    <!--    HistoryRecordsActivity-->
+    <string name="history_records_title">कहानी</string>
+    <string name="history_records_delete_message">क्या आप वाकई इस इतिहास प्रविष्टि को हटाना चाहते हैं?</string>
+
+    <!--    BrowserActivity-->
+    <string name="browser_add_bookmark">बुकमार्क जोड़ें</string>
+    <string name="browser_add_bookmark_question">क्या आप वाकई इस पेज को बुकमार्क करना चाहते हैं?</string>
+    <string name="browser_add_bookmark_message">बुकमार्क जोड़ा गया।.</string>
+    <string name="browser_bookmark_added_already">बुकमार्क पहले ही जोड़ा जा चुका है।.</string>
+    <string name="browser_error_handling">पता संसाधित करने में त्रुटि।.</string>
+
+    <!--    DownloadsActivity-->
+    <string name="downloads_title">डाउनलोड</string>
+
+    <!--    SettingsActivity-->
+    <string name="settings_title">समायोजन</string>
+    <string name="settings_main_title">मुख्य सेटिंग्स</string>
+    <string name="settings_without_images">कोई चित्र नहीं</string>
+    <string name="settings_block_ads">विज्ञापन अवरोधित करें</string>
+    <string name="settings_enable_javascript">जावास्क्रिप्ट सक्षम करें</string>
+    <string name="settings_enable_color_mode">रंग मोड सक्षम करें</string>
+    <string name="settings_http_proxy">Http प्रॉक्सी</string>
+    <string name="settings_user_agent">उपभोक्ता अभिकर्ता</string>
+    <string name="settings_download_path">लोड पथ</string>
+    <string name="settings_new_tab">नया इनसेट</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_http_default">चूक</string>
+
+    <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <!-- App -->
+    <!--    <string name="app_name">FOSS Browser</string>-->
+    <string name="app_ok">ठीक है</string>
+    <string name="app_help">मदद</string>
+    <string name="app_cancel">रद्द करना</string>
+    <string name="app_done">तैयार</string>
+    <string name="app_error">गलती</string>
+    <string name="app_error_activity">इस URL को खोलने के लिए कोई एप्लिकेशन इंस्टॉल नहीं है।</string>
+    <string name="app_warning">चेतावनी</string>
+    <string name="app_permission">इस सुविधा का उपयोग करने के लिए, आपको अनुमति देनी होगी। उसके बाद, एप्लिकेशन को पुनरारंभ करें।.</string>
+    <string name="list_empty">सूची खाली है</string>
+    <string name="album_title_bookmarks">पसंदीदा</string>
+    <string name="album_title_history">कहानी</string>
+    <string name="album_title_home">घर</string>
+    <string name="album_title_tab">खुले टैब</string>
+    <string name="search_hint">खोज</string>
+
+    <string name="color_red">लाल</string>
+    <string name="color_pink">गुलाबी</string>
+    <string name="color_purple">बैंगनी</string>
+    <string name="color_blue">नीला</string>
+    <string name="color_teal">फ़िरोज़ा</string>
+    <string name="color_green">हरा</string>
+    <string name="color_lime">नींबू</string>
+    <string name="color_yellow">पीला</string>
+    <string name="color_orange">संतरा</string>
+    <string name="color_brown">भूरा</string>
+    <string name="color_grey">स्लेटी</string>
+
+    <!-- Menu -->
+    <string name="main_menu_new_tab">नया टैब (पृष्ठभूमि)</string>
+    <string name="main_menu_new_tabProfile">नया टैब (प्रोफ़ाइल के साथ...)</string>
+    <string name="main_menu_new_tabOpen">नया टैब (अग्रभूमि)</string>
+    <string name="main_omnibox_input_hint">यूआरएल खोजें या दर्ज करें</string>
+    <string name="menu_open_with">इससे लिंक खोलें...</string>
+
+    <string name="menu_quit">लॉग ऑफ</string>
+    <string name="menu_openFav">पसंदीदा खोलें</string>
+    <string name="menu_delete">मिटाना</string>
+    <string name="menu_edit">संपादन करना</string>
+    <string name="menu_closeTab">टैब बंद करें</string>
+    <string name="menu_download">ओपन डाउनलोड</string>
+    <string name="menu_fav">पसंदीदा के रूप में सहेजें</string>
+    <string name="menu_sc">होम स्क्रीन शॉर्टकट</string>
+    <string name="menu_sort">इसके अनुसार क्रमबद्ध करें …</string>
+    <string name="menu_filter">इसके अनुसार क्रमबद्ध करें …</string>
+
+    <string name="menu_share_link">लिंक शेयर करें</string>
+
+    <string name="menu_save_home">घर में सहेजें</string>
+    <string name="menu_save_bookmark">बुकमार्क के रूप में सहेजें</string>
+    <string name="menu_save_as">के रूप रक्षित करें …</string>
+    <string name="menu_save_pdf">पीडीएफ के रूप में सहेजें</string>
+    <string name="menu_shareClipboard">क्लिपबोर्ड पर कॉपी करें</string>
+    <string name="menu_other_searchSite">अनुसंधान क्षेत्र</string>
+
+    <!-- Dialog -->
+    <string name="dialog_title_hint">हेडर:</string>
+    <string name="dialog_URL_hint">यूआरएल:</string>
+    <string name="dialog_extension_hint">एक्सटेंशन (जैसे: \.jpg\"):</string>
+    <string name="dialog_sign_in_username">उपयोगकर्ता नाम</string>
+    <string name="dialog_sign_in_password">पासवर्ड</string>
+    <string name="dialog_title_download">फ़ाइल डाउनलोड करें?</string>
+    <string name="dialog_content_resubmission">डेटा फिर से भेजें?</string>
+    <string name="dialog_content_ssl_error">साइट का प्रमाणपत्र विश्वसनीय नहीं है। फिर भी जारी रखें?</string>
+
+    <string name="dialog_sortName">नाम द्वारा क्रमबद्ध करें</string>
+    <string name="dialog_sortIcon">आइकन के आधार पर छाँटें</string>
+    <string name="dialog_sortDate">दिनांक के हिसाब से अलग करे</string>
+
+    <!-- Settings -->
+    <string name="setting_label">समायोजन</string>
+
+    <!-- browser setting -->
+    <string name="setting_title_browser">ब्राउज़र सेटिंग्स</string>
+
+    <string name="setting_title_search_engine">खोज प्रणाली</string>
+    <string name="setting_summary_search_engine_google">Google</string>
+    <string name="setting_summary_search_engine_duckduckgo">DuckDuckGo</string>
+    <string name="setting_summary_search_engine_startpage">StartPage</string>
+    <string name="setting_summary_search_engine_bing">Bing</string>
+    <string name="setting_summary_search_engine_baidu">Baidu</string>
+    <string name="setting_summary_search_engine_startpage_de">StartPage (de)</string>
+    <string name="setting_summary_search_engine_searx">Searx</string>
+    <string name="setting_summary_search_engine_qwant">Qwant</string>
+    <string name="setting_summary_search_engine_ecosia">Ecosia</string>
+    <string name="setting_summary_search_engine_metager">Metager</string>
+
+    <string name="setting_title_font">Font size</string>
+    <string name="setting_title_dom">DOM Storage</string>
+
+    <string name="setting_title_save_data">अनुरोध" डेटा सहेजें "</string>
+
+    <string name="setting_title_profiles">प्रोफाइल</string>
+    <string name="setting_title_profiles_edit">प्रोफाइल संपादित करें</string>
+    <string name="setting_title_profiles_trustedList">विश्वसनीय वेबसाइटें</string>
+    <string name="setting_title_profiles_standardList">मानक साइटें</string>
+    <string name="setting_title_profiles_protectedList">संरक्षित वेबसाइटें</string>
+    <string name="setting_title_profiles_startApp">ऐप लॉन्च पर प्रोफ़ाइल</string>
+    <string name="setting_title_profiles_trusted">न्यायिक</string>
+    <string name="setting_title_profiles_standard">Standard</string>
+    <string name="setting_title_profiles_protected">Protected</string>
+    <string name="setting_title_profiles_changed">Custom</string>
+    <string name="setting_title_profiles_active">प्रोफ़ाइल</string>
+    <string name="setting_title_profiles_dataUsage">डेटा उपयोग में लाया गया</string>
+    <string name="setting_title_profiles_privacy">गोपनीयता</string>
+    <string name="setting_title_profiles_Security">Security</string>
+
+    <!-- browser start -->
+    <string name="setting_title_images">इमेजिस</string>
+    <string name="setting_title_cookie">Cookies</string>
+    <string name="setting_summary_cookie_delete">यदि सक्षम किया गया है, तो सभी कुकीज़ हटा दी जाएंगी। विश्वसनीय वेबसाइटों से भी कुकीज़।</string>
+
+    <string name="setting_title_javascript_popUp">Popups</string>
+    <string name="setting_title_javascript">JavaScript</string>
+
+    <string name="setting_title_adblock">AdBlock</string>
+    <string name="setting_summary_adblock">परेशान करने वाले विज्ञापनों को ब्लॉक करने के लिए AdBlock को सक्षम करें। सक्षम होने पर साइटें भी तेज़ी से लोड होती हैं।.</string>
+    <string name="setting_title_adblockHost">अवरुद्ध सामग्री</string>
+
+    <string name="setting_title_location">जगह</string>
+    <string name="setting_title_history">कहानी</string>
+
+    <string name="setting_title_autofill">Form Data</string>
+    <string name="setting_summary_autofill">फॉर्म डेटा सेविंग (एंड्रॉइड नौगट और नीचे) या ऑटोफिल सेवा (एंड्रॉइड ओरेओ और ऊपर) सक्षम करें।.</string>
+
+
+    <!-- browser clear -->
+    <string name="data_summary">सभी फ़ाइलें SD कार्ड पर "दस्तावेज़/ब्राउज़र_बैकअप/" फ़ोल्डर में निर्यात की जाएंगी।.</string>
+    <string name="clear_title_quit">ऐप से बाहर निकलने पर साफ़ करें</string>
+    <string name="clear_title_cache">कैश को साफ़ करें</string>
+    <string name="clear_title_cookie">कुकी साफ़ करें</string>
+    <string name="clear_title_history">शुद्ध इतिहास</string>
+    <string name="localData">डिवाइस पर संग्रहीत डेटा साफ़ करें</string>
+
+    <string name="clear_title_deleteDatabase">डेटाबेस हटाएं</string>
+    <string name="clear_summary_deleteDatabase">संपूर्ण डेटाबेस (प्रारंभ पृष्ठ, बुकमार्क, इतिहास और सभी श्वेतसूची) हटाएं।.</string>
+
+
+    <!-- App setting -->
+    <string name="setting_title_app">अनुप्रयोग सेटिंग</string>
+    <string name="setting_title_ui">Behavior/UI</string>
+    <string name="setting_title_data">Backup</string>
+
+    <string name="setting_filter">Bookmark filter</string>
+
+    <string name="setting_title_fav">Favorite</string>
+    <string name="setting_title_reload">Swipe down to reload</string>
+
+    <string name="setting_title_searchEngine">Custom search engine</string>
+
+    <string name="setting_title_userAgent">Custom user agent</string>
+
+    <string name="setting_title_fingerPrint">Fingerprint protection</string>
+    <string name="setting_theme">Theme</string>
+    <string name="setting_theme_system">System</string>
+    <string name="setting_theme_OLED">OLED</string>
+    <string name="setting_theme_wallpaper">Wallpaper based</string>
+
+    <!-- App behavior -->
+    <string name="setting_title_hideToolbar">Hide toolbar</string>
+
+    <string name="setting_title_behavior">Behavior</string>
+
+    <string name="setting_title_confirm_exit">Confirm browser exit</string>
+
+    <string name="setting_title_confirm_tab_close">Confirm tab close</string>
+
+    <string name="setting_overView_onStart_title">Show on start</string>
+
+    <string name="setting_gestures">Gestures</string>
+
+    <!-- gestures -->
+    <string name="setting_title_toolbar">Toolbar</string>
+    <string name="setting_title_toolbar_buttons">Toolbar buttons</string>
+    <string name="setting_title_longPress">Long press</string>
+    <string name="setting_title_tabButton">Tab button / menu button</string>
+    <string name="setting_title_overViewButton">समीक्षा</string>
+    <string name="setting_gesture_up">Swipe up</string>
+    <string name="setting_gesture_down">Swipe down</string>
+    <string name="setting_gesture_left">Swipe left</string>
+    <string name="setting_gesture_right">Swipe right</string>
+    <string name="setting_gesture_01">Nothing</string>
+    <string name="setting_gesture_02">इतिहास में आगे</string>
+    <string name="setting_gesture_03">इतिहास में वापस</string>
+    <string name="setting_gesture_04">Scroll to top</string>
+    <string name="setting_gesture_05">Scroll to bottom</string>
+    <string name="setting_gesture_06">Switch to left tab</string>
+    <string name="setting_gesture_07">Switch to right tab</string>
+    <string name="setting_gesture_08">अवलोकन दर्शाएं</string>
+    <string name="setting_gesture_09">नया टैब खोलें</string>
+    <string name="setting_gesture_10">टैब बंद करें</string>
+    <string name="setting_gesture_11">Show fast toggle</string>
+
+    <!-- Data -->
+    <string name="title_appData">App data</string>
+    <string name="hint_database">यह वर्तमान डेटा को हटा देगा। जारी रखें?</string>
+    <string name="settings_data_restore">पुनर्स्थापित करें</string>
+
+
+    <!-- Others setting -->
+
+    <!-- Toast -->
+    <string name="toast_add_whitelist_successful">डोमेन सफलतापूर्वक जोड़ा गया</string>
+    <string name="toast_copy_successful">सफलतापूर्वक कॉपी किया गया</string>
+    <string name="toast_delete_successful">सफलतापूर्वक हटाया गया</string>
+    <string name="toast_domain_already_exists">डोमेन पहले से मौजूद है</string>
+    <string name="toast_input_empty">आपने कुछ भी दर्ज नहीं किया</string>
+    <string name="toast_invalid_domain">अमान्य डोमेन</string>
+    <string name="toast_webview_forward">निम्न साइट लोड करने में असमर्थ</string>
+    <string name="toast_restart">परिवर्तनों को प्रभावी करने के लिए आपको FOSS ब्राउज़र को पुनरारंभ करना होगा। अभी बंद करें?</string>
+    <string name="toast_quit">क्या आप \"FOSS ब्राउज़र\" से बाहर निकलना चाहते हैं?</string>
+    <string name="toast_quit_TAB">टैब बंद करें?</string>
+    <string name="toast_downloadComplete">डाउनलोड पूर्ण। फ़ाइल प्रबंधक खोलें?</string>
+    <string name="toast_unsecured">वेबसाइट एक असुरक्षित कनेक्शन ("http") का उपयोग कर रही है। एक सुरक्षित कनेक्शन ("https\") आज़माएं?</string>
+    <string name="toast_backup">बैकअप डेटा? यह पुराने बैकअप को अधिलेखित कर देगा।.</string>
+
+
+    <!-- Whitelist -->
+    <string name="whitelist_menu_clear">साफ़</string>
+    <string name="whitelist_edit_hint">कार्यक्षेत्र</string>
+    <string name="whitelist_add">जोड़ें</string>
+    <string name="menu_mobileView">मोबाइल दृश्य</string>
+    <string name="menu_desktopView">पीसी व्यू</string>
+    <string name="menu_dayView">दिन का दृश्य</string>
+    <string name="menu_nightView">रात का नजारा</string>
+    <string name="setting_userScript">Custom JavaScript code</string>
+    <string name="setting_title_camera">कैमरे के उपयोग की अनुमति दें</string>
+    <string name="setting_title_microphone">माइक्रोफ़ोन की अनुमति दें</string>
+    <string name="setting_title_tabsReload">टैब पुनः लोड करें</string>
+    <string name="setting_title_tabsRestore">टैब पुनर्स्थापित करें</string>
+    <string name="setting_title_userInterface">प्रयोक्ता इंटरफ़ेस</string>
+    <string name="setting_summary_tabsReload">FOSS ब्राउज़र लॉन्च करते समय अंतिम बार खोले गए टैब को पुनः लोड करें।.</string>
+    <string name="setting_summary_tabsRestore">जब सिस्टम FOSS ब्राउज़र को समाप्त कर देता है तो टैब पुनर्स्थापित करें।.</string>
+    <string name="hint_DRM_Media">DRM-संरक्षित मीडिया के प्लेबैक की अनुमति दें?</string>
+    <string name="menu_reload">पुनः लोड करें</string>
+    <string name="menu_restart">टैब पुन: लॉन्च और पुनः लोड करें</string>
+    <string name="profile_warning">अधिलेखित:</string>
+    <string name="setting_title_screenOn">स्क्रीन को चालू रखें</string>
+    <string name="setting_title_audioBackground">पृष्ठभूमि में ध्वनि चलाएं</string>
+
+    <string name="empty_view_text">कोई टैब उपलब्ध नहीं है</string>
+    <string name="toggle_tab_switcher_menu_item">Toggle switcher</string>
+    <string name="remove_tab_menu_item">टैब हटाएं</string>
+    <string name="add_tab_menu_item">नया इनसेट</string>
+    <string name="clear_tabs_menu_item">सभी टैब साफ़ करें</string>
+    <string name="settings_menu_item">समायोजन</string>
+
+    <string name="undo">रद्द करना</string>
+    <string name="tab_title">Tab %1$d</string>
+    <string name="removed_tab_snackbar">Removed %1$s</string>
+
+    <string name="theme_preference_category_title">Theme</string>
+    <string name="theme_preference_key">theme_preference_key</string>
+    <string name="theme_preference_title">Theme</string>
+    <string name="theme_preference_summary">Allows to choose the theme, which should be used by the example app</string>
+    <string name="theme_preference_default_value">0</string>
+    <string name="cleared_tabs_snackbar">सभी टैब हटाएं</string>
+
+    <string name="edit_text_hint">Text</string>
+    <string name="incognito_mode">आप गुप्त मोड में हैं</string>
+    <string name="incognito_mode_description">The pilgrims you visited will not be remembered and will not remain in the search history</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</string>
+
+    <string name="proxy">प्रॉक्सी सेट करें</string>
+    <string name="hint_user_agent">उपयोगकर्ता एजेंट दर्ज करें</string>
+    <string name="user_agent">उपयोगकर्ता एजेंट स्थापित करें</string>
+    <string name="hint_host">होस्ट दर्ज करें</string>
+    <string name="hint_port">पोर्ट दर्ज करें</string>
+
+    <string-array name="languages">
+        <item>अंग्रेज़ी</item>
+        <item>फ्रेंच</item>
+        <item>स्पैनिश</item>
+        <item>चीनी</item>
+        <item>पुर्तगाली</item>
+        <item>रूसी</item>
+        <item>हिन्दी</item>
+        <item>अरब</item>
+        <item>जापानी</item>
+    </string-array>
+
+    <string-array name="languages_code">
+        <item>en</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>zh</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>hi</item>
+        <item>ar</item>
+        <item>ja</item>
+    </string-array>
+
+</resources>

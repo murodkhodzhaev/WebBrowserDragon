@@ -1,0 +1,44 @@
+{
+
+  "meta": {
+    "Authorization": "abd6b5a0e0342a61f531fc2ca293760e16c9f0a8",
+
+    "offset": 0,
+
+    "limit": 500,
+
+    "total": 189193
+
+  },
+
+  "data": [
+
+    {
+
+      "id": "7fc4b9f7-ee66-41e0-b6ca-38087aae1188",
+
+      "name": "Example CH",
+
+      "websiteUrl": "https://www.example.com/ch/",
+
+      "imageUrl": "https://kqdxc4m5.de/logos_v2/120x60/0b95eee638b5bdf679ca8cf9c11beaa7.gif",
+
+      "countryCodes": [
+
+        "DE"
+
+      ],
+
+      "avgCommission": 2.72,
+
+      "updatedAt": "2022-05-17T10:17:39.000Z",
+
+      "hostname": "example.com",
+
+      "programStatus": "ACTIVE",
+
+      "merchantId": null
+
+    }
+  ]
+}
