@@ -104,7 +104,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
     implementation 'com.github.corouteam:glidetovectoryou:v2.0.0'
 
-    implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'org.jsoup:jsoup:1.15.1'
     implementation 'com.github.michael-rapp:chrome-like-tab-switcher:0.4.6'
 
     //WebKit

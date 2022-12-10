@@ -20,7 +20,6 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.webkit.*
 import android.webkit.WebView.HitTestResult
-import android.webkit.WebView.clearClientCertPreferences
 import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
@@ -35,27 +34,25 @@ import com.google.android.gms.tasks.Tasks
 import kotlinx.android.synthetic.main.activity_browser3.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_scrolling.*
+import kotlinx.coroutines.*
 import org.json.JSONArray
 import timber.log.Timber
 import web.browser.dragon.R
 import web.browser.dragon.WebBrowserDragon
 import web.browser.dragon.database.bookmarks.BookmarksViewModel
 import web.browser.dragon.database.bookmarks.BookmarksViewModelFactory
+import web.browser.dragon.database.browser.BrowserViewModel
 import web.browser.dragon.database.downloads.DownloadModelsViewModel
 import web.browser.dragon.database.downloads.DownloadModelsViewModelFactory
 import web.browser.dragon.database.history.HistoryRecordsViewModel
 import web.browser.dragon.database.history.HistoryRecordsViewModelFactory
-import web.browser.dragon.model.Bookmark
-import web.browser.dragon.model.DownloadModel
-import web.browser.dragon.model.HistoryRecord
-import web.browser.dragon.model.OpenGraphResult
+import web.browser.dragon.model.*
 import web.browser.dragon.ui.downloads.DownloadsActivity
 import web.browser.dragon.ui.history.HistoryRecordsActivity
 import web.browser.dragon.ui.home.HomeActivity
 import web.browser.dragon.ui.settings.SettingsActivity
 import web.browser.dragon.ui.tabs.TabsActivity
 import web.browser.dragon.utils.*
-import web.browser.dragon.utils.Constants.CheckUrl.NEWEST_URL_END
 import web.browser.dragon.utils.Constants.CheckUrl.NEWEST_URL_START
 import web.browser.dragon.utils.file.getMimeType
 import web.browser.dragon.utils.file.getStringSizeLengthFile
@@ -74,12 +71,10 @@ import java.util.*
 import java.util.concurrent.Callable
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
-import java.util.logging.Logger.global
 
 
 open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
 
-    private lateinit var mText: TextView
     private var lastUrl: String? = null
     private var currentCount: Int = 0
 
@@ -88,6 +83,9 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
     private var timer: CountDownTimer? = null
 
     private var thread: Thread? = null
+    private var links: List<String> = listOf()
+    private var isSearch = false
+    private var isRedirected = false
 
     companion object {
         fun newIntent(
@@ -95,7 +93,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             url: String? = null,
             isFromTabs: Boolean = false,
             countTab: Int? = null,
-            isSiteAvailability: Boolean = false
+            isSiteAvailability: Boolean = false,
         ): Intent {
             val intent = Intent(context, BrowserActivity::class.java)
             intent.putExtra(EXTRA_URL, url)
@@ -121,6 +119,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
     private val downloadsViewModel: DownloadModelsViewModel by viewModels {
         DownloadModelsViewModelFactory((this.application as WebBrowserDragon).downloadsRepository)
     }
+    private val browserViewModel: BrowserViewModel by viewModels ()
 
     private val INPUT_FILE_REQUEST_CODE = 1
     private val FILECHOOSER_RESULTCODE = 1
@@ -187,6 +186,10 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             ) else true
             requestToWeb = initialUrl
 
+            browserViewModel.links.observe(this, androidx.lifecycle.Observer {
+                links = it
+            })
+
             setWebView()
             setOnClickListeners()
             setOnActionListeners()
@@ -213,16 +216,20 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         val chaptersUrl = url.split("//")
         lastUrl = if (chaptersUrl.size > 1) "${url.split("//")[1].split("/")[0]}"
         else url
-        if (checkUrl(lastUrl!!)) {
-            val urlWithRedirect =
-                Uri.parse(url).buildUpon().appendQueryParameter("redirect", "false").build()
-                    .toString()
-            val encodedUrl = Uri.encode(urlWithRedirect)
-            return NEWEST_URL_START + encodedUrl + NEWEST_URL_END
-        }
+        //if (checkUrl(lastUrl!!)) {
+        //            val urlWithRedirect =
+        //                Uri.parse(url).buildUpon().appendQueryParameter("redirect", "false").build()
+        //                    .toString()
+        //            val encodedUrl = Uri.encode(urlWithRedirect)
+        //            return NEWEST_URL_START + encodedUrl + NEWEST_URL_END
+        //        }
+        /** старый метод оборачивания ссылок из локального списка компаний, не используется
+         */
         return url
     }
 
+    /** не используется, т.к аффилиатные ссылки получаются из API
+     */
     private fun checkUrl(lastUrl: String): Boolean {
         val jsonArray = JSONArray(loadJSONFile())//
         for (i in 0 until jsonArray.length()) {
@@ -240,6 +247,8 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         return false
     }
 
+    /** не используется, т.к аффилиатные ссылки получаются из API
+     */
     private fun loadJSONFile(): String? {
         var json: String? = null
         json = try {
@@ -391,14 +400,13 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             webView?.clearFormData()
             webView?.settings!!.savePassword = false
             webView?.settings!!.saveFormData = false
-
         }
 
-                webView?.webViewClient = object : WebViewClient() {
+        webView?.webViewClient = object : WebViewClient() {
 
                     override fun shouldOverrideUrlLoading(
                         view: WebView,
-                        request: WebResourceRequest
+                        request: WebResourceRequest,
                     ): Boolean {
                         if (!request.url.toString()
                                 .startsWith("https://m.youtube") && !request.url.toString()
@@ -412,6 +420,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                                 .startsWith("https://t.me") && request.url.toString()
                                 .startsWith("https")
                         ) {
+                            view.loadUrl(getAffLink(request.url.toString()))
                             return false
                         } else {
                             return try {
@@ -434,8 +443,6 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                                 else {
                                     host.startActivity(browserIntent)
                                     true
-
-
                                 }
                             } catch (e: ActivityNotFoundException) {
                                 false
@@ -529,7 +536,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     override fun onReceivedError(
                         view: WebView?,
                         request: WebResourceRequest?,
-                        error: WebResourceError?
+                        error: WebResourceError?,
                     ) {
 
                         super.onReceivedError(view, request, error)
@@ -539,7 +546,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     override fun onReceivedHttpError(
                         view: WebView?,
                         request: WebResourceRequest?,
-                        errorResponse: WebResourceResponse?
+                        errorResponse: WebResourceResponse?,
                     ) {
                         super.onReceivedHttpError(view, request, errorResponse)
                         Log.d("onReceivedHttpError", errorResponse.toString())
@@ -549,7 +556,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     override fun onReceivedSslError(
                         view: WebView?,
                         handler: SslErrorHandler?,
-                        error: SslError?
+                        error: SslError?,
                     ) {
                         super.onReceivedSslError(view, handler, error)
                         Log.d("onReceivedSslError", error.toString())
@@ -565,7 +572,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     override fun onPageFinished(view: WebView, url: String) {
                         super.onPageFinished(view, url)
 
-                        Log.d("onPageFinished", url.toString())
+                        Log.d("onPageFinished", url)
 
                         if (!isIncognitoMode(this@BrowserActivity)) {
                             CookieManager.getInstance().setAcceptCookie(true)
@@ -588,13 +595,19 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                              * Ещё не внедрено. Можно использовать метод changeToolbarBackground() из Lightning-Browser
                              * **/
                         }
+//                        view.loadUrl("javascript:" +
+//                                "var links = document.querySelectorAll('a');" +
+//                                "for(let link of links) {" +
+//                                "if(link.href.includes('https://www.w3schools.com')) {" +
+//                                "link.href = 'www'+ link.href}}")
+                        /** можно менять ссылки в результатах поиска и по этому методу, черех JS скрипт
+                         * */
                     }
                 }
-//        webView.webChromeClient = WebChromeClient()
 
         webView.settings.allowFileAccess = true
         webView.settings.mixedContentMode = 0
-        webView.settings.setJavaScriptEnabled(true)
+        webView.settings.javaScriptEnabled = true
         webView.settings.javaScriptCanOpenWindowsAutomatically = true
         webView?.webChromeClient = object : WebChromeClient() {
 
@@ -615,7 +628,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 view: WebView?,
                 url: String?,
                 message: String?,
-                result: JsResult?
+                result: JsResult?,
             ): Boolean {
                 return super.onJsAlert(view, url, message, result)
             }
@@ -732,7 +745,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     override fun onShowFileChooser(
                         view: WebView,
                         filePath: ValueCallback<Array<Uri>>,
-                        fileChooserParams: FileChooserParams
+                        fileChooserParams: FileChooserParams,
                     ): Boolean {
                         if (mFilePathCallback != null) {
                             mFilePathCallback!!.onReceiveValue(null)
@@ -815,7 +828,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     fun openFileChooser(
                         uploadMsg: ValueCallback<Uri>,
                         acceptType: String?,
-                        capture: String?
+                        capture: String?,
                     ) {
                         openFileChooser(uploadMsg, acceptType)
                     }
@@ -860,7 +873,6 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 if (isFromTabs) {
                     Log.d("INFO1", "INFO")
                     currentCount = countTab
-    //            newestUrlAndCheckUrl(initialUrl ?: "https://google.com")
                     webView?.loadUrl(newestUrlAndCheckUrl(initialUrl ?: "https://google.com"))
                 } else {
                     if (initialUrl.isNullOrEmpty()) {
@@ -886,6 +898,8 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                             val checkUrl =
                                 newestUrlAndCheckUrl("${getSelectedSearchEngine(this)?.searchLink}${initialUrl}")
                             webView?.loadUrl(checkUrl)
+                            isSearch = true
+                            browserViewModel.getLinks(checkUrl)
                             checkUrl
                         }
                         Log.d("INFO4", url)
@@ -912,7 +926,42 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 }
             }
 
-            private fun saveLocalImageSite() {
+    private fun getAffLink(url: String): String {
+        /** обернутая ссылка проходит через 3 редиректа, поэтому нужен флаг isRedirected  чтобы зря не оборачивать редирекнутые ссылки
+          */
+        var link = url
+        if (isSearch) {
+            if (isRedirected) {
+                link = url
+            } else {
+                val parts = url.split("//")
+                val purePart: String
+                if (parts[1].contains("m.")) {
+                    purePart = if(parts[1].contains("-")) {
+                        val domain = parts[1].split("-")[1].removePrefix("m")
+                        parts[1].split("-")[0] + domain
+                    } else {
+                        parts[1].removePrefix("m.")
+                    }
+                    link =  NEWEST_URL_START + Uri.encode("https://$purePart")
+                    isRedirected = true
+                }
+                link = links.find { it.contains(Uri.encode(url)) } ?: link
+            }
+        } else {
+            /** если ссылка не в базе данных Admitad, тогда обернутая ссылка вернется к оригиналу после 2 редиректа
+             */
+           if (isRedirected) {
+                link = url
+            } else {
+                link = NEWEST_URL_START + Uri.encode(link)
+               isRedirected = true
+            }
+        }
+        return link
+    }
+
+    private fun saveLocalImageSite() {
                 try {
                     val bitmap = Bitmap.createBitmap(
                         webView.width,
@@ -938,7 +987,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 url: String,
                 contentDisposition: String?,
                 mimeType: String?,
-                contentLength: Long
+                contentLength: Long,
             ) {
                 BrowserUnit.downloadWithPath(this, url, contentDisposition, mimeType) {
                     downloadsViewModel.insert(
@@ -967,7 +1016,6 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     if (searchText.contains(".") && !searchText.contains(" ")) {
                         requestToWeb =
                             if (searchText.startsWith("http://") || searchText.startsWith("https://")) searchText else "http://$searchText"
-
                         createHttpTask(requestToWeb!!)
                             .addOnSuccessListener {
                                 isSiteAvailability = true
@@ -1264,7 +1312,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     }
                 })
             }
-        }
+}
 
 
 

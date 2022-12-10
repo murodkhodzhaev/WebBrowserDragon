@@ -65,7 +65,7 @@ class JsoupNetworkCall {
                 openGraphResult!!.title = doc.title()
             if (openGraphResult!!.description.isNullOrEmpty())
                 openGraphResult!!.description = if (doc.select("meta[name=description]").size != 0) doc.select("meta[name=description]")
-                    .first().attr("content") else ""
+                    .first()?.attr("content") else ""
             if (openGraphResult!!.url.isNullOrEmpty())
                 openGraphResult!!.url = getBaseUrl(url)
         } catch (e: Exception) {

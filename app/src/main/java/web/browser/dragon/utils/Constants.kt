@@ -14,7 +14,6 @@ object Constants {
     object Search {
         const val SEARCH = "search"
         const val SEARCH_SELECTED = "search_selected"
-        const val SEARCH_ENGINES = "search_engines"
         const val USER_AGENT =
             "Mozilla/5.0 (Linux; Android 5.1.1; Nexus 5 Build/LMY48B; wv) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36"
 
@@ -39,8 +38,10 @@ object Constants {
     object CheckUrl {
         const val FILE_NAME = "getAffPrograms.json"
 
-        const val NEWEST_URL_START = "https://api.smartredirect.de/redir/clickGate.php?u=u68EH62H&p=zi0499J5tV&m=30&url="
+        const val NEWEST_URL_START = "https://api.smartredirect.de/redir/clickGate.php?u=u68EH62H&p=9f45iT0K3m&m=30&url="
         const val NEWEST_URL_END = "&s=https%3A%2F%2Fwww.dragonsearch.sbs"
+        const val MONETIZE_API_PUBLIC_KEY = "abd6b5a0e0342a61f531fc2ca293760e16c9f0a8"
+        const val MONETIZE_API_BASE_URL = "https://api.monetize.admitad.com/v1/product/monetize-api/v1/"
     }
 }
 
