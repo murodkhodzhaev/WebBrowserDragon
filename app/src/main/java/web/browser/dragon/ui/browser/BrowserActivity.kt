@@ -935,29 +935,31 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 link = url
             } else {
                 val parts = url.split("//")
-                val purePart: String
-                if (parts[1].contains("m.")) {
-                    purePart = if(parts[1].contains("-")) {
-                        val domain = parts[1].split("-")[1].removePrefix("m")
-                        parts[1].split("-")[0] + domain
-                    } else {
-                        parts[1].removePrefix("m.")
+                var domain = parts[1]
+                if (domain.subSequence(0, 3).contains("-")) {
+                    domain = domain.split("-")[1]
+                    if (domain.startsWith("m.")) {
+                        domain = domain.removePrefix("m.")
                     }
-                    link =  NEWEST_URL_START + Uri.encode("https://$purePart")
+                } else if (domain.startsWith("m.")) {
+                    domain = domain.removePrefix("m.")
+                }
+                if (!domain.contains("?")) {
                     isRedirected = true
                 }
-                link = links.find { it.contains(Uri.encode(url)) } ?: link
-            }
-        } else {
-            /** если ссылка не в базе данных Admitad, тогда обернутая ссылка вернется к оригиналу после 2 редиректа
-             */
-           if (isRedirected) {
-                link = url
-            } else {
-                link = NEWEST_URL_START + Uri.encode(link)
-               isRedirected = true
+                link = links.find { it.contains(Uri.encode(domain)) } ?: url
             }
         }
+//        else {
+//            /** если ссылка не в базе данных Admitad, тогда обернутая ссылка вернется к оригиналу после 2 редиректа
+//             */
+//           if (isRedirected) {
+//                link = url
+//            } else {
+//                link = NEWEST_URL_START + Uri.encode(link)
+//               isRedirected = true
+//            }
+//        }
         return link
     }
 
@@ -1102,10 +1104,10 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                     menu.setForceShowIcon(true)
                 }
-
-                ib_search_menu.setOnClickListener {
-                    menu.show()
-                }
+                menu.show()
+//                ib_search_menu.setOnClickListener {
+//
+//                }
             }
 
             private fun onAddBookmarkClicked() {

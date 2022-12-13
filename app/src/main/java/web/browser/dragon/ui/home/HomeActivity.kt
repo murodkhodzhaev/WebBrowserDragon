@@ -228,10 +228,11 @@ class HomeActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             menu.setForceShowIcon(true)
         }
+        menu.show()
 
-        ib_search_menu.setOnClickListener {
-            menu.show()
-        }
+//        ib_search_menu.setOnClickListener {
+//            menu.show()
+//        }
     }
 
 
