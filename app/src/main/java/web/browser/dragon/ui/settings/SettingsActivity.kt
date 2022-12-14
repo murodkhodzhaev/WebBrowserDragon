@@ -3,32 +3,30 @@ package web.browser.dragon.ui.settings
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.content.edit
+import androidx.webkit.ProxyConfig
+import androidx.webkit.ProxyController
+import androidx.webkit.WebViewFeature
+import kotlinx.android.synthetic.main.activity_settings.*
 import web.browser.dragon.R
 import web.browser.dragon.model.Settings
 import web.browser.dragon.ui.home.HomeActivity
 import web.browser.dragon.utils.Constants.Settings.SETTINGS_LANGUAGE
-import web.browser.dragon.utils.settings.getSettings
-import web.browser.dragon.utils.settings.saveSettings
-import kotlinx.android.synthetic.main.activity_settings.*
-import java.util.*
-import android.view.ViewGroup
-import android.view.LayoutInflater
-import android.view.View
-import androidx.core.content.ContextCompat
-import androidx.webkit.ProxyConfig
-import androidx.webkit.ProxyController
-import androidx.webkit.WebViewFeature
 import web.browser.dragon.utils.Constants.Settings.SETTINGS_PROXY
 import web.browser.dragon.utils.Constants.Settings.SETTINGS_USER_AGENT
 import web.browser.dragon.utils.onCheckTheme
 import web.browser.dragon.utils.setOnCheckTheme
+import web.browser.dragon.utils.settings.AGENTS
+import web.browser.dragon.utils.settings.getSettings
+import web.browser.dragon.utils.settings.saveSettings
+import java.util.*
 import java.util.concurrent.Executor
 
 
@@ -90,28 +88,39 @@ class SettingsActivity : AppCompatActivity() {
         registerForContextMenu(cl_language)
         cl_language?.setOnClickListener { openContextMenu(it) }
         cl_new_tab?.setOnClickListener { startActivity(HomeActivity.newIntent(this)) }
+
         cl_user_agent?.setOnClickListener {
             val builder = AlertDialog.Builder(this@SettingsActivity)
             builder.setTitle(getString(R.string.user_agent))
+
             val viewInflated: View = LayoutInflater.from(this@SettingsActivity)
                 .inflate(R.layout.input_user_agent, parent as ViewGroup?, false)
             val inputUserAgent = viewInflated.findViewById<EditText>(R.id.input_user_agent)
-            if(tv_user_agent_description?.text.toString().isNotEmpty()) inputUserAgent.setText(tv_user_agent_description?.text.toString())
+            if(tv_user_agent_description?.text.toString().isNotEmpty()) inputUserAgent.setText(tv_user_agent_description?.text)
             builder.setView(viewInflated)
+            val agentList = arrayListOf<String>()
+            AGENTS.values().forEach { agentList.add(it.agent) }
+            val agents: Array<String> = agentList.toArray(arrayOfNulls<String>(0))
+            val checkedItem = 1
+
+            builder.setSingleChoiceItems(agents, checkedItem) { dialogInterface, i ->
+                tv_user_agent_description.text = agents[i]
+                inputUserAgent.setText(agents[i])
+            }
+
             builder.setPositiveButton(
                 android.R.string.ok
             ) { dialog, which ->
                 dialog.dismiss()
                 if(inputUserAgent.text.isEmpty()){
-                    tv_user_agent_description?.text = getString(R.string.settings_http_default)
+                    tv_user_agent_description?.text = getString(R.string.settings_http_user_choice)
                     setUserAgent(null)
                 }else{
                     tv_user_agent_description?.text = inputUserAgent.text.toString()
                     setUserAgent(inputUserAgent.text.toString())
                 }
-
-                //m_Text = input.text.toString()
             }
+
             builder.setNegativeButton(
                 android.R.string.cancel
             ) { dialog, which -> dialog.cancel() }

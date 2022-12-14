@@ -105,7 +105,7 @@
             android:name=".ui.browser.BrowserActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
-            >
+            android:windowSoftInputMode="adjustPan">
             <intent-filter android:icon="@mipmap/ic_launcher">
                 <action android:name="android.intent.action.GET_CONTENT" />
                 <category android:name="android.intent.category.OPENABLE" />

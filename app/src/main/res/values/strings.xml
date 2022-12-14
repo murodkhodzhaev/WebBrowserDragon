@@ -69,6 +69,7 @@
     <string name="settings_new_tab">New tab</string>
     <string name="settings_language">Language</string>
     <string name="settings_http_default">Default</string>
+    <string name="settings_http_user_choice">Manual agent</string>
 
     <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
 

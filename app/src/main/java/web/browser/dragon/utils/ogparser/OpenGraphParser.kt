@@ -3,6 +3,7 @@ package web.browser.dragon.utils.ogparser
 import android.content.Context
 import web.browser.dragon.model.OpenGraphResult
 import kotlinx.coroutines.*
+import web.browser.dragon.utils.settings.AGENTS
 import kotlin.coroutines.CoroutineContext
 
 class OpenGraphParser(
@@ -15,7 +16,7 @@ class OpenGraphParser(
 
     private var url: String = ""
 
-    private val AGENTS = mutableListOf(
+    private val fbfb = mutableListOf(
         "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)",
         "Mozilla",
         "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36",
@@ -56,8 +57,8 @@ class OpenGraphParser(
             return@withContext sharedPrefs?.getOpenGraphResult(url)
         }
 
-        AGENTS.forEach {
-            openGraphResult = jsoupNetworkCall.callUrl(url, it)
+        enumValues<AGENTS>().forEach {
+            openGraphResult = jsoupNetworkCall.callUrl(url, it.agent)
             val isResultNull = checkNullParserResult(openGraphResult)
             if (!isResultNull) {
                 openGraphResult?.let { sharedPrefs?.setOpenGraphResult(it, url) }

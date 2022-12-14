@@ -66,6 +66,8 @@
     <string name="settings_new_tab">Новая вкладка</string>
     <string name="settings_language">Язык</string>
     <string name="settings_http_default">По умолчанию</string>
+    <string name="settings_http_user_choice">Свой user agent</string>
+
 
     <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
 
