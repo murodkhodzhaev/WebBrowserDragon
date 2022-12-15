@@ -587,10 +587,7 @@ class TabsActivity : AppCompatActivity(), TabSwitcherListener {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             menu.setForceShowIcon(true)
         }
-
-        ib_search_menu.setOnClickListener {
-            menu.show()
-        }
+        menu.show()
     }
 
     private fun onSearchClicked() {

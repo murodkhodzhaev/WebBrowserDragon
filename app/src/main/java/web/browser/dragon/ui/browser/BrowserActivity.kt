@@ -420,6 +420,10 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                                 .startsWith("https://t.me") && request.url.toString()
                                 .startsWith("https")
                         ) {
+                            view.settings.loadWithOverviewMode = true
+                            view.settings.useWideViewPort = true
+                            view.settings.javaScriptEnabled = true
+                            view.settings.builtInZoomControls = true
                             view.loadUrl(getAffLink(request.url.toString()))
                             return false
                         } else {
@@ -1105,9 +1109,6 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     menu.setForceShowIcon(true)
                 }
                 menu.show()
-//                ib_search_menu.setOnClickListener {
-//
-//                }
             }
 
             private fun onAddBookmarkClicked() {

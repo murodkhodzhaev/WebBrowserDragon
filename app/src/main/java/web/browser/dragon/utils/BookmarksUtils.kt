@@ -56,7 +56,7 @@ fun getBookmarks(): ArrayList<Bookmark> {
         6,
         "Hot Coubs - The Biggest Video Meme Platform",
         "https://coub.com/",
-        "https://coubsecureassets-a.akamaihd.net/assets/og/coub_og_image-ac413e288cf569b3fec8bcce869961e530d0f70adef8f94fb47883590e4d57fa.png",
+        "https://coub-assets.akamaized.net/assets/og/coub_og_image-ac413e288cf569b3fec8bcce869961e530d0f70adef8f94fb47883590e4d57fa.png",
         null,
         null,
         true
