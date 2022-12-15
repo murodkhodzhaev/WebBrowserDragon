@@ -362,5 +362,6 @@
         <item>ar</item>
         <item>ja</item>
     </string-array>
+	<string name="settings_http_user_choice">"手動エージェント "</string>
 
 </resources>

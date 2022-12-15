@@ -66,6 +66,8 @@
     <string name="settings_new_tab">أقحم جديد</string>
     <string name="settings_language">لغة</string>
     <string name="settings_http_default">تقصير</string>
+    <string name="settings_http_user_choice">وكيل يدوي</string>
+
 
     <!--    !!!!!!!!!!!!!!!!!! ADDED !!!!!!!!!!!!!!!!!!!!!!!!-->
 
