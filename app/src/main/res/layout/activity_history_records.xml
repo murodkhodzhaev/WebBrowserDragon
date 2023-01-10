@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_3"
-    tools:context=".ui.history.HistoryRecordsActivity">
+    tools:context=".huawei.ui.history.HistoryRecordsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_toolbar"
