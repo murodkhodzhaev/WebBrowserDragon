@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="web.browser.dragon">
+    package="web.browser.dragon.huawei">
 
     <queries>
         <intent>
@@ -92,7 +92,7 @@
             android:name=".ui.settings.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.downloads.DownloadsActivity"
+            android:name=".database.history.downloads.DownloadsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.tabs.TabsActivity"
@@ -105,7 +105,7 @@
             android:name=".ui.browser.BrowserActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustResize">
             <intent-filter android:icon="@mipmap/ic_launcher">
                 <action android:name="android.intent.action.GET_CONTENT" />
                 <category android:name="android.intent.category.OPENABLE" />

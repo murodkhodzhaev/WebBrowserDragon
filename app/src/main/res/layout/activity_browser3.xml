@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.browser.BrowserActivity">
+    tools:context=".huawei.ui.browser.BrowserActivity">
 
     <!--    <WebView-->
     <!--        android:id="@+id/webView"-->
@@ -156,6 +156,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/cl_main_bar_browser"
                             tools:progress="35" />
+
                     </LinearLayout>
 
 
@@ -164,7 +165,12 @@
 
             <include
                 android:id="@+id/container"
-                layout="@layout/content_scrolling" />
+                layout="@layout/content_scrolling"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"/>
+
+
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/errorAnim"

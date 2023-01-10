@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "web.browser.dragon.huawei",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 8,
+      "versionName": "0.008",
+      "outputFile": "web-browser-dragon-huaweirelease-0.008 (8).apk"
+    }
+  ],
+  "elementType": "File"
+}
