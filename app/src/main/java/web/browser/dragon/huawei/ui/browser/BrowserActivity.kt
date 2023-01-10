@@ -50,7 +50,7 @@ import web.browser.dragon.huawei.model.Bookmark
 import web.browser.dragon.huawei.model.DownloadModel
 import web.browser.dragon.huawei.model.HistoryRecord
 import web.browser.dragon.huawei.model.OpenGraphResult
-import web.browser.dragon.huawei.database.history.downloads.DownloadsActivity
+import web.browser.dragon.huawei.ui.downloads.DownloadsActivity
 import web.browser.dragon.huawei.ui.history.HistoryRecordsActivity
 import web.browser.dragon.huawei.ui.home.HomeActivity
 import web.browser.dragon.huawei.ui.settings.SettingsActivity

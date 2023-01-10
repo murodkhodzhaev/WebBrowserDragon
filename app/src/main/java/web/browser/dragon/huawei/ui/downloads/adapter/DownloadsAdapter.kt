@@ -1,4 +1,4 @@
-package web.browser.dragon.huawei.database.history.downloads.adapter
+package web.browser.dragon.huawei.ui.downloads.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

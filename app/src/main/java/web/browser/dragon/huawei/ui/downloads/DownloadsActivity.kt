@@ -1,4 +1,4 @@
-package web.browser.dragon.huawei.database.history.downloads
+package web.browser.dragon.huawei.ui.downloads
 
 import android.content.ContentResolver
 import android.content.Context
@@ -16,7 +16,7 @@ import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.database.downloads.DownloadModelsViewModel
 import web.browser.dragon.huawei.database.downloads.DownloadModelsViewModelFactory
 import web.browser.dragon.huawei.model.DownloadModel
-import web.browser.dragon.huawei.database.history.downloads.adapter.DownloadsAdapter
+import web.browser.dragon.huawei.ui.downloads.adapter.DownloadsAdapter
 import kotlinx.android.synthetic.main.activity_downloads.*
 import timber.log.Timber
 import android.webkit.MimeTypeMap

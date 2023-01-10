@@ -44,7 +44,7 @@ import kotlinx.android.synthetic.main.activity_tabs.rv_search_engines
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.model.SearchEngine
 import web.browser.dragon.huawei.ui.browser.BrowserActivity
-import web.browser.dragon.huawei.database.history.downloads.DownloadsActivity
+import web.browser.dragon.huawei.ui.downloads.DownloadsActivity
 import web.browser.dragon.huawei.ui.history.HistoryRecordsActivity
 import web.browser.dragon.huawei.ui.home.HomeActivity
 import web.browser.dragon.huawei.ui.home.search.adapter.SearchEngineAdapter

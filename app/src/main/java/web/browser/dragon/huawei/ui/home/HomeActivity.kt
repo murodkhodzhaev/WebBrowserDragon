@@ -27,7 +27,7 @@ import web.browser.dragon.huawei.database.bookmarks.BookmarksViewModelFactory
 import web.browser.dragon.huawei.model.Bookmark
 import web.browser.dragon.huawei.model.SearchEngine
 import web.browser.dragon.huawei.ui.browser.BrowserActivity
-import web.browser.dragon.huawei.database.history.downloads.DownloadsActivity
+import web.browser.dragon.huawei.ui.downloads.DownloadsActivity
 import web.browser.dragon.huawei.ui.history.HistoryRecordsActivity
 import web.browser.dragon.huawei.ui.home.bookmarks.BookmarksAdapter
 import web.browser.dragon.huawei.ui.home.search.adapter.SearchEngineAdapter

@@ -92,7 +92,7 @@
             android:name=".ui.settings.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".database.history.downloads.DownloadsActivity"
+            android:name=".ui.downloads.DownloadsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.tabs.TabsActivity"
