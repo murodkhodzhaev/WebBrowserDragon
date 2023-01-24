@@ -15,6 +15,8 @@ class Admitad : AppCompatActivity(), TrackerListener {
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         AdmitadTracker.setLogEnabled(true)
         AdmitadTracker.initialize(
             applicationContext,

@@ -14,11 +14,8 @@ import android.graphics.Bitmap
 import android.media.MediaPlayer
 import android.media.MediaPlayer.OnCompletionListener
 import android.net.Uri
-import android.os.Build
+import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.Handler
-import android.os.HandlerThread
 import android.preference.PreferenceManager
 import android.print.PrintAttributes
 import android.print.PrintDocumentAdapter
@@ -48,7 +45,7 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.appsflyer.AppsFlyerLib
+import com.google.android.gms.location.*
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.chip.Chip
@@ -75,7 +72,7 @@ import web.browser.dragon.huawei.utils.other.unit.HelperUnit
 import web.browser.dragon.huawei.utils.other.unit.RecordUnit
 import web.browser.dragon.huawei.utils.other.view.*
 import kotlinx.android.synthetic.main.activity_main.*
-import web.browser.dragon.utils.other.view.NinjaWebView
+import web.browser.dragon.huawei.utils.other.view.NinjaWebView
 import java.util.*
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.collections.ArrayList
@@ -83,17 +80,24 @@ import kotlin.collections.ArrayList
 class MainActivity : AppCompatActivity(), BrowserController {
 
     companion object {
+
+        const val MY_PERMISSIONS_REQUEST_LOCATION = 99
+        const val MY_PERMISSIONS_REQUEST_BACKGROUND_LOCATION = 66
+
         fun newIntent(context: Context, url: String? = null): Intent {
             val intent = Intent(context, MainActivity::class.java)
             intent.putExtra(EXTRA_URL, url)
             return intent
         }
-        
+
         const val EXTRA_URL = "extra_url"
     }
 
     private var overViewTab: String? = null
     private var downloadReceiver: BroadcastReceiver? = null
+
+
+    lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
     private var adapter: RecordAdapter? = null
     private var sp: SharedPreferences? = null
@@ -122,10 +126,40 @@ class MainActivity : AppCompatActivity(), BrowserController {
     private val INPUT_FILE_REQUEST_CODE = 1
     private var mFilePathCallback: ValueCallback<Array<Uri>>? = null
 
+    private var fusedLocationProvider: FusedLocationProviderClient? = null
+    private val locationRequest: LocationRequest = LocationRequest.create().apply {
+        interval = 30
+        fastestInterval = 10
+        priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
+        maxWaitTime = 60
+    }
+
+    private var locationCallback: LocationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            val locationList = locationResult.locations
+            if (locationList.isNotEmpty()) {
+                //The last location in the list is the newest
+                val location = locationList.last()
+                Toast.makeText(
+                    this@MainActivity,
+                    "Got Location: " + location.toString(),
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            }
+        }
+    }
+
     // Classes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        fusedLocationProvider = LocationServices.getFusedLocationProviderClient(this)
+
+        checkLocationPermission()
+
+
 
         sp = PreferenceManager.getDefaultSharedPreferences(this)
 
@@ -179,6 +213,7 @@ class MainActivity : AppCompatActivity(), BrowserController {
                 TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
             main_content.setPadding(0, 0, 0, actionBarHeight)
         }
+
 
         downloadReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
@@ -270,6 +305,15 @@ class MainActivity : AppCompatActivity(), BrowserController {
         //Save open Tabs in shared preferences
         saveOpenedTabs()
         super.onPause()
+         if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            )
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+
+            fusedLocationProvider?.removeLocationUpdates(locationCallback)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -297,6 +341,18 @@ class MainActivity : AppCompatActivity(), BrowserController {
 
     override fun onResume() {
         super.onResume()
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+
+            fusedLocationProvider?.requestLocationUpdates(
+                locationRequest,
+                locationCallback,
+                Looper.getMainLooper()
+            )
+        }
+
+
         if (sp!!.getBoolean("sp_camera", false)) {
             if (ContextCompat.checkSelfPermission(
                     this,
@@ -2695,4 +2751,167 @@ class MainActivity : AppCompatActivity(), BrowserController {
         newConfig.setLocale(locale)
         return context.createConfigurationContext(newConfig)
     }
+    private fun checkLocationPermission() {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            ) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                AlertDialog.Builder(this)
+                    .setTitle("Location Permission Needed")
+                    .setMessage("This app needs the Location permission, please accept to use location functionality")
+                    .setPositiveButton(
+                        "OK"
+                    ) { _, _ ->
+                        //Prompt the user once explanation has been shown
+                        requestLocationPermission()
+                    }
+                    .create()
+                    .show()
+            } else {
+                // No explanation needed, we can request the permission.
+                requestLocationPermission()
+            }
+        } else {
+            checkBackgroundLocation()
+        }
+    }
+
+    private fun checkBackgroundLocation() {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_BACKGROUND_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            requestBackgroundLocationPermission()
+        }
+    }
+
+    private fun requestLocationPermission() {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+            ),
+            MY_PERMISSIONS_REQUEST_LOCATION
+        )
+    }
+
+    private fun requestBackgroundLocationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(
+                    Manifest.permission.ACCESS_BACKGROUND_LOCATION
+                ),
+                MY_PERMISSIONS_REQUEST_BACKGROUND_LOCATION
+            )
+        } else {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                MY_PERMISSIONS_REQUEST_LOCATION
+            )
+        }
+    }
 }
+
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<String>,
+//        grantResults: IntArray
+//    ) {
+//        when (requestCode) {
+//            MY_PERMISSIONS_REQUEST_LOCATION -> {
+//                // If request is cancelled, the result arrays are empty.
+//                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//                    // permission was granted, yay! Do the
+//                    // location-related task you need to do.
+//                    if (ContextCompat.checkSelfPermission(
+//                            this,
+//                            Manifest.permission.ACCESS_FINE_LOCATION
+//                        ) == PackageManager.PERMISSION_GRANTED
+//                    ) {
+//                        fusedLocationProvider?.requestLocationUpdates(
+//                            locationRequest,
+//                            locationCallback,
+//                            Looper.getMainLooper()
+//                        )
+//
+//                        // Now check background location
+//                        checkBackgroundLocation()
+//                    }
+//
+//                } else {
+//
+//                    // permission denied, boo! Disable the
+//                    // functionality that depends on this permission.
+//                    Toast.makeText(this, "permission denied", Toast.LENGTH_LONG).show()
+//
+//                    // Check if we are in a state where the user has denied the permission and
+//                    // selected Don't ask again
+//                    if (!ActivityCompat.shouldShowRequestPermissionRationale(
+//                            this,
+//                            Manifest.permission.ACCESS_FINE_LOCATION
+//                        )
+//                    ) {
+//                        startActivity(
+//                            Intent(
+//                                Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+//                                Uri.fromParts("package", this.packageName, null),
+//                            ),
+//                        )
+//                    }
+//                }
+//                return
+//            }
+//            MY_PERMISSIONS_REQUEST_BACKGROUND_LOCATION -> {
+//                // If request is cancelled, the result arrays are empty.
+//                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//                    // permission was granted, yay! Do the
+//                    // location-related task you need to do.
+//                    if (ContextCompat.checkSelfPermission(
+//                            this,
+//                            Manifest.permission.ACCESS_FINE_LOCATION
+//                        ) == PackageManager.PERMISSION_GRANTED
+//                    ) {
+//                        fusedLocationProvider?.requestLocationUpdates(
+//                            locationRequest,
+//                            locationCallback,
+//                            Looper.getMainLooper()
+//                        )
+//
+//                        Toast.makeText(
+//                            this,
+//                            "Granted Background Location Permission",
+//                            Toast.LENGTH_LONG
+//                        ).show()
+//                    }
+//                } else {
+//
+//                    // permission denied, boo! Disable the
+//                    // functionality that depends on this permission.
+//                    Toast.makeText(this, "permission denied", Toast.LENGTH_LONG).show()
+//                }
+//                return
+//
+//            }
+//        }
+    //}
+//}
+
+
+
+
+

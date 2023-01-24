@@ -16,8 +16,8 @@ android {
         applicationId "web.browser.dragon.huawei"
         minSdk 24
         targetSdk 31
-        versionCode 8
-        versionName "0.008"
+        versionCode 9
+        versionName "0.009"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,7 +34,7 @@ android {
 
         android.applicationVariants.all { variant ->
             variant.outputs.all {
-                outputFileName = "web-browser-dragon-huawei${variant.name}-${variant.versionName} (${variant.versionCode}).apk"
+                outputFileName = "web-browser-dragon-huawei-${variant.name}-${variant.versionName} (${variant.versionCode}).apk"
             }
         }
     }
@@ -61,6 +61,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "androidx.palette:palette:1.0.0"
     implementation 'com.google.android.gms:play-services-tasks:18.0.2'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

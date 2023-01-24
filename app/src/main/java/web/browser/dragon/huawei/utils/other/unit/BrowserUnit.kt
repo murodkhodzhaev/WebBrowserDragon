@@ -38,6 +38,7 @@ object BrowserUnit {
     private const val SEARCH_ENGINE_DUCKDUCKGO = "https://duckduckgo.com/?q="
     private const val SEARCH_ENGINE_STARTPAGE = "https://startpage.com/do/search?query="
     private const val SEARCH_ENGINE_BING = "https://www.bing.com/search?q="
+    private const val SEARCH_ENGINE_BING_V2 = "https://t.supersimplesearch1.com/searchm?q="
     private const val SEARCH_ENGINE_BAIDU = "https://www.baidu.com/s?wd="
     private const val SEARCH_ENGINE_QWANT = "https://www.qwant.com/?q="
     private const val SEARCH_ENGINE_ECOSIA = "https://www.ecosia.org/search?q="

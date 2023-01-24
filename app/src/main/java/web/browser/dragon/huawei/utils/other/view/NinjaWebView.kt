@@ -1,4 +1,4 @@
-package web.browser.dragon.utils.other.view
+package web.browser.dragon.huawei.utils.other.view
 
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
@@ -15,9 +15,7 @@ import android.preference.PreferenceManager
 import android.util.AttributeSet
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.webkit.CookieManager
-import android.webkit.WebSettings
-import android.webkit.WebView
+import android.webkit.*
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.app.NotificationCompat
@@ -25,20 +23,25 @@ import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
 import com.google.android.material.chip.Chip
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.content_scrolling.view.*
+import timber.log.Timber
 import web.browser.dragon.huawei.R
-import web.browser.dragon.ui.main.MainActivity
 import web.browser.dragon.huawei.utils.other.browser.*
 import web.browser.dragon.huawei.utils.other.database.FaviconHelper
 import web.browser.dragon.huawei.utils.other.database.Record
 import web.browser.dragon.huawei.utils.other.database.RecordAction
 import web.browser.dragon.huawei.utils.other.unit.BrowserUnit
-import timber.log.Timber
-import web.browser.dragon.huawei.utils.other.view.AlbumItem
-import java.lang.Exception
+import web.browser.dragon.ui.main.MainActivity
 import java.util.*
+
 
 class NinjaWebView : WebView, AlbumController {
     private var onScrollChangeListener: OnScrollChangeListener? = null
+
+
+
+
+
 
     constructor(context: Context?, attrs: AttributeSet?) : super(
         context!!, attrs
@@ -136,9 +139,21 @@ class NinjaWebView : WebView, AlbumController {
         webViewClient = NinjaWebViewClient(this)
         webChromeClient = NinjaWebChromeClient(this)
         downloadListener = NinjaDownloadListener(this.context)
+        webView.webChromeClient = object : WebChromeClient() {
+            override fun onGeolocationPermissionsShowPrompt(
+                origin: String,
+                callback: GeolocationPermissions.Callback
+            ) {
+                callback.invoke(origin, true, false)
+            }
+        }
+
+
+
         initWebView()
         initAlbum()
     }
+
 
     @Synchronized
     private fun initWebView() {
@@ -160,6 +175,13 @@ class NinjaWebView : WebView, AlbumController {
         if (Build.VERSION.SDK_INT >= 26) webSettings.safeBrowsingEnabled = true
         webSettings.setSupportZoom(true)
         webSettings.builtInZoomControls = true
+        webSettings.setGeolocationEnabled(true)
+        webSettings.setJavaScriptEnabled(true)
+
+        //Не помогает с геолокацией
+//        webSettings.setAppCacheEnabled(true)
+//        webSettings.setDatabaseEnabled(true)
+//        webSettings.setDomStorageEnabled(true)
         webSettings.displayZoomControls = false
         webSettings.setSupportMultipleWindows(true)
         webSettings.textZoom =
@@ -693,4 +715,10 @@ class NinjaWebView : WebView, AlbumController {
             0f
         )
     }
+    private val setWebChromeClient = object: WebChromeClient() {
+    }
+
+
+
+
 }

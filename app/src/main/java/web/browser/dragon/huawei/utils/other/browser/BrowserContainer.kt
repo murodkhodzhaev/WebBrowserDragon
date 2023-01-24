@@ -1,6 +1,6 @@
 package web.browser.dragon.huawei.utils.other.browser
 
-import web.browser.dragon.utils.other.view.NinjaWebView
+import web.browser.dragon.huawei.utils.other.view.NinjaWebView
 import java.util.*
 
 object BrowserContainer {

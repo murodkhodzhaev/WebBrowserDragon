@@ -451,6 +451,7 @@ class TabsActivity : AppCompatActivity(), TabSwitcherListener {
 
     private fun setSearchEngine() {
         val searchEngine = getSelectedSearchEngine(this)
+        val countryName =
 
         if (searchEngine != null) {
             saveSelectedSearchEngine(this, searchEngine)

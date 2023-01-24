@@ -264,7 +264,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             e.printStackTrace()
             return null
         }
-        return json
+        return json!!
     }
 
     private fun onIncognitoMode() {

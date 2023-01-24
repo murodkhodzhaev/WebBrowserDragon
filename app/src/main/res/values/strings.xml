@@ -56,7 +56,7 @@
     <!--    DownloadsActivity-->
     <string name="downloads_title">Downloads</string>
 
-<!--    SettingsActivity-->
+    <!--    SettingsActivity-->
     <string name="settings_title">Settings</string>
     <string name="settings_main_title">Main settings</string>
     <string name="settings_without_images">Without images</string>
@@ -356,15 +356,15 @@
     </string-array>
 
     <string-array name="languages_code">
-    <item>en</item>
-    <item>fr</item>
-    <item>es</item>
-    <item>zh</item>
-    <item>pt</item>
-    <item>ru</item>
-    <item>hi</item>
-    <item>ar</item>
-    <item>ja</item>
-</string-array>
+        <item>en</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>zh</item>
+        <item>pt</item>
+        <item>ru</item>
+        <item>hi</item>
+        <item>ar</item>
+        <item>ja</item>
+    </string-array>
 
 </resources>

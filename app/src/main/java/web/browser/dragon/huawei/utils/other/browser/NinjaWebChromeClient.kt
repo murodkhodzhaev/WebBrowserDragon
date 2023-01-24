@@ -13,15 +13,22 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.utils.other.unit.BrowserUnit
 import web.browser.dragon.huawei.utils.other.unit.HelperUnit
-import web.browser.dragon.utils.other.view.NinjaWebView
+import web.browser.dragon.huawei.utils.other.view.NinjaWebView
 import java.util.*
+
+
 
 class NinjaWebChromeClient(ninjaWebView: NinjaWebView) : WebChromeClient() {
 
+
+
     private val ninjaWebView: NinjaWebView
+
 
     override fun onProgressChanged(view: WebView, progress: Int) {
         super.onProgressChanged(view, progress)
+
+
         ninjaWebView.updateTitle(progress)
         if (Objects.requireNonNull(view.title)?.isEmpty() == true) {
             ninjaWebView.updateTitle(view.url)
@@ -29,6 +36,9 @@ class NinjaWebChromeClient(ninjaWebView: NinjaWebView) : WebChromeClient() {
             ninjaWebView.updateTitle(view.title)
         }
         ninjaWebView.updateFavicon(view.url)
+
+
+
     }
 
     override fun onCreateWindow(
@@ -37,6 +47,7 @@ class NinjaWebChromeClient(ninjaWebView: NinjaWebView) : WebChromeClient() {
         userGesture: Boolean,
         resultMsg: Message
     ): Boolean {
+
         val context = view.context
         val newWebView = NinjaWebView(context)
         view.addView(newWebView)
@@ -81,9 +92,13 @@ class NinjaWebChromeClient(ninjaWebView: NinjaWebView) : WebChromeClient() {
     ) {
         val activity = ninjaWebView.getContext() as Activity
         HelperUnit.grantPermissionsLoc(activity)
-        callback.invoke(origin, true, false)
         super.onGeolocationPermissionsShowPrompt(origin, callback)
+        callback.invoke(origin, true, false)
+
     }
+
+
+
 
     override fun onPermissionRequest(request: PermissionRequest) {
         val sp: SharedPreferences =
@@ -122,6 +137,7 @@ class NinjaWebChromeClient(ninjaWebView: NinjaWebView) : WebChromeClient() {
                 HelperUnit.setupDialog(ninjaWebView.getContext(), dialog)
             }
         }
+
     }
 
     override fun onReceivedIcon(view: WebView, icon: Bitmap) {

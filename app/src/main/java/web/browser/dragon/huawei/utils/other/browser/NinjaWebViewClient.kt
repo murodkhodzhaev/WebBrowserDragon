@@ -15,16 +15,15 @@ import android.widget.EditText
 import android.widget.ImageView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
+import timber.log.Timber
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.utils.other.database.Record
 import web.browser.dragon.huawei.utils.other.database.RecordAction
 import web.browser.dragon.huawei.utils.other.unit.BrowserUnit
 import web.browser.dragon.huawei.utils.other.unit.HelperUnit
 import web.browser.dragon.huawei.utils.other.unit.RecordUnit
-import timber.log.Timber
-import web.browser.dragon.utils.other.view.NinjaWebView
+import web.browser.dragon.huawei.utils.other.view.NinjaWebView
 import java.io.ByteArrayInputStream
-import java.lang.Exception
 import java.util.*
 
 class NinjaWebViewClient(ninjaWebView: NinjaWebView) : WebViewClient() {
@@ -586,6 +585,9 @@ class NinjaWebViewClient(ninjaWebView: NinjaWebView) : WebViewClient() {
             dialog1.cancel()
         }
     }
+
+
+
 
     init {
 //        context = ninjaWebView.getContext()

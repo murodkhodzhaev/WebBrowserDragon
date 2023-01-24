@@ -10,3 +10,5 @@ data class SearchEngine(
     val searchLink: String,
     var isSelected: Boolean = false
 ): Parcelable
+
+

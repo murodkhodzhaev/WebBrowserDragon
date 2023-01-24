@@ -45,10 +45,12 @@ import java.util.*
 import kotlin.collections.ArrayList
 import android.net.Uri
 import android.os.Build
+import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import web.browser.dragon.huawei.R
@@ -71,6 +73,7 @@ class HomeActivity : AppCompatActivity() {
         BookmarksViewModelFactory((this.application as WebBrowserDragon).bookmarksRepository)
     }
 
+
     private var searchEngineAdapter: SearchEngineAdapter? = null
     private var bookmarksAdapter: BookmarksAdapter? = null
     private var bookmarksPopularAdapter: BookmarksAdapter? = null
@@ -90,9 +93,43 @@ class HomeActivity : AppCompatActivity() {
 
     private var requestToWeb: String? = null
 
+   lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+
+
+   private var fusedLocationProvider: FusedLocationProviderClient? = null
+    private val locationRequest: LocationRequest = LocationRequest.create().apply {
+        interval = 30
+        fastestInterval = 10
+        priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
+        maxWaitTime = 60
+    }
+
+
+    private var locationCallback: LocationCallback = object : LocationCallback() {
+        override fun onLocationResult(locationResult: LocationResult) {
+            val locationList = locationResult.locations
+            if (locationList.isNotEmpty()) {
+                //The last location in the list is the newest
+                val location = locationList.last()
+             //   Toast.makeText(
+                   // this@HomeActivity,
+             //       "Got Location: " + location.toString(),
+                    Toast.LENGTH_LONG
+             //   )
+                //    .show()
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+
+        fusedLocationProvider = LocationServices.getFusedLocationProviderClient(this)
+
+
+
 
         startSettingsOfHome()
         setOnClickListeners()
@@ -108,8 +145,9 @@ class HomeActivity : AppCompatActivity() {
         val resolveInfo =
             packageManager.resolveActivity(browserIntent, PackageManager.MATCH_DEFAULT_ONLY)
 
-        return resolveInfo!!.activityInfo.packageName
+        return resolveInfo?.activityInfo!!.packageName
     }
+
 
     private fun incognitoMode() {
         if (isIncognitoMode(this)) {
@@ -322,7 +360,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setSearchEngine() {
-        val searchEngine = getSelectedSearchEngine(this)
+
+    val searchEngine = getSelectedSearchEngine(this)
 
         if (searchEngine != null) {
             saveSelectedSearchEngine(this, searchEngine)
@@ -362,7 +401,8 @@ class HomeActivity : AppCompatActivity() {
         if (!searchText.isNullOrEmpty()) {
             if (searchText.contains(".") && !searchText.contains(" ")) {
                 requestToWeb =
-                    if (searchText.startsWith("http://") || searchText.startsWith("https://")) searchText else "http://$searchText"
+                    if (searchText.startsWith("http://") || searchText.startsWith("https://")) searchText
+                    else "http://$searchText"
 
                 createHttpTask(requestToWeb!!)
                     .addOnSuccessListener {
@@ -504,10 +544,14 @@ class HomeActivity : AppCompatActivity() {
 
         activityResultLauncher.launch(
             arrayOf(
+
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.MANAGE_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA
+                Manifest.permission.CAMERA,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+
             )
         )
         setFirstRequestPermissions(this, false)
@@ -536,10 +580,31 @@ class HomeActivity : AppCompatActivity() {
         if (isFirstRequestPermissions(this)) {
             grantPermissions()
         }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+
+            fusedLocationProvider?.requestLocationUpdates(
+                locationRequest,
+                locationCallback,
+                Looper.getMainLooper()
+            )
+        }
     }
 
     override fun onResume() {
         super.onResume()
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+            == PackageManager.PERMISSION_GRANTED
+        ) {
+
+            fusedLocationProvider?.requestLocationUpdates(
+                locationRequest,
+                locationCallback,
+                Looper.getMainLooper()
+            )
+        }
 
         currentTabs.clear()
         for (item in getSharedPreferences(
@@ -568,6 +633,19 @@ class HomeActivity : AppCompatActivity() {
 
         incognitoMode()
     }
+//    override fun onPause() {
+//        //Save open Tabs in shared preferences
+//        super.onPause()
+//        if (ContextCompat.checkSelfPermission(
+//                this,
+//                Manifest.permission.ACCESS_FINE_LOCATION
+//            )
+//            == PackageManager.PERMISSION_GRANTED
+//        ) {
+//
+//            fusedLocationProvider?.removeLocationUpdates(locationCallback)
+//        }
+//    }
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(applySelectedAppLanguage(base))
@@ -636,4 +714,5 @@ class HomeActivity : AppCompatActivity() {
         tv_popular_title.startAnimation(btt4)
         rv_popular.startAnimation(btt4)
     }
+
 }

@@ -45,6 +45,7 @@ object HelperUnit {
     private const val REQUEST_CODE_ASK_PERMISSIONS_1 = 1234
     private const val REQUEST_CODE_ASK_PERMISSIONS_2 = 12345
     private const val REQUEST_CODE_ASK_PERMISSIONS_3 = 123456
+   // private const val REQUEST_CODE_ASK_PERMISSIONS_4 = 1234567
     private var sp: SharedPreferences? = null
 
     fun grantPermissionsLoc(activity: Activity) {
@@ -106,7 +107,11 @@ object HelperUnit {
             dialog.show()
             setupDialog(activity, dialog)
         }
+
     }
+
+
+
 
     fun saveAs(dialogToCancel: AlertDialog, activity: Activity, url: String?) {
         try {

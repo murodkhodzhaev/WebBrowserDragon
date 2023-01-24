@@ -43,6 +43,10 @@ object Constants {
         const val MONETIZE_API_PUBLIC_KEY = "abd6b5a0e0342a61f531fc2ca293760e16c9f0a8"
         const val MONETIZE_API_BASE_URL = "https://api.monetize.admitad.com/v1/product/monetize-api/v1/"
     }
+
+
+
+
 }
 
 
