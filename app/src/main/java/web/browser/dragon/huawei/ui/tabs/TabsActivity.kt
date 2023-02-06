@@ -286,7 +286,10 @@ class TabsActivity : AppCompatActivity(), TabSwitcherListener {
         return tab
     }
 
-    override fun onSwitcherShown(tabSwitcher: TabSwitcher) {}
+    override fun onSwitcherShown(tabSwitcher: TabSwitcher) {
+
+
+    }
     override fun onSwitcherHidden(tabSwitcher: TabSwitcher) {
         if (snackbar != null) {
             snackbar!!.dismiss()
@@ -316,7 +319,7 @@ class TabsActivity : AppCompatActivity(), TabSwitcherListener {
                     )
                 )
             } else {
-                isStartLaunchTabs = false
+                isStartLaunchTabs = true
             }
         }
     }
@@ -672,7 +675,7 @@ class TabsActivity : AppCompatActivity(), TabSwitcherListener {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rv_search_engines?.adapter = searchEngineAdapter
 
-        searchEngineAdapter?.updateData(getSearchEngines(this))
+        searchEngineAdapter?.updateData(getSearchEngines(this ))
     }
 
     private fun onSearchEngineClicked(searchEngine: SearchEngine) {
@@ -693,6 +696,7 @@ class TabsActivity : AppCompatActivity(), TabSwitcherListener {
 
     override fun onResume() {
         super.onResume()
+
 
         val newestLanguage = getSharedPreferences(
             Constants.Settings.SETTINGS_LANGUAGE,
@@ -759,11 +763,11 @@ class TabsActivity : AppCompatActivity(), TabSwitcherListener {
         //Button
         val button_course = AnimationUtils.loadAnimation(this, R.anim.button_course)
 
-        val rc = findViewById(R.id.rv_search_engines) as RecyclerView
-        val cl_main_bar = findViewById(R.id.cl_main_bar) as ConstraintLayout
-        val tab_switcher = findViewById(R.id.tab_switcher) as TabSwitcher
+        val rc = findViewById<RecyclerView>(R.id.rv_search_engines)
+        val cl_main_bar = findViewById<ConstraintLayout>(R.id.cl_main_bar)
+        val tab_switcher = findViewById<TabSwitcher>(R.id.tab_switcher)
 
-        val cl_buttons_tabs = findViewById(R.id.cl_buttons_tabs) as ConstraintLayout
+        val cl_buttons_tabs = findViewById<ConstraintLayout>(R.id.cl_buttons_tabs)
 
         rc.startAnimation(btt)
         cl_main_bar.startAnimation(btt2)

@@ -1,9 +1,11 @@
 package web.browser.dragon.huawei.ui.browser
 
 
+import android.Manifest
 import android.app.Activity
 import android.content.*
 import android.content.pm.ActivityInfo
+import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.content.res.Configuration
 import android.graphics.Bitmap
@@ -12,6 +14,7 @@ import android.net.Uri
 import android.net.http.SslError
 import android.os.*
 import android.provider.MediaStore
+import android.telephony.TelephonyManager
 import android.util.Log
 import android.view.*
 import android.view.View.GONE
@@ -24,6 +27,7 @@ import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
@@ -62,20 +66,25 @@ import web.browser.dragon.huawei.utils.ogparser.OpenGraphCallback
 import web.browser.dragon.huawei.utils.ogparser.OpenGraphParser
 import web.browser.dragon.huawei.utils.other.unit.BrowserUnit
 import web.browser.dragon.huawei.utils.settings.getSettings
+import web.browser.dragon.ui.main.MainActivity.Companion.MY_PERMISSIONS_REQUEST_LOCATION
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
+import java.net.URLDecoder
 import java.nio.charset.StandardCharsets.UTF_8
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.Callable
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
 
 open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
+
 
     private var lastUrl: String? = null
     private var currentCount: Int = 0
@@ -102,6 +111,8 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             intent.putExtra(FROM_TABS, isFromTabs)
             intent.putExtra(COUNT_TAB, countTab)
             intent.putExtra(SITE_AVAILABILITY, isSiteAvailability)
+
+
             return intent
         }
 
@@ -154,6 +165,9 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         windowInsetsController.systemBarsBehavior =
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+    }
+    fun getCountryCode(countryName: String) = Locale.getISOCountries().find {
+        Locale("", it).displayCountry == countryName
     }
 
 
@@ -345,6 +359,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         val webSettings = webView?.settings
         webSettings?.javaScriptEnabled = getSettings(this)?.enableJavaScript ?: true
         webSettings?.domStorageEnabled = true
+
         webSettings?.allowFileAccess = true
         webSettings?.blockNetworkImage = getSettings(this)?.withoutImages ?: false
         webSettings?.loadsImagesAutomatically = true
@@ -359,16 +374,36 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         )
     }
 
+
+    open fun shouldOverrideUrlLoading(view: WebView?, url: String): Boolean {
+        var url = url
+        if (url.startsWith("intent://") && url.contains("scheme=http")) {
+            url = Uri.decode(url)
+            var bkpUrl: String? = null
+            val regexBkp: Pattern = Pattern.compile("intent://(.*?)#")
+            val regexMatcherBkp: Matcher = regexBkp.matcher(url)
+            return if (regexMatcherBkp.find()) {
+                bkpUrl = regexMatcherBkp.group(1)
+                val myIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://$bkpUrl"))
+                startActivity(myIntent)
+                true
+            } else {
+                false
+            }
+        }
+        return false
+    }
     private fun setWebView() {
         updateSettings()
 
         webView.settings.userAgentString = Constants.Search.USER_AGENT
         webView.settings.userAgentString = webView.settings.userAgentString.replace("; wv)", ")");
-        webView.settings.loadWithOverviewMode = true;
-        webView.settings.useWideViewPort = true;
-        webView.settings.allowFileAccess = true;
-        webView.settings.allowContentAccess = true;
-        webView.settings.domStorageEnabled = true;
+        webView.settings.loadWithOverviewMode = true
+        webView.settings.useWideViewPort = true
+        webView.settings.setGeolocationEnabled(true)
+        webView.settings.allowFileAccess = true
+        webView.settings.allowContentAccess = true
+        webView.settings.domStorageEnabled = true
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
         webView.requestFocus();
 
@@ -404,13 +439,17 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             webView?.settings!!.saveFormData = false
         }
 
-        webView?.webViewClient = object : WebViewClient() {
 
+
+        webView?.webViewClient = object : WebViewClient() {
                     override fun shouldOverrideUrlLoading(
                         view: WebView,
                         request: WebResourceRequest,
                     ): Boolean {
+
+
                         if (!request.url.toString()
+                                .startsWith("intent://")&& !request.url.toString()
                                 .startsWith("https://m.youtube") && !request.url.toString()
                                 .startsWith("https://youtube") && !request.url.toString()
                                 .startsWith("https://m.facebook.com") && !request.url.toString()
@@ -421,11 +460,17 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                                 .startsWith("https://www.facebook.com") && !request.url.toString()
                                 .startsWith("https://t.me") && request.url.toString()
                                 .startsWith("https")
+
+
                         ) {
                             view.settings.loadWithOverviewMode = true
                             view.settings.useWideViewPort = true
+                            view.settings.setGeolocationEnabled(true)
+                            view.settings.javaScriptCanOpenWindowsAutomatically = true
                             view.settings.javaScriptEnabled = true
                             view.settings.builtInZoomControls = true
+                            view.settings.databaseEnabled = true
+                            view.settings.domStorageEnabled = true
                             view.loadUrl(getAffLink(request.url.toString()))
                             return false
                         } else {
@@ -440,7 +485,18 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                                 (request.url.toString().startsWith("https://facebook"))
                                 (request.url.toString().startsWith("https://facebook.com"))
                                 (request.url.toString().startsWith("https://m.youtube"))
+                                (request.url.toString().startsWith("intent://"))
                                 val packageManager = packageManager
+
+                                val FALLBACK_URL = "browser_fallback_url="
+                                val url = request.url
+                                val urlString = url.toString()
+                                val fallbackUrl = urlString.subSequence(
+                                    urlString.indexOf(FALLBACK_URL) + FALLBACK_URL.length,
+                                    urlString.length)
+                                    .toString()
+                                webView.loadUrl(URLDecoder.decode(fallbackUrl, "UTF-8"))
+
 
 
                                 val host = webView?.context as Activity
@@ -453,11 +509,37 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                             } catch (e: ActivityNotFoundException) {
                                 false
                             }
+
                         }
+
+                        // не помогает
+//                        if (!request.url.toString().startsWith("intent://")) {
+//                            try {
+//                                val context = view.context
+//                                if (intent != null) {
+//                                    view.stopLoading()
+//                                    val packageManager = context.packageManager
+//                                    val info =
+//                                        packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
+//                                    if (info != null) {
+//                                        context.startActivity(intent)
+//                                    } else {
+//                                        val fallbackUrl = intent.getStringExtra("browser_fallback_url")
+//                                        view.loadUrl(fallbackUrl!!)
+//                                    }
+//                                    return true
+//                                }
+//                            } catch (e: URISyntaxException) {
+//                                }
+//                            }
+//
+//                    }
                     }
 
                     //            Для старых устройств
                     override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+
+
                         if (!url.toString().startsWith("https://m.youtube") && !url.toString()
                                 .startsWith("https://youtube") && !url.toString()
                                 .startsWith("https://m.facebook.com") && !url.toString()
@@ -466,6 +548,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                                 .startsWith("https://market.android.com/details?id=") && !url.toString()
                                 .startsWith("https://play.google.com/store/") && !url.toString()
                                 .startsWith("https://t.me")
+
                         ) {
 
                             return false
@@ -479,6 +562,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                                 (url.startsWith("https://m.facebook.com"))
                                 (url.startsWith("https://m.youtube.com"))
                                 (url.startsWith("https://m.youtube"))
+
 
                                 val packageManager = packageManager
                                 val resolvedActivities: MutableList<ResolveInfo?> =
@@ -614,9 +698,58 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         webView.settings.allowFileAccess = true
         webView.settings.mixedContentMode = 0
         webView.settings.javaScriptEnabled = true
+        webView.settings.setGeolocationEnabled(true)
         webView.settings.javaScriptCanOpenWindowsAutomatically = true
         webView?.webChromeClient = object : WebChromeClient() {
+            override fun onGeolocationPermissionsShowPrompt(
+                origin: String,
+                callback: GeolocationPermissions.Callback
+            ) {
+                // = null
+            //    mGeoLocationCallback = null
+                // Do We need to ask for permission?
+                if (ContextCompat.checkSelfPermission(
+                        this@BrowserActivity,
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
 
+                    // Should we show an explanation?
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(
+                            this@BrowserActivity,
+                            Manifest.permission.ACCESS_FINE_LOCATION
+                        )
+                    ) {
+
+                        AlertDialog.Builder(this@BrowserActivity)
+                        //    .setMessage(R.string.permission_location_rationale)
+                            .setNeutralButton(android.R.string.ok) { _, _ ->
+                             //   mGeoLocationRequestOrigin = origin
+                               // mGeoLocationCallback = callback
+                                ActivityCompat.requestPermissions(
+                                    this@BrowserActivity,
+                                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                                    MY_PERMISSIONS_REQUEST_LOCATION
+                                )
+                            }
+                            .show()
+
+                    } else {
+                        // No explanation needed, we can request the permission.
+
+                     //   mGeoLocationRequestOrigin = origin
+                      //  mGeoLocationCallback = callback
+                        ActivityCompat.requestPermissions(
+                            this@BrowserActivity,
+                            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                            MY_PERMISSIONS_REQUEST_LOCATION
+                        )
+                    }
+                } else {
+                    // Tell the WebView that permission has been granted
+                    callback.invoke(origin, true, false)
+                }
+            }
                     private var customView: View? = null
                     private var customViewCallback: CustomViewCallback? = null
                     private var originalOrientation = 0
@@ -1023,7 +1156,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 if (!searchText.isNullOrEmpty()) {
                     if (searchText.contains(".") && !searchText.contains(" ")) {
                         requestToWeb =
-                            if (searchText.startsWith("http://") || searchText.startsWith("https://")) searchText else "http://$searchText"
+                            if (searchText.startsWith("http://") || searchText.startsWith("https://"))searchText else "http://$searchText"
                         createHttpTask(requestToWeb!!)
                             .addOnSuccessListener {
                                 isSiteAvailability = true
@@ -1317,6 +1450,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     }
                 })
             }
+
 }
 
 

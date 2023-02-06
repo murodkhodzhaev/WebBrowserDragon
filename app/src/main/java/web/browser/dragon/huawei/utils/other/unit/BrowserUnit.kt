@@ -38,7 +38,6 @@ object BrowserUnit {
     private const val SEARCH_ENGINE_DUCKDUCKGO = "https://duckduckgo.com/?q="
     private const val SEARCH_ENGINE_STARTPAGE = "https://startpage.com/do/search?query="
     private const val SEARCH_ENGINE_BING = "https://www.bing.com/search?q="
-    private const val SEARCH_ENGINE_BING_V2 = "https://t.supersimplesearch1.com/searchm?q="
     private const val SEARCH_ENGINE_BAIDU = "https://www.baidu.com/s?wd="
     private const val SEARCH_ENGINE_QWANT = "https://www.qwant.com/?q="
     private const val SEARCH_ENGINE_ECOSIA = "https://www.ecosia.org/search?q="
@@ -395,7 +394,7 @@ object BrowserUnit {
     fun intentURL(context: Context, uri: Uri?) {
         val browserIntent = Intent(Intent.ACTION_VIEW)
         browserIntent.data = uri
-        browserIntent.setPackage("web.browser.dragon")
+        browserIntent.setPackage("web.browser.dragon.huawei")
         val chooser =
             Intent.createChooser(browserIntent, context.getString(R.string.menu_open_with))
         context.startActivity(chooser)
@@ -406,7 +405,7 @@ object BrowserUnit {
         if (sp.getBoolean(
                 "sp_tabBackground",
                 false
-            ) && intent.getPackage() != "web.browser.dragon"
+            ) && intent.getPackage() != "web.browser.dragon.huawei"
         ) {
             val intentP = Intent(activity, BrowserActivity::class.java)
             val pendingIntent =

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".huawei.ui.browser.BrowserActivity">
+    tools:context="web.browser.dragon.huawei.ui.browser.BrowserActivity">
 
     <!--    <WebView-->
     <!--        android:id="@+id/webView"-->
@@ -163,14 +163,14 @@
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
             </com.google.android.material.appbar.AppBarLayout>
 
+
             <include
                 android:id="@+id/container"
                 layout="@layout/content_scrolling"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:layout_marginBottom="10dp"/>
-
-
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="10dp" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/errorAnim"

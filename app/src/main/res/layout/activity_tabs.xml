@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".huawei.ui.tabs.TabsActivity">
+    tools:context="web.browser.dragon.huawei.ui.tabs.TabsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_search_engines"
@@ -93,17 +93,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
+        android:background="@color/white"
+        app:emptyView="@layout/empty_view"
+        app:layoutPolicy="auto"
         app:layout_constraintBottom_toTopOf="@id/cl_buttons_tabs"
         app:layout_constraintTop_toBottomOf="@id/cl_main_bar"
-        android:background="@color/white"
-        app:layoutPolicy="auto"
+        app:layout_constraintVertical_bias="1.0"
+        app:tabBackgroundColor="@color/tab_background_color_light"
+        app:tabCloseButtonIcon="@drawable/ic_close_18dp"
+        app:tabContentBackgroundColor="@color/tab_content_background_color_light"
         app:tabIcon="@drawable/ic_file_outline_18dp"
         app:tabIconTint="@android:color/black"
-        app:tabBackgroundColor="@color/tab_background_color_light"
-        app:tabContentBackgroundColor="@color/tab_content_background_color_light"
         app:tabTitleTextColor="@color/tab_title_text_color"
-        app:tabCloseButtonIcon="@drawable/ic_close_18dp"
-        app:emptyView="@layout/empty_view"/>
+        tools:layout_editor_absoluteX="0dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_buttons_tabs"

@@ -4,11 +4,10 @@ package web.browser.dragon.huawei.utils
 
 import android.content.Context
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.model.SearchEngine
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 fun saveSelectedSearchEngine(context: Context, searchEngine: SearchEngine?) {
     context.getSharedPreferences(Constants.Search.SEARCH, Context.MODE_PRIVATE)
@@ -110,13 +109,22 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
 //    val objectType = object : TypeToken<ArrayList<SearchEngine>>() {}.type
 //    return Gson().fromJson(objectJson, objectType) ?: arrayListOf()
 //}
-fun getCountryCode(countryName: String) = Locale.getISOCountries().find {
+fun getCountryCode(countryName:String): String? = Locale.getISOCountries().find {
        Locale("", it).displayCountry == countryName
     }
 
+
+
 fun getSearchEngines(context: Context): ArrayList<SearchEngine> {
-    val countryName = getCountryCode("")
+
+    val countryName = getCountryCode("Canada")
+
+
+
+
+
     val arr = arrayListOf<SearchEngine>()
+
 
     arr.add(
         SearchEngine(
@@ -133,24 +141,39 @@ fun getSearchEngines(context: Context): ArrayList<SearchEngine> {
             "https://yandex.ru/search/?&text="
         )
     )
-    if ((countryName == "US") || ((countryName == "FR") || (countryName == "CA") ||
-                ((countryName == "DE") || (countryName == "GB") || (countryName == "AU")))
-    ) {
+
+
+    if ((countryName == "US") ||
+        (countryName == "FR") ||
+        (countryName == "CA") ||
+        (countryName == "DE") ||
+        (countryName == "GB") ||
+        (countryName == "AU")
+
+    )
+
+
+     {
         arr.add(
             SearchEngine(
                 2,
                 context.getString(R.string.bing),
                 "https://t.supersimplesearch1.com/searchm?q="
+//            "https://www.google.com/search?q="
+
+
 
             )
-        )
 
+        )
     } else {
         arr.add(
             SearchEngine(
                 2,
                 context.getString(R.string.bing),
-                "https://www.bing.com/search?q="
+              "https://www.bing.com/search?q="
+            //"https://www.youtube.com"
+
 
             )
         )
@@ -166,6 +189,10 @@ fun getSearchEngines(context: Context): ArrayList<SearchEngine> {
     )
     return arr
 }
+
+
+
+
 
 
 

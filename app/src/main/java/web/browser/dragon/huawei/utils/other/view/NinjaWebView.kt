@@ -38,11 +38,6 @@ import java.util.*
 class NinjaWebView : WebView, AlbumController {
     private var onScrollChangeListener: OnScrollChangeListener? = null
 
-
-
-
-
-
     constructor(context: Context?, attrs: AttributeSet?) : super(
         context!!, attrs
     ) {
@@ -140,6 +135,7 @@ class NinjaWebView : WebView, AlbumController {
         webChromeClient = NinjaWebChromeClient(this)
         downloadListener = NinjaDownloadListener(this.context)
         webView.webChromeClient = object : WebChromeClient() {
+
             override fun onGeolocationPermissionsShowPrompt(
                 origin: String,
                 callback: GeolocationPermissions.Callback
@@ -171,12 +167,13 @@ class NinjaWebView : WebView, AlbumController {
         val profileOriginal = profile
         val webSettings = settings
         val userAgent = getUserAgent(isDesktopMode)
-        webSettings.setUserAgentString(userAgent)
+        webSettings.userAgentString = userAgent
         if (Build.VERSION.SDK_INT >= 26) webSettings.safeBrowsingEnabled = true
         webSettings.setSupportZoom(true)
         webSettings.builtInZoomControls = true
         webSettings.setGeolocationEnabled(true)
-        webSettings.setJavaScriptEnabled(true)
+        webSettings.javaScriptEnabled = true
+        webSettings.javaScriptCanOpenWindowsAutomatically = true
 
         //Не помогает с геолокацией
 //        webSettings.setAppCacheEnabled(true)
@@ -581,6 +578,7 @@ class NinjaWebView : WebView, AlbumController {
         }
     }
 
+
     @Synchronized
     override fun destroy() {
         stopLoading()
@@ -631,6 +629,7 @@ class NinjaWebView : WebView, AlbumController {
         settings.loadWithOverviewMode = isDesktopMode
         if (reload) reload()
     }
+
 
     fun toggleNightMode() {
         isNightMode = !isNightMode
@@ -691,6 +690,7 @@ class NinjaWebView : WebView, AlbumController {
         this.stopped = stopped
     }
 
+
     companion object {
         private val NEGATIVE_COLOR = floatArrayOf(
             -1.0f,
@@ -714,8 +714,6 @@ class NinjaWebView : WebView, AlbumController {
             1.0f,
             0f
         )
-    }
-    private val setWebChromeClient = object: WebChromeClient() {
     }
 
 

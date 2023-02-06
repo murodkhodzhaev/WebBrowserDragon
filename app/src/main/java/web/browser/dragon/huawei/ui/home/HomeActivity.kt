@@ -105,6 +105,10 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
+
+
+
+
     private var locationCallback: LocationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
             val locationList = locationResult.locations
@@ -112,9 +116,9 @@ class HomeActivity : AppCompatActivity() {
                 //The last location in the list is the newest
                 val location = locationList.last()
              //   Toast.makeText(
-                   // this@HomeActivity,
+//                    this@HomeActivity,
              //       "Got Location: " + location.toString(),
-                    Toast.LENGTH_LONG
+            //        Toast.LENGTH_LONG
              //   )
                 //    .show()
             }
@@ -214,6 +218,7 @@ class HomeActivity : AppCompatActivity() {
             }
         })
     }
+
 
     private fun observeBookmarksPopular() {
         bookmarksViewModel.popularBookmarks.observe(this, androidx.lifecycle.Observer {
@@ -378,7 +383,7 @@ class HomeActivity : AppCompatActivity() {
             showMenu()
         }
         iv_search?.setOnClickListener {
-            onSearchClicked()
+            onSearchClicked().clear()
         }
         b_tabs?.setOnClickListener {
             if (b_tabs.text != "0") startActivity(TabsActivity.newIntent(this))
@@ -401,7 +406,9 @@ class HomeActivity : AppCompatActivity() {
         if (!searchText.isNullOrEmpty()) {
             if (searchText.contains(".") && !searchText.contains(" ")) {
                 requestToWeb =
-                    if (searchText.startsWith("http://") || searchText.startsWith("https://")) searchText
+                    if (searchText.startsWith("http://") ||
+                        searchText.startsWith("https://"))
+                        searchText
                     else "http://$searchText"
 
                 createHttpTask(requestToWeb!!)
@@ -443,6 +450,7 @@ class HomeActivity : AppCompatActivity() {
                                         )
                                     )
                                 }
+
                         } else {
                             startActivity(
                                 BrowserActivity.newIntent(
@@ -550,7 +558,7 @@ class HomeActivity : AppCompatActivity() {
                 Manifest.permission.MANAGE_EXTERNAL_STORAGE,
                 Manifest.permission.CAMERA,
                 Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
 
             )
         )
@@ -668,6 +676,8 @@ class HomeActivity : AppCompatActivity() {
 
     private val mExecutor: Executor = Executors.newSingleThreadExecutor()
 
+
+
     private fun createHttpTask(u: String): Task<String> {
         return Tasks.call(mExecutor, Callable<String> {
             val url = URL(u)
@@ -715,4 +725,8 @@ class HomeActivity : AppCompatActivity() {
         rv_popular.startAnimation(btt4)
     }
 
+}
+
+private fun Unit.clear() {
+    TODO("Not yet implemented")
 }
