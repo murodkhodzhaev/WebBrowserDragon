@@ -8,13 +8,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import web.browser.dragon.huawei.utils.Constants.CheckUrl.MONETIZE_API_BASE_URL
 import web.browser.dragon.huawei.utils.Constants.CheckUrl.MONETIZE_API_PUBLIC_KEY
-import web.browser.dragon.huawei.utils.getCountryCode
 import web.browser.dragon.huawei.utils.other.browser.MonetizeApi
 
 class BrowserViewModel : ViewModel() {
     private val _links = MutableLiveData<List<String>>()
     val links: LiveData<List<String>> = _links
-    val countryName = getCountryCode("Canada")
+        // val countryName = getCountryCode("Canada")
 
     fun getLinks(url: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -34,16 +33,6 @@ class BrowserViewModel : ViewModel() {
                 key = "Bearer $MONETIZE_API_PUBLIC_KEY",
                 body = map
             )
-//          if ((countryName == "US") ||
-//                    (countryName == "BD") ||
-//                    (countryName == "CA") ||
-//                    (countryName == "DE") ||
-//                    (countryName == "IN") ||
-//                    (countryName == "IT") ||
-//                    (countryName == "RU") ||
-//                    (countryName == "FR")
-//
-//          )
 
             if (result.isSuccessful) {
                 _links.postValue((result.body()?.data?.map { it.deeplink } ?: mutableListOf()))

@@ -166,9 +166,6 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
     }
-    fun getCountryCode(countryName: String) = Locale.getISOCountries().find {
-        Locale("", it).displayCountry == countryName
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -46,6 +46,7 @@ import kotlin.collections.ArrayList
 import android.net.Uri
 import android.os.Build
 import android.os.Looper
+import android.telephony.TelephonyManager
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -61,6 +62,7 @@ import java.net.URL
 import java.util.concurrent.Callable
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
+
 
 
 class HomeActivity : AppCompatActivity() {
@@ -89,11 +91,13 @@ class HomeActivity : AppCompatActivity() {
 
     private var isShowEditDialog = false
 
+
     private var isSiteAvailability = false
 
     private var requestToWeb: String? = null
 
    lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+
 
 
    private var fusedLocationProvider: FusedLocationProviderClient? = null
@@ -128,7 +132,6 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
 
         fusedLocationProvider = LocationServices.getFusedLocationProviderClient(this)
 
@@ -365,10 +368,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setSearchEngine() {
-
-    val searchEngine = getSelectedSearchEngine(this)
-
-        if (searchEngine != null) {
+        val searchEngine = getSelectedSearchEngine(this)
+         if (searchEngine != null) {
             saveSelectedSearchEngine(this, searchEngine)
             searchEngineAdapter?.selectItem(searchEngine)
         } else {
@@ -383,7 +384,7 @@ class HomeActivity : AppCompatActivity() {
             showMenu()
         }
         iv_search?.setOnClickListener {
-            onSearchClicked().clear()
+            onSearchClicked()
         }
         b_tabs?.setOnClickListener {
             if (b_tabs.text != "0") startActivity(TabsActivity.newIntent(this))
@@ -500,6 +501,9 @@ class HomeActivity : AppCompatActivity() {
         bookmarksPopularAdapter = BookmarksAdapter(arrayListOf(), {
             onPopularBookmarkClicked(it)
         }, {}, {})
+
+
+
         rv_popular?.layoutManager = GridLayoutManager(this, 2)
         rv_popular?.adapter = bookmarksPopularAdapter
 
@@ -727,6 +731,3 @@ class HomeActivity : AppCompatActivity() {
 
 }
 
-private fun Unit.clear() {
-    TODO("Not yet implemented")
-}

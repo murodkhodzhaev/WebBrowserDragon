@@ -3,6 +3,8 @@
 package web.browser.dragon.huawei.utils
 
 import android.content.Context
+import android.os.Build
+import android.os.LocaleList
 import com.google.gson.Gson
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.model.SearchEngine
@@ -27,17 +29,6 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
         null
     }
 }
-        //var countryName1 = getSearchEngines
-//        val country = countryName
-//       if (country == "US") || (country == "FR") || (country == "DE") || (country == "GB") || (country == "CA"){
-//           return
-//
-//
-//            }
-//              else(country != "US") || (country != "FR")|| (country != "DE") || (country != "GB") || (country != "CA"){
-//
-//        }
-//    }
 
 
 
@@ -109,86 +100,111 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
 //    val objectType = object : TypeToken<ArrayList<SearchEngine>>() {}.type
 //    return Gson().fromJson(objectJson, objectType) ?: arrayListOf()
 //}
-fun getCountryCode(countryName:String): String? = Locale.getISOCountries().find {
-       Locale("", it).displayCountry == countryName
-    }
+
+//
+//var tm = this.getSystemService(TELEPHONY_SERVICE) as TelephonyManager
+//var countryCodeValue = tm.networkCountryIso
+//fun getCountryCode(countryName:String) = Locale.getISOCountries().find {
+//       Locale("", it).displayCountry == countryName
+//}
+
+//
+//fun getUserCountry(context: Context): String? {
+//    try {
+//        val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+//        val simCountry = tm.simCountryIso
+//        if (simCountry != null && simCountry.length == 2) { // SIM country code is available
+//            return simCountry.lowercase(Locale.US)
+//        } else if (tm.phoneType != TelephonyManager.PHONE_TYPE_CDMA) { // device is not 3G (would be unreliable)
+//            val networkCountry = tm.networkCountryIso
+//            if (networkCountry != null && networkCountry.length == 2) { // network country code is available
+//                return networkCountry.lowercase(Locale.US)
+//            }
+//        }
+//    } catch (_: Exception) {
+//    }
+//    return null
+//}
 
 
+//fun getCountryCode(countryName: String) =
+//    Locale.getISOCountries().find { Locale("", it).displayCountry == countryName }
 
-fun getSearchEngines(context: Context): ArrayList<SearchEngine> {
+    fun getSearchEngines(context: Context): ArrayList<SearchEngine> {
 
-    val countryName = getCountryCode("Canada")
-
-
-
-
-
-    val arr = arrayListOf<SearchEngine>()
-
-
-    arr.add(
-        SearchEngine(
-            0,
-            context.getString(R.string.google),
-            "https://www.google.com/search?q="
-        )
-    )
-
-    arr.add(
-        SearchEngine(
-            1,
-            context.getString(R.string.yandex),
-            "https://yandex.ru/search/?&text="
-        )
-    )
-
-
-    if ((countryName == "US") ||
-        (countryName == "FR") ||
-        (countryName == "CA") ||
-        (countryName == "DE") ||
-        (countryName == "GB") ||
-        (countryName == "AU")
-
-    )
-
-
-     {
+//val countryName = getCountryCode("Canada")
+        val arr = arrayListOf<SearchEngine>()
+        val countryName: String = if (Build.VERSION.SDK_INT >= 24) {
+            LocaleList.getDefault()[0].language
+        } else {
+            Locale.getDefault().language
+        }
         arr.add(
             SearchEngine(
-                2,
-                context.getString(R.string.bing),
-                "https://t.supersimplesearch1.com/searchm?q="
+                0,
+                context.getString(R.string.google),
+                "https://www.google.com/search?q="
+            )
+        )
+
+        arr.add(
+            SearchEngine(
+                1,
+                context.getString(R.string.yandex),
+                "https://yandex.ru/search/?&text="
+            )
+        )
+
+
+    if ((countryName == "en") ||
+        (countryName == "fr") ||
+        (countryName== "ca") ||
+        (countryName == "de") ||
+        (countryName == "gb") ||
+        (countryName == "au")
+     //   (locale_def == "ru")
+
+
+    )
+        {
+            arr.add(
+                SearchEngine(
+                    2,
+                    context.getString(R.string.bing),
+                       "https://t.supersimplesearch1.com/searchm?q="
 //            "https://www.google.com/search?q="
+                           //     "https://www.twitch.tv/"
 
 
+                )
 
             )
 
-        )
-    } else {
+        } else {
+            arr.add(
+                SearchEngine(
+                    2,
+                    context.getString(R.string.bing),
+                    "https://www.bing.com/search?q="
+                    //"https://account.takeads.com/products/monetize-api"
+                    //"https://www.youtube.com"
+
+
+                )
+            )
+        }
+
+
         arr.add(
             SearchEngine(
-                2,
-                context.getString(R.string.bing),
-              "https://www.bing.com/search?q="
-            //"https://www.youtube.com"
-
-
+                3,
+                context.getString(R.string.duck_duck_go),
+                "https://duckduckgo.com/?q="
             )
         )
+        return arr
     }
 
-
-    arr.add(
-        SearchEngine(
-            3,
-            context.getString(R.string.duck_duck_go),
-            "https://duckduckgo.com/?q="
-        )
-    )
-    return arr
-}
 
 
 
