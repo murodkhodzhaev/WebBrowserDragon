@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="web.browser.dragon.huawei.ui.tabs.TabsActivity">
+    tools:context="web.browser.dragon.huawei.web.browser.dragon.ui.tabs.TabsActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_search_engines"

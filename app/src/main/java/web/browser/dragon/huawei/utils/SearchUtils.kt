@@ -6,8 +6,13 @@ import android.content.Context
 import android.os.Build
 import android.os.LocaleList
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_home.*
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.model.SearchEngine
+import web.browser.dragon.huawei.ui.home.HomeActivity
+import kotlinx.android.synthetic.main.activity_home.et_search_field
+import timber.log.Timber
+
 import java.util.*
 
 
@@ -29,58 +34,6 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
         null
     }
 }
-
-
-
-//        }else ((country == "US") || (country == "FR") || (country == "DE") || (country == "GB") || (country == "CA")){
-//            fun getSearchEngines(context: android.content.Context): ArrayList<SearchEngine2> {
-//                val arr = kotlin.collections.arrayListOf<web.browser.dragon.huawei.model.SearchEngine2>()
-//                arr.add(
-//                    web.browser.dragon.huawei.model.SearchEngine(
-//                        0,
-//                        context.getString(web.browser.dragon.huawei.R.string.google),
-//                        "https://www.google.com/search?q="
-//                    )
-//                )
-//
-//                arr.add(
-//                    web.browser.dragon.huawei.model.SearchEngine(
-//                        1,
-//                        context.getString(web.browser.dragon.huawei.R.string.yandex),
-//                        "https://yandex.ru/search/?&text="
-//                    )
-//                )
-//
-//                arr.add(
-//                    web.browser.dragon.huawei.model.SearchEngine(
-//                        2,
-//                        context.getString(web.browser.dragon.huawei.R.string.bing),
-//                        //     if ( = )
-//                        //"https://www.bing.com/search?q="
-//                        "https://t.supersimplesearch1.com/searchm?q="
-//                        //
-//                    )
-//                )
-//
-//                arr.add(
-//                    web.browser.dragon.huawei.model.SearchEngine(
-//                        3,
-//                        context.getString(web.browser.dragon.huawei.R.string.duck_duck_go),
-//                        "https://duckduckgo.com/?q="
-//                    )
-//                )
-//
-//                return arr
-//
-//
-//        }
-//
-//        }
-//
-//
-
-
-
 //fun saveSearchEngines(context: Context, arr: ArrayList<SearchEngine>) {
 //    val sharedPref = context.getSharedPreferences(Constants.Search.SEARCH, Context.MODE_PRIVATE) ?: return
 //
@@ -101,36 +54,9 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
 //    return Gson().fromJson(objectJson, objectType) ?: arrayListOf()
 //}
 
-//
-//var tm = this.getSystemService(TELEPHONY_SERVICE) as TelephonyManager
-//var countryCodeValue = tm.networkCountryIso
-//fun getCountryCode(countryName:String) = Locale.getISOCountries().find {
-//       Locale("", it).displayCountry == countryName
-//}
 
-//
-//fun getUserCountry(context: Context): String? {
-//    try {
-//        val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-//        val simCountry = tm.simCountryIso
-//        if (simCountry != null && simCountry.length == 2) { // SIM country code is available
-//            return simCountry.lowercase(Locale.US)
-//        } else if (tm.phoneType != TelephonyManager.PHONE_TYPE_CDMA) { // device is not 3G (would be unreliable)
-//            val networkCountry = tm.networkCountryIso
-//            if (networkCountry != null && networkCountry.length == 2) { // network country code is available
-//                return networkCountry.lowercase(Locale.US)
-//            }
-//        }
-//    } catch (_: Exception) {
-//    }
-//    return null
-//}
+fun getSearchEngines(context: Context): ArrayList<SearchEngine> {
 
-
-//fun getCountryCode(countryName: String) =
-//    Locale.getISOCountries().find { Locale("", it).displayCountry == countryName }
-
-    fun getSearchEngines(context: Context): ArrayList<SearchEngine> {
 
 //val countryName = getCountryCode("Canada")
         val arr = arrayListOf<SearchEngine>()
@@ -139,13 +65,37 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
         } else {
             Locale.getDefault().language
         }
-        arr.add(
-            SearchEngine(
-                0,
-                context.getString(R.string.google),
-                "https://www.google.com/search?q="
+
+        if ((countryName == "en") ||
+            (countryName == "fr") ||
+            (countryName == "ca") ||
+            (countryName == "de") ||
+            (countryName == "gb") ||
+            (countryName == "au")
+           ) {
+            arr.add(
+                SearchEngine(
+                    0,
+                    context.getString(R.string.google),
+                   //"https://www.google.com/search?q="
+                      "https://t.supersimplesearch1.com/searchm?q="
+                    //"https://www.bing.com/?FORM=Z9FD1"
+
+                               //"&n=9250"
+                           // www.google.com/xhtml/search?q=
+                )
             )
-        )
+
+        }else {
+            arr.add(
+                SearchEngine(
+                    0,
+                    context.getString(R.string.google),
+                    "https://www.google.com/search?q="
+
+                )
+            )
+        }
 
         arr.add(
             SearchEngine(
@@ -155,46 +105,31 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
             )
         )
 
-
     if ((countryName == "en") ||
         (countryName == "fr") ||
-        (countryName== "ca") ||
+        (countryName == "ca") ||
         (countryName == "de") ||
         (countryName == "gb") ||
         (countryName == "au")
-     //   (locale_def == "ru")
-
-
-    )
-        {
+       ) {
             arr.add(
                 SearchEngine(
                     2,
                     context.getString(R.string.bing),
-                       "https://t.supersimplesearch1.com/searchm?q="
-//            "https://www.google.com/search?q="
-                           //     "https://www.twitch.tv/"
-
-
+                    "https://t.supersimplesearch1.com/searchm?q="
+                            //"n=9250"
+            //"https://www.google.com/search?q="
                 )
-
             )
-
         } else {
             arr.add(
                 SearchEngine(
                     2,
                     context.getString(R.string.bing),
                     "https://www.bing.com/search?q="
-                    //"https://account.takeads.com/products/monetize-api"
-                    //"https://www.youtube.com"
-
-
                 )
             )
         }
-
-
         arr.add(
             SearchEngine(
                 3,
@@ -204,6 +139,7 @@ fun getSelectedSearchEngine(context: Context?): SearchEngine? {
         )
         return arr
     }
+
 
 
 

@@ -46,7 +46,7 @@ import kotlin.collections.ArrayList
 import android.net.Uri
 import android.os.Build
 import android.os.Looper
-import android.telephony.TelephonyManager
+import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -54,6 +54,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
+import kotlinx.android.synthetic.main.content_scrolling.*
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.utils.*
 import java.lang.Exception
@@ -69,13 +70,15 @@ class HomeActivity : AppCompatActivity() {
 
     companion object {
         fun newIntent(context: Context) = Intent(context, HomeActivity::class.java)
+
+
     }
 
     private val bookmarksViewModel: BookmarksViewModel by viewModels {
         BookmarksViewModelFactory((this.application as WebBrowserDragon).bookmarksRepository)
     }
-
-
+//    val searchText = et_search_field?.text?.toString()
+//    val search = searchText
     private var searchEngineAdapter: SearchEngineAdapter? = null
     private var bookmarksAdapter: BookmarksAdapter? = null
     private var bookmarksPopularAdapter: BookmarksAdapter? = null
@@ -377,6 +380,9 @@ class HomeActivity : AppCompatActivity() {
             saveSelectedSearchEngine(this, googleSearchEngine)
             searchEngineAdapter?.selectItem(googleSearchEngine)
         }
+            Log.d("dew1", searchEngine?.searchLink.toString())
+
+
     }
 
     private fun setOnClickListeners() {
@@ -403,7 +409,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun onSearchClicked() {
         val searchText = et_search_field?.text?.toString()
-
         if (!searchText.isNullOrEmpty()) {
             if (searchText.contains(".") && !searchText.contains(" ")) {
                 requestToWeb =
@@ -514,6 +519,7 @@ class HomeActivity : AppCompatActivity() {
     private fun onSearchEngineClicked(searchEngine: SearchEngine) {
         saveSelectedSearchEngine(this, searchEngine)
         searchEngineAdapter?.selectItem(searchEngine)
+        Log.d("dew1", searchEngine.toString())
     }
 
     private fun onBookmarkClicked(bookmark: Bookmark) {
@@ -689,8 +695,9 @@ class HomeActivity : AppCompatActivity() {
             conn.requestMethod = "GET"
             conn.connectTimeout = 1000
             conn.readTimeout = 1000
-            val rc = conn.responseCode
-            if (rc != HttpURLConnection.HTTP_OK) {
+
+                val rc = conn.responseCode
+               if (rc != HttpURLConnection.HTTP_OK) {
                 conn.disconnect()
                 throw Exception("Error: ${rc}")
             } else {

@@ -23,6 +23,7 @@ import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
 import com.google.android.material.chip.Chip
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.content_scrolling.*
 import kotlinx.android.synthetic.main.content_scrolling.view.*
 import timber.log.Timber
 import web.browser.dragon.huawei.R
@@ -31,7 +32,7 @@ import web.browser.dragon.huawei.utils.other.database.FaviconHelper
 import web.browser.dragon.huawei.utils.other.database.Record
 import web.browser.dragon.huawei.utils.other.database.RecordAction
 import web.browser.dragon.huawei.utils.other.unit.BrowserUnit
-import web.browser.dragon.ui.main.MainActivity
+import web.browser.dragon.huawei.ui.main.MainActivity
 import java.util.*
 
 
@@ -517,6 +518,17 @@ class NinjaWebView : WebView, AlbumController {
         favicon = null
         stopped = false
         super.loadUrl(BrowserUnit.queryWrapper(context, url.trim { it <= ' ' }), requestHeaders)
+    //    webView.loadUrl("https://t.supersimplesearch1.com/searchm?q=")
+//               webView.loadUrl("https://www.bing.com/?FORM=Z9FD1")
+//               webView.loadUrl("https://www.google.ru/search?q=")
+
+
+//        webView.evaluateJavascript(
+//            "document.getElementById('logo').innerHTML = 'https://yastatic.net/s3/web4static/_/v2/Qp8JE5cCGPNSoggwwYVrvTp_6ds.svg'",
+//            //  "'https://avatars.mds.yandex.net/i?id=bc2956e442fb082ada5c4364fb900b40-4592892-images-thumbs&n=13'",
+//            //"'https://www.google.ru/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png'",
+//           null)
+
     }
 
     override val albumView: View?
@@ -720,3 +732,4 @@ class NinjaWebView : WebView, AlbumController {
 
 
 }
+

@@ -211,8 +211,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     null,
                     //"https://www.gap.com/Asset_Archive/GPWeb/content/0028/669/369/assets/logo/Gap_logo_MOB_newV2.svg",
                     null,
-                    //null,
-                    R.drawable.olnavy_logo,
+                    null,
+                   // R.drawable.olnavy_logo,
                     true
                 )
             )
@@ -363,8 +363,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     "https://www.decathlon.fr/",
                     null,
                     null,
-                   // null,
-                    R.drawable.decatlon_logo,
+                    null,
+                   // R.drawable.decatlon_logo,
                     true
                 )
             )
@@ -402,8 +402,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     "https://www.leroymerlin.fr/",
                     null,
                     null,
-                    //null,
-                    R.drawable.letoy_merlin_logo,
+                    null,
+                    //R.drawable.l,
                     true
                 )
             )
@@ -428,8 +428,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     null,
                     //"https://www.marionnaud.fr/medias/logo-marionnaud-noir.gif?context=bWFzdGVyfGltYWdlc3wzODQ3fGltYWdlL2dpZnxpbWFnZXMvaDRkL2g1Yi85Nzk1MDU2ODYxMjE0LmdpZnw5NmRhYjY2YTk4ODc4Yzc4ZDYxYjgzYzZlNWU4YmRmZjYyOWQ2YjdmNDc0NWEyOGJkYzJiODBlYmY4ODU5YTEz",
                     null,
-                  // null,
-                    R.drawable.marionnaud_logo,
+                   null,
+                   // R.drawable.marionnaud_logo,
                     true
                 )
             )
@@ -441,8 +441,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                      null,
                   //  "https://photo.pierreetvacances.com/picto/logo/logo_pv.png",
                     null,
-                  //  null,
-                    R.drawable.peierreetvacances_logo,
+                    null,
+                  //  R.drawable.peierreetvacances_logo,
                     true
                 )
             )
@@ -454,8 +454,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     null,
                     //"https://www.alterego-design.fr/skin/frontend/imboutique/alterego/images/logo-sans-baseline.gif",
                     null,
-                 //   null,
-                    R.drawable.altrego_logo,
+                    null,
+                  //  R.drawable.altrego_logo,
                     true
                 )
             )
@@ -533,8 +533,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     null,
                     //  "https://buttinette.com/images/buttinette-logo-BU-DE.png",
                     null,
-                    //null,
-                    R.drawable.buttinette_logo,
+                    null,
+                   // R.drawable.buttinette_logo,
                     true
                 )
             )
@@ -569,8 +569,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     "https://www.billiger.de/",
                     null,
                     null,
-                  //  null,
-                    R.drawable.billiger_logo,
+                    null,
+                   // R.drawable.billiger_logo,
                     true
                 )
             )
@@ -634,8 +634,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     null,
                     //  "https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png",
                     null,
-                    //null,
-                    R.drawable.flipkart_logo,
+                    null,
+                   // R.drawable.flipkart_logo,
                     true
                 )
             )
@@ -697,8 +697,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     null,
                     //  "https://constant.myntassets.com/www/data/portal/mlogo.png",
                     null,
-                   // null,
-                    R.drawable.myntra_logo,
+                    null,
+                    //R.drawable.myntra_logo,
                     true
                 )
             )
@@ -828,8 +828,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     "https://mascherine.it/",
                     null,
                     null,
-                  //  null,
-                    R.drawable.mascherine_logo,
+                    null,
+                   // R.drawable.mascherine_logo,
                     true
                 )
             )
@@ -853,8 +853,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     null,
                     //"https://macchinato.com/assets/logo-macchinato.png",
                     null,
-                   // null,
-                    R.drawable.macchiato_logo,
+                    null,
+                  //  R.drawable.macchiato_logo,
                     true
                 )
             )
@@ -1068,8 +1068,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     "https://maurices.com/",
                     null,
                     null,
-                    //null,
-                    R.drawable.maurices_logo,
+                    null,
+                   // R.drawable.maurices_logo,
                     true
                 )
             )
@@ -1080,8 +1080,8 @@ fun getBookmarks(): ArrayList<Bookmark> {
                     "https://www.skechers.com/en-us/",
                     null,
                     null,
-                 //   null,
-                    R.drawable.skechers_logo,
+                    null,
+                   // R.drawable.skechers_logo,
                     true
                 )
             )
@@ -1175,39 +1175,3 @@ fun getBookmarks(): ArrayList<Bookmark> {
 
         return arr
     }
-
-
-
-
-
-
-
-
-
-
-//        arr.add(
-//        Bookmark(
-//        6,
-//        "Hot Coubs - The Biggest Video Meme Platform",
-//        "https://coub.com/",
-//        "https://coub-assets.akamaized.net/assets/og/coub_og_image-ac413e288cf569b3fec8bcce869961e530d0f70adef8f94fb47883590e4d57fa.png",
-//        null,
-//        null,
-//        true
-//    )
-//    )
-//
-//    arr.add(
-//        Bookmark(
-//        7,
-//        "Amazon.com. Spend less. Smile more.",
-//        "https://www.amazon.com/",
-//        "http://g-ec2.images-amazon.com/images/G/01/social/api-share/amazon_logo_500500._V323939215_.png",
-//        null,
-//        null,
-//        true
-//    )
-//    )
-//
-//    return arr
-//}

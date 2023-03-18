@@ -9,7 +9,10 @@ data class SearchEngine(
     val title: String,
     val searchLink: String,
     var isSelected: Boolean = false
-): Parcelable
+
+): Parcelable {
+
+}
 
 
 

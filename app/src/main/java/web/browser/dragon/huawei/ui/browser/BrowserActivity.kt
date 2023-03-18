@@ -2,6 +2,7 @@ package web.browser.dragon.huawei.ui.browser
 
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.*
 import android.content.pm.ActivityInfo
@@ -14,7 +15,6 @@ import android.net.Uri
 import android.net.http.SslError
 import android.os.*
 import android.provider.MediaStore
-import android.telephony.TelephonyManager
 import android.util.Log
 import android.view.*
 import android.view.View.GONE
@@ -66,7 +66,7 @@ import web.browser.dragon.huawei.utils.ogparser.OpenGraphCallback
 import web.browser.dragon.huawei.utils.ogparser.OpenGraphParser
 import web.browser.dragon.huawei.utils.other.unit.BrowserUnit
 import web.browser.dragon.huawei.utils.settings.getSettings
-import web.browser.dragon.ui.main.MainActivity.Companion.MY_PERMISSIONS_REQUEST_LOCATION
+import web.browser.dragon.huawei.ui.main.MainActivity.Companion.MY_PERMISSIONS_REQUEST_LOCATION
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -356,7 +356,6 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         val webSettings = webView?.settings
         webSettings?.javaScriptEnabled = getSettings(this)?.enableJavaScript ?: true
         webSettings?.domStorageEnabled = true
-
         webSettings?.allowFileAccess = true
         webSettings?.blockNetworkImage = getSettings(this)?.withoutImages ?: false
         webSettings?.loadsImagesAutomatically = true
@@ -390,6 +389,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
         }
         return false
     }
+    @SuppressLint("SetJavaScriptEnabled")
     private fun setWebView() {
         updateSettings()
 
@@ -443,11 +443,11 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                         view: WebView,
                         request: WebResourceRequest,
                     ): Boolean {
-
-
                         if (!request.url.toString()
                                 .startsWith("intent://")&& !request.url.toString()
                                 .startsWith("https://m.youtube") && !request.url.toString()
+                                .startsWith("https://www.google.com/maps/") && !request.url.toString()
+                                .startsWith("https://www.instagram.com") && !request.url.toString()
                                 .startsWith("https://youtube") && !request.url.toString()
                                 .startsWith("https://m.facebook.com") && !request.url.toString()
                                 .startsWith("https://facebook.com") && !request.url.toString()
@@ -509,28 +509,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
 
                         }
 
-                        // не помогает
-//                        if (!request.url.toString().startsWith("intent://")) {
-//                            try {
-//                                val context = view.context
-//                                if (intent != null) {
-//                                    view.stopLoading()
-//                                    val packageManager = context.packageManager
-//                                    val info =
-//                                        packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
-//                                    if (info != null) {
-//                                        context.startActivity(intent)
-//                                    } else {
-//                                        val fallbackUrl = intent.getStringExtra("browser_fallback_url")
-//                                        view.loadUrl(fallbackUrl!!)
-//                                    }
-//                                    return true
-//                                }
-//                            } catch (e: URISyntaxException) {
-//                                }
-//                            }
-//
-//                    }
+
                     }
 
                     //            Для старых устройств
@@ -582,6 +561,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                     override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                         super.onPageStarted(view, url, favicon)
                         webView.visibility = View.INVISIBLE
+                    //    webView.loadUrl("https://www.bing.com/search?q=")
                         Log.d("onPageStarted", url.toString())
                         if (thread != null && !thread!!.isInterrupted) thread!!.interrupt()
 
@@ -689,6 +669,13 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
 //                                "link.href = 'www'+ link.href}}")
                         /** можно менять ссылки в результатах поиска и по этому методу, черех JS скрипт
                          * */
+//                        webView.loadUrl("https://t.supersimplesearch1.com/searchm?q=")
+//                        //webView.loadUrl("https://www.bing.com/search?q=")
+//                        webView.evaluateJavascript(
+//                            "document.getElementById('b_logoArea').setAttribute('src','https://www.google.ru/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png')",
+//                          null
+//                        )
+
                     }
                 }
 
@@ -1149,6 +1136,9 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
 
             private fun onSearchClicked() {
                 val searchText = et_search_field?.text?.toString()
+                when ("https://t.supersimplesearch1.com/searchm?q="){
+
+                }
 
                 if (!searchText.isNullOrEmpty()) {
                     if (searchText.contains(".") && !searchText.contains(" ")) {
@@ -1186,6 +1176,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
                 } else {
                     Toast.makeText(this, getString(R.string.search_empty_error), Toast.LENGTH_SHORT).show()
                 }
+
             }
 
             private fun setOnClickListeners() {
@@ -1449,6 +1440,7 @@ open class BrowserActivity : AppCompatActivity(), OpenGraphCallback {
             }
 
 }
+
 
 
 

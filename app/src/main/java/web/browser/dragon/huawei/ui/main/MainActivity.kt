@@ -1,4 +1,4 @@
-package web.browser.dragon.ui.main
+package web.browser.dragon.huawei.ui.main
 
 import android.Manifest
 import android.animation.ObjectAnimator

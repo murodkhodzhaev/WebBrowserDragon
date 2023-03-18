@@ -11,22 +11,20 @@ import android.os.Build
 import android.os.Environment
 import android.preference.PreferenceManager
 import android.util.Log
-import android.view.View
 import android.webkit.CookieManager
 import android.webkit.MimeTypeMap
 import android.webkit.URLUtil
-import android.webkit.ValueCallback
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.client.utils.URIBuilder
+import timber.log.Timber
 import web.browser.dragon.huawei.R
 import web.browser.dragon.huawei.ui.browser.BrowserActivity
 import web.browser.dragon.huawei.utils.other.DataURIParser
 import web.browser.dragon.huawei.utils.other.database.RecordAction
-import timber.log.Timber
 import java.io.File
 import java.io.FileOutputStream
-import java.lang.Exception
 import java.util.*
 import java.util.regex.Pattern
 
@@ -35,6 +33,7 @@ object BrowserUnit {
     const val LOADING_STOPPED = 101 //Must be > PROGRESS_MAX !
     const val MIME_TYPE_TEXT_PLAIN = "text/plain"
     private const val SEARCH_ENGINE_GOOGLE = "https://www.google.com/search?q="
+    private const val SEARCH_ENGINE_SUPERSIMPLESEARCH= "https://t.supersimplesearch1.com/searchm?q=&n=9250"
     private const val SEARCH_ENGINE_DUCKDUCKGO = "https://duckduckgo.com/?q="
     private const val SEARCH_ENGINE_STARTPAGE = "https://startpage.com/do/search?query="
     private const val SEARCH_ENGINE_BING = "https://www.bing.com/search?q="
@@ -44,6 +43,7 @@ object BrowserUnit {
     private const val SEARCH_ENGINE_Metager = "https://metager.org/meta/meta.ger3?eingabe="
     private const val SEARCH_ENGINE_STARTPAGE_DE =
         "https://startpage.com/do/search?lui=deu&language=deutsch&query="
+
     private const val SEARCH_ENGINE_SEARX = "https://searx.be/?q="
     const val URL_ENCODING = "UTF-8"
     private const val URL_ABOUT_BLANK = "about:blank"
@@ -67,6 +67,9 @@ object BrowserUnit {
         ) {
             return true
         }
+        val ub = URIBuilder(SEARCH_ENGINE_SUPERSIMPLESEARCH)
+        ub.addParameter("q", "&n=9250")
+
         val regex = ("^((ftp|http|https|intent)?://)" // support scheme
                 + "?(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?" // ftp的user@
                 + "(([0-9]{1,3}\\.){3}[0-9]{1,3}" // IP形式的URL -> 199.194.52.184
@@ -117,10 +120,11 @@ object BrowserUnit {
                 3 -> SEARCH_ENGINE_BING + query
                 4 -> SEARCH_ENGINE_DUCKDUCKGO + query
                 5 -> SEARCH_ENGINE_GOOGLE + query
-                6 -> SEARCH_ENGINE_SEARX + query
-                7 -> SEARCH_ENGINE_QWANT + query
-                8 -> SEARCH_ENGINE_ECOSIA + query
-                9 -> SEARCH_ENGINE_Metager + query
+                6 -> SEARCH_ENGINE_SUPERSIMPLESEARCH + query
+                7 -> SEARCH_ENGINE_SEARX + query
+                8 -> SEARCH_ENGINE_QWANT + query
+                9 -> SEARCH_ENGINE_ECOSIA + query
+                10 -> SEARCH_ENGINE_Metager + query
                 else -> SEARCH_ENGINE_STARTPAGE + query
             }
         }

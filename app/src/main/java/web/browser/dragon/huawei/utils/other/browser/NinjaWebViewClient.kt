@@ -42,10 +42,33 @@ class NinjaWebViewClient(ninjaWebView: NinjaWebView) : WebViewClient() {
 
         Timber.d("TAG_NinjaWebViewClient_2")
     }
+
     override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
+       // ninjaWebView.evaluateJavascript(
+//            window.addEventListener("load", (event) => {
+//                let style = document.head.appendChild(document.createElement("style"));
+//                style.innerHTML = ".b_logo:after {content: url(твой урл пикчи сюда); }";
+//            }
+//        )
+        if (url == "https://www.bing.com/search?q=")
+        {
+            view.evaluateJavascript(
+                ("\n"+
+                        "windows.addEventListener(load, (event) => {\n" +
+                        "  let \"style\" = document.head.appendChild(document.createElement(style));\n" +
+                        "  style.innerHTML =\".b_logo:after\" {content:url(https://www.google.ru/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png);\n" +
+                        "  };\n"+
+                        "!important;\n"+
+                         "});"),
+                null
+            )
+        }
 
-        Timber.d("TAG_NinjaWebViewClient_1")
+
+
+
+             Timber.d("TAG_NinjaWebViewClient_1")
         ninjaWebView.isBackPressed = false
         if (ninjaWebView.isForeground) {
             ninjaWebView.invalidate()
@@ -100,6 +123,7 @@ class NinjaWebViewClient(ninjaWebView: NinjaWebView) : WebViewClient() {
                 )
             }
         }
+
         if (ninjaWebView.isFingerPrintProtection) {
             //Block WebRTC requests which can reveal local IP address
             //Tested with https://diafygi.github.io/webrtc-ips/
@@ -594,3 +618,4 @@ class NinjaWebViewClient(ninjaWebView: NinjaWebView) : WebViewClient() {
         //        adBlock = AdBlock(context)
     }
 }
+
